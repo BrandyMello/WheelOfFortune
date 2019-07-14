@@ -13,7 +13,8 @@ class Game {
     let player1 = new Player(1, 'Brandy');
     let player2 = new Player(2, 'Lacy');
     let player3 = new Player(3, 'Julian');
-    let round = new Round
+    let round = new Round(data);
+    
   }
 
 
