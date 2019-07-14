@@ -2,8 +2,9 @@
 // import Round from '.Round';
 
 class Player {
-  constructor(players,) {
-
+  constructor(name) {
+    this.name = name;
+    // this
   }
 }
 

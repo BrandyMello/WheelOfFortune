@@ -17,7 +17,8 @@ class Game {
     return this.players;
   }
 
-  startGame() {
+  startGame(p1, p2, p3) {
+    this.addPlayers(p1, p2, p3);
     let round = new Round(data);
   }
 
