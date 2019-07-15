@@ -1,6 +1,18 @@
 class Round {
   constructor() {
+    this.round = 1;
+    this.roundCounter = null;
 
+  }
+
+  incrementRound() {
+    //turn.round increments along with roundCounter
+  }
+
+  determineRoundWinner() {
+    //compare scores return winner name
+    //wheel.generateCurrentWheel()
+    //incrementRound();
   }
 }
 

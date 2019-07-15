@@ -1,6 +1,6 @@
-// import Puzzle from '.Puzzle';
-// import Round from '.Round';
-// import Turn from '.Turn';
+import Puzzle from './Puzzle';
+import Round from './Round';
+import Turn from './Turn';
 
 class Player {
   constructor(name) {

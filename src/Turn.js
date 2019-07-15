@@ -25,11 +25,11 @@ class Turn {
   }
 
   checkTurn() {
-    //switchPlayer()
+    //switchPlayer() if
   }
 
   switchPlayer() {
-    
+
   }
 }
 
