@@ -1,3 +1,4 @@
+
 //Wheel is a class with access to the data correlated to the wheel options.
 
 //a property of this class can be wheelData where the array of the entirety of options for the wheel are stored --- this will be found via a method -
@@ -28,6 +29,28 @@
 
 
 
+class Wheel {
+  constructor() {
+    this.wheelData = [];
+    this.bonusWheelData = [];
+    this.currentWheel = [];//generateCurrentWheel()
+    this.wheelPrize = null; // chooseWheelPrize()
+  }
 
+  findWheelData() {
 
+  }
+
+  generateCurrentWheel() {
+
+  }
+
+  chooseWheelPrize() {
+
+  }
+
+  
+}
+
+export default Wheel;
 
