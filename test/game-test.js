@@ -20,21 +20,18 @@ describe('Game', function() {
     expect(game).to.be.an.instanceOf(Game);
   });
 
-  it('should have three players at the start of the game', function () {
-    let player1 = new Player('Brandy');
-    let player2 = new Player('Lacy');
-    let player3 = new Player('Julian');
-    expect(game.addPlayers(player1, player2, player3).length).to.equal(3);
+  describe('addPlayer', function () {
+    it('should have three players at the start of the game', function () {
+      let player1 = new Player('Brandy');
+      let player2 = new Player('Lacy');
+      let player3 = new Player('Julian');
+      expect(game.addPlayers(player1, player2, player3).length).to.equal(3);
+    });
+
+  describe('startGame', function () {
+    it('should initialize the game with the new players', function () {
+      expect(game.StartGame())
+    })
+  })
   });
-
-  it('should have three players at the start of the game', function () {
-    let player1 = new Player('Brandy');
-    let player2 = new Player('Lacy');
-    let player3 = new Player('Julian');
-    expect(game.addPlayers(player1, player2, player3).length).to.equal(3);
-  });
-
-
-
-
 });
