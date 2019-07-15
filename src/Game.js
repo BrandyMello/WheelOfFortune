@@ -7,6 +7,7 @@ class Game {
     this.data = data;
     this.round = 0;
     this.players = [];
+
   }
 
   addPlayers(p1, p2, p3) {
@@ -22,6 +23,10 @@ class Game {
     let round = new Round(data);
   }
 
+  determineWinner() {
+    //player.winGame()
+    //generate a bonus Wheel and start a bonus round
+  }
 }
 
 export default Game;
