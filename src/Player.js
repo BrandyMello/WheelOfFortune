@@ -7,6 +7,7 @@ class Player {
     this.name = name;
     this.roundScore = 0;
     this.grandTotal = 0;
+    this.currentMoney = 0;
   
   }
 }
