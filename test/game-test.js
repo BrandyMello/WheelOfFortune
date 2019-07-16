@@ -1,10 +1,13 @@
 import chai from 'chai';
+import spies from 'chai-spies';
 import Game from '../src/Game';
 import data from '../src/data';
 import Player from '../src/Player';
-import Round from '../src/Round'
+import Round from '../src/Round';
+
 
 const expect = chai.expect;
+chai.use(spies);
 
 let game;
 
@@ -23,35 +26,50 @@ describe('Game', () => {
     expect(game).to.be.an.instanceOf(Game);
   });
 
+   it('should have four rounds, and 4 rounds make up a game', () => {
+    game.startGame()
+    expect(game.roundCounter).to.equal(1)
+    game.startNewRound()
+    expect(game.roundCounter).to.equal(2)
+    game.startNewRound()
+    game.startNewRound()
+    expect(game.roundCounter).to.equal(4)
+  });
+
+
   describe('addPlayer', () => {
     it('should have three players at the start of the game', function () {
       game.addPlayers()
       expect(game.players.length).to.equal(3);
     });
-
-  it('should have four rounds, and 4 rounds make up a game', () => {
-    game.startGame()
-    expect(game.roundCounter).to.eql(1)
-    game.startNewRound()
-    expect(game.roundCounter).to.eql(2)
-    game.startNewRound()
-    game.startNewRound()
-    expect(game.roundCounter).to.eql(4)
-//not sure if this is the best way to test this
   });
-});
-
-  // describe('startGame', () => {
-  //   it('should initialize the game with the three new players', function () {
-  //     expect(game.startGame()).to.eql([{p1},{p2},{p3}])
-  //   })
-  //   it('should create the puzzle data')
-
-  // })
-  //startGame is really a helper method that will help invoke other methods so curious if we will need to use a spy here
+ 
   describe('startNewRound', () => {
     it('should start a new round if the it is not the the 4th round', () => {
-    expect(game.startNewRound()).to.equal(new Round(game))
+    expect(game.startNewRound()).to.eql(new Round(game))
     });
   });
 });
+
+  describe('puzzleSlayer', () => {
+    it('should return the winner of all of the rounds', () => {
+      expect(game.puzzleSlayer().to.be.an('object'))
+    });
+    it('should start the bonus round', () => {
+      expect(game.puzzleSlayer().to.eql(new BonusRound('object')))
+    });
+  });
+
+
+
+
+  //  describe('startGame', () => {
+  //   it('should initialize the game with the three new players', () => {
+  //     chai.spy.on(game,['startGame'], () => {});
+  //     game.startGame()
+  //     expect(game.addPlayers).to.have.been.called(1);
+  //   })
+  // })
+
+  //startGame will be a spy to test that this.addPlayers() has been called.
+

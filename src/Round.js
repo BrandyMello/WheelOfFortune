@@ -1,8 +1,8 @@
 class Round {
   constructor(game) {
     this.game = game;
-    this.round = this.startNewRound();
-    this.roundCounter = 0;
+    // this.round = this.startNewRound();
+    // this.roundCounter = 0;
     this.puzzleBank = [];
     // this.puzzle 
   }
