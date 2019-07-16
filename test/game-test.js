@@ -32,10 +32,10 @@ describe('Game', function() {
     
   })
 
-  describe('startGame', function () {
-    it('should initialize the game with the new players', function () {
-      expect(game.StartGame())
-    })
-  })
+  // describe('startGame', function () {
+  //   it('should initialize the game with the new players', function () {
+  //     expect(game.StartGame())
+  //   })
+  // })
   });
 });
