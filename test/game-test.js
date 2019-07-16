@@ -39,6 +39,7 @@ describe('Game', function() {
 //not sure if this is the best way to test this
   })
 
+
   describe('startGame', function () {
     it('should initialize the game with the three new players', function () {
       expect(game.StartGame()
