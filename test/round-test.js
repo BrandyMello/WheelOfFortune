@@ -1,7 +1,7 @@
 import chai from 'chai';
 import Game from '../src/Game';
 import data from '../src/data';
-import Player from '../src/Player';
+// import Player from '../src/Player';
 import Round from '../src/Round';
 
 const expect = chai.expect;
@@ -24,6 +24,7 @@ describe('Round', function() {
   });
 
   it('should create a puzzle bank', function () {
+    console.log(data);
     expect(round.createPuzzleBank(data).length).to.eql(4);
   });
 

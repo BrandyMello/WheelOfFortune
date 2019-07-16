@@ -1,3 +1,7 @@
+import data from './data';
+import Player from './Player';
+import Game from './Game';
+
 class Round {
   constructor(game) {
     this.game = game;
@@ -16,14 +20,14 @@ class Round {
   }
 
   createPuzzleBank() {
-
+    // console.log(data);
   }
 
-  determineRoundWinner() {
-    //compare scores return winner name
-    //wheel.generateCurrentWheel()
-    //
-  }
+  // determineRoundWinner() {
+  //   //compare scores return winner name
+  //   //wheel.generateCurrentWheel()
+  //   //
+  // }
 }
 
 export default Round;
