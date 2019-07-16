@@ -1,20 +1,28 @@
 class Round {
   constructor(game) {
     this.game = game;
-    this.round = this.startNewRound();
-    this.roundCounter = 0;
     this.puzzleBank = [];
-    // this.puzzle 
+    this.puzzle = {};
+  }
+
+  startNewRound() {
+    //wheel.generateCurrentWheel()
   }
 
   //makeNewTurn()
-  //assignPuzzleBank()
-  //createPuzzle()
+  
+  choosePuzzle() {
+
+  }
+
+  createPuzzleBank() {
+
+  }
 
   determineRoundWinner() {
     //compare scores return winner name
     //wheel.generateCurrentWheel()
-    //incrementRound();
+    //
   }
 }
 
