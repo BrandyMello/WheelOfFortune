@@ -1,3 +1,7 @@
+import data from './data';
+import Player from './Player';
+import Round from './Round';
+import Game from './Game';
 class Turn {
   constructor(player, round) {
     this.player = player;
@@ -5,9 +9,9 @@ class Turn {
   }
 
 
-  spinwheel() {
-    //wheel.findWheelPrize()
-    //checkCurrentPlayer();
+  spinWheel() {
+    // wheel.findWheelPrize()
+    // checkCurrentPlayer();
   }
 
   chooseConsonant() {
