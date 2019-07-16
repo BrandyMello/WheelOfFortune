@@ -6,7 +6,8 @@ class Game {
   constructor() {
     this.data = data;
     this.players = [];
-    this.roundCounter = this.startNewRound();
+    this.round = this.startNewRound();
+    this.roundCounter = 0;
     this.champion = null;
   }
 

@@ -29,12 +29,19 @@ describe('Game', function() {
     });
 
   it('should have four rounds, and 4 rounds make up a game', function () {
-    
+    game.startGame()
+    expect(game.roundCounter).to.eql(1)
+    game.startNewRound()
+    expect(game.roundCounter).to.eql(2)
+    game.startNewRound()
+    game.startNewRound()
+    expect(game.roundCounter).to.eql(4)
+//not sure if this is the best way to test this
   })
 
   describe('startGame', function () {
-    it('should initialize the game with the new players', function () {
-      expect(game.StartGame())
+    it('should initialize the game with the three new players', function () {
+      expect(game.StartGame()
     })
   })
   });
