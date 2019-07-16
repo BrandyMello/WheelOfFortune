@@ -1,14 +1,15 @@
 class Round {
-  constructor() {
-    this.round = 1;
-    this.roundCounter = null;
-    this.puzzleBank = 
-
+  constructor(game) {
+    this.game = game;
+    this.round = this.startNewRound();
+    this.roundCounter = 0;
+    this.puzzleBank = [];
+    // this.puzzle 
   }
 
-  incrementRound() {
-    //turn.round increments along with roundCounter
-  }
+  //makeNewTurn()
+  //assignPuzzleBank()
+  //createPuzzle()
 
   determineRoundWinner() {
     //compare scores return winner name

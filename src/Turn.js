@@ -1,35 +1,33 @@
 class Turn {
-  constructor() {
-    this.player = null;
-    this.round = null;
+  constructor(player, round) {
+    this.player = player;
+    this.round = round;
   }
 
-  spinWheel() {
+
+  spinwheel() {
     //wheel.findWheelPrize()
+    //checkCurrentPlayer();
   }
 
-  checkWheel(){
-    //checkTurn()
+  chooseConsonant() {
+    //checkCurrentPlayer();
   }
 
-  checkVowel(){
-    //checkTurn()
+  buyVowel() {
+    //checkCurrentPlayer();
   }
 
-  checkConsonant(){
-    //checkTurn()
+  solvePuzzle() {
+    //checkCurrentPlayer();
   }
 
-  checkAnswer(){
-    //checkTurn()
+  winRound() {
+    //checkCurrentPlayer();
   }
 
-  checkTurn() {
-    //switchPlayer() if
-  }
-
-  switchPlayer() {
-
+  checkCurrentPlayer() {
+    //switch if necessary
   }
 }
 

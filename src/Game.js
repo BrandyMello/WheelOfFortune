@@ -5,9 +5,9 @@ import Round from './Round';
 class Game {
   constructor() {
     this.data = data;
-    this.round = 0;
     this.players = [];
-
+    this.roundCounter = this.startNewRound();
+    this.champion = null;
   }
 
   addPlayers(p1, p2, p3) {
@@ -20,7 +20,16 @@ class Game {
 
   startGame(p1, p2, p3) {
     this.addPlayers(p1, p2, p3);
+    //this.startNewRound()
+  }
+
+  startNewRound() {
+    //conditionals to determine if < or > 4
+    //increment roundCounter and return (new Round(this))or return this.determineWinner() and
     // let round = new Round(data);
+    
+    
+    
   }
 
 

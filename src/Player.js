@@ -7,27 +7,7 @@ class Player {
     this.name = name;
     this.roundScore = 0;
     this.grandTotal = 0;
-    this.turn = true || false;
-  }
-
-  spinwheel() {
-    //turn.checkWheel()
-  }
-
-  chooseConsonant() {
-    //turn.checkConsonant();
-  }
-
-  buyVowel() {
-    //turn.checkVowel();
-  }
-
-  solvePuzzle() {
-    //turn.checkAnswer();
-  }
-
-  winGame() {
-    // turn.switchPlayer();
+  
   }
 }
 
