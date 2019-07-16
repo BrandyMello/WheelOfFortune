@@ -3,41 +3,51 @@ import Player from './Player';
 import Round from './Round';
 
 class Game {
-  constructor() {
+  constructor(p1, p2, p3) {
     this.data = data;
     this.players = [];
+    this.player1 = new Player(p1);
+    this.player2 = new Player(p2);
+    this.player3 = new Player(p3);
     this.round = this.startNewRound();
     this.roundCounter = 0;
     this.champion = null;
   }
 
-  addPlayers(p1, p2, p3) {
-    let player1 = new Player(p1);
-    let player2 = new Player(p2);
-    let player3 = new Player(p3);
-    this.players.push(player1, player2, player3);
-    return this.players;
+  startGame() {
+    this.addPlayers();
   }
 
-  startGame(p1, p2, p3) {
-    this.addPlayers(p1, p2, p3);
-    //this.startNewRound()
+  addPlayers() {
+    this.players.push(this.player1, this.player2, this.player3);
+    return this.players;
+    console.log(this.players)
   }
 
   startNewRound() {
+  this.roundCounter ++;
+
+
+    // if(this.roundCounter === 4) {
+    //   return this.determineWinner()
+    // } else {
+    //   this.roundCounter ++;
+    //   return new Round(this)
+    // }
+  }
+
     //conditionals to determine if < or > 4
     //increment roundCounter and return (new Round(this))or return this.determineWinner() and
     // let round = new Round(data);
     
     
-    
-  }
+  
 
 
-  determineWinner() {
-    //player.winGame()
-    //generate a bonus Wheel and start a bonus round
-  }
+  // determineWinner() {
+  //   return 'write method'
+  //   //iterate through players array and compare their grandTotal and return the player that had the highest total.
+  // }
 }
 
 export default Game;
