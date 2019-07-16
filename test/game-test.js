@@ -28,6 +28,10 @@ describe('Game', function() {
       expect(game.addPlayers(player1, player2, player3).length).to.equal(3);
     });
 
+  it('should have four rounds, and 4 rounds make up a game', function () {
+    
+  })
+
   describe('startGame', function () {
     it('should initialize the game with the new players', function () {
       expect(game.StartGame())

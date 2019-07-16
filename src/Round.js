@@ -2,14 +2,10 @@ class Round {
   constructor(game) {
     this.game = game;
     this.round = this.startNewRound();
-
-    //this.puzzleBank =[];
-    //this.puzzle = this.createPuzzle()
-    //this.turn = this.makeNewTurn()
-    
-
+    this.roundCounter = 0;
+    this.puzzleBank = [];
+    // this.puzzle 
   }
-
 
   //makeNewTurn()
   //assignPuzzleBank()
