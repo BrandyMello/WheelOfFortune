@@ -2,6 +2,7 @@ class Round {
   constructor() {
     this.round = 1;
     this.roundCounter = null;
+    this.puzzleBank = 
 
   }
 
