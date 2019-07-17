@@ -9,7 +9,7 @@ class Round {
     this.puzzleBank = [];
     this.puzzle = this.choosePuzzle();
     this.turn = this.makeNewTurn();
-    this.wheel = new Wheel();
+    // this.wheel = new Wheel();
   }
 
   makeNewTurn() {
@@ -18,7 +18,13 @@ class Round {
   }
 
   createPuzzleBank() {
-    // console.log(data);
+    let randomNum = Math.ceil(Math.random() * 23);
+    let puzlBank = [data.puzzles.one_word_answers.puzzle_bank[randomNum]];
+    let twoWrdPzl = data.puzzles.two_word_answers.puzzle_bank[randomNum];
+    let threeWrdPzl = data.puzzles.three_word_answers.puzzle_bank[randomNum];
+    let fourWrdPzl = data.puzzles.four_word_answers.puzzle_bank[randomNum];
+    puzlBank.push(twoWrdPzl, threeWrdPzl, fourWrdPzl)
+    return puzlBank;
   }
 
   choosePuzzle() {
