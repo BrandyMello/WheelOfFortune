@@ -19,20 +19,18 @@ class Round {
 
   createPuzzleBank() {
     let randomNum = Math.ceil(Math.random() * 23);
-    let puzlBank = [data.puzzles.one_word_answers.puzzle_bank[randomNum]];
+    let oneWrdPzl = data.puzzles.one_word_answers.puzzle_bank[randomNum];
     let twoWrdPzl = data.puzzles.two_word_answers.puzzle_bank[randomNum];
     let threeWrdPzl = data.puzzles.three_word_answers.puzzle_bank[randomNum];
     let fourWrdPzl = data.puzzles.four_word_answers.puzzle_bank[randomNum];
-    puzlBank.push(twoWrdPzl, threeWrdPzl, fourWrdPzl)
-    return puzlBank;
+    this.puzzleBank.push(oneWrdPzl, twoWrdPzl, threeWrdPzl, fourWrdPzl);
+    
+    return this.puzzleBank;
   }
 
   choosePuzzle() {
-    this.createPuzzleBank();
-    return this.puzzleBank[this.round -1];
-    // console.log(this.round -1)
-    //has to be called in turn at the end of a turn???
-    //needs to be an instantiated instance of puzzle/save the return to variable and pass through instantiation
+    let bank = this.createPuzzleBank();
+    return bank[this.round -1];
   }
 }
 

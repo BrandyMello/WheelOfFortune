@@ -26,7 +26,7 @@ describe('Round', function() {
   });
 
   it('should create a puzzle bank', function () {
-    expect(round.createPuzzleBank(data).length).to.eql(4);
+    expect(round.puzzleBank.length).to.eql(4);
   });
 
   it('should choose a puzzle from the puzzle bank', function() {

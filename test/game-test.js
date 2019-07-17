@@ -47,7 +47,7 @@ describe('Game', () => {
  
   describe('startNewRound', () => {
     it('should start a new round if the it is not the the 4th round', () => {
-    expect(game.startNewRound()).to.eql(new Round(game))
+    expect(game.startNewRound()).to.be.an.instanceOf(Round);
     });
   });
 
