@@ -1,5 +1,5 @@
 class Turn {
-  constructor(player, round) {
+  constructor(round, player) {
     this.player = player;
     this.round = round;
   }
@@ -7,7 +7,7 @@ class Turn {
 
   spinwheel() {
     //wheel.findWheelPrize()
-    // if incorrect switch player to next player in index with round.makeNewTurn() and reassign this.player;
+    // if incorrect switch player to next player in index with round.makeNewTurn(player) and reassign this.player;
   }
 
   chooseConsonant() {

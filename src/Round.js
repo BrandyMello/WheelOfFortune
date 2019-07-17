@@ -12,10 +12,16 @@ class Round {
     // this.wheel = new Wheel();
   }
 
-  makeNewTurn() {
-    //conditionals - how to loop through an array and back again
-    //return new Turn(this, this.game.players[++])
+  makeNewTurn(player) {
+    // let playerIndex = this.game.players
+    // if (this.playerIndex < this.game.players.length -1) {
+    //   playerIndex ++;
+    // } else {
+    //   let playerIndex = 0;
+    // }
+    // return new Turn(this, this.game.players[playerIndex]);
   }
+  
 
   createPuzzleBank() {
     let randomNum = Math.ceil(Math.random() * 23);
@@ -24,7 +30,6 @@ class Round {
     let threeWrdPzl = data.puzzles.three_word_answers.puzzle_bank[randomNum];
     let fourWrdPzl = data.puzzles.four_word_answers.puzzle_bank[randomNum];
     this.puzzleBank.push(oneWrdPzl, twoWrdPzl, threeWrdPzl, fourWrdPzl);
-    
     return this.puzzleBank;
   }
 

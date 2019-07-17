@@ -15,13 +15,13 @@ class Game {
     this.player2 = new Player(p2);
     this.player3 = new Player(p3);
     this.roundCounter = 0;
-    this.round = this.startNewRound();
     this.puzzleSlayer = null;
+    this.round;
   }
 
   startGame() {
     this.addPlayers();
-
+    this.round = this.startNewRound();
   }
 
   addPlayers() {
