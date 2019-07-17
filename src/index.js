@@ -14,7 +14,10 @@ import Game from './Game';
 
 
 //On submit of names - start game button
-let game = new Game();
-game.startGame('player1', 'player2', 'player3');
+
+$( document ).ready(() => {
+ let game = new Game();
+ game.startGame('player1', 'player2', 'player3');
+});
 
 console.log('This is the JavaScript entry file - your code begins here.');

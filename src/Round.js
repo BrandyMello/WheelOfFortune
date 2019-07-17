@@ -1,6 +1,7 @@
 import data from './data';
 import Player from './Player';
 import Game from './Game';
+import Wheel from './Wheel';
 
 class Round {
   constructor(game) {

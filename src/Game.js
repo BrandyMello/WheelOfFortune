@@ -15,7 +15,7 @@ class Game {
     this.player2 = new Player(p2);
     this.player3 = new Player(p3);
     this.roundCounter = 0;
-    // this.round = this.startNewRound();
+    this.round = this.startNewRound();
     this.puzzleSlayer = null;
   }
 
@@ -31,7 +31,7 @@ class Game {
   }
 
   startNewRound() {
-    if(this.roundCounter > 4) {
+    if(this.roundCounter === 4) {
        this.puzzleSlayer()
     } else {
       this.roundCounter ++;

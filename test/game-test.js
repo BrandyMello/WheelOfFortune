@@ -46,7 +46,7 @@ describe('Game', () => {
  
   describe('startNewRound', () => {
     it('should start a new round if the it is not the the 4th round', () => {
-    expect(game.startNewRound()).to.eql(new Round(game))
+    expect(game.startNewRound()).to.be.an.instanceOf(Round)
     });
   });
 
@@ -61,16 +61,13 @@ describe('Game', () => {
   });
 });
 
+   describe('startGame', () => {
+    it('should initialize the game with the three new players', () => {
+      chai.spy.on(game,['addPlayers'], () => {});
+      game.startGame()
+      expect(game.addPlayers).to.have.been.called(1);
+    })
+  })
 
-
-
-  //  describe('startGame', () => {
-  //   it('should initialize the game with the three new players', () => {
-  //     chai.spy.on(game,['startGame'], () => {});
-  //     game.startGame()
-  //     expect(game.addPlayers).to.have.been.called(1);
-  //   })
-  // })
-
-  //startGame will be a spy to test that this.addPlayers() has been called.
+  // startGame will be a spy to test that this.addPlayers() has been called.
 
