@@ -49,7 +49,7 @@ describe('Game', () => {
     expect(game.startNewRound()).to.eql(new Round(game))
     });
   });
-});
+
 
   describe('puzzleSlayer', () => {
     it('should return the winner of all of the rounds', () => {
@@ -59,6 +59,7 @@ describe('Game', () => {
       expect(game.puzzleSlayer().to.eql(new BonusRound('object')))
     });
   });
+});
 
 
 

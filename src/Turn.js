@@ -7,27 +7,23 @@ class Turn {
 
   spinwheel() {
     //wheel.findWheelPrize()
-    //checkCurrentPlayer();
+    // if incorrect switch player to next player in index with round.makeNewTurn() and reassign this.player;
   }
 
   chooseConsonant() {
-    //checkCurrentPlayer();
+    // if incorrect switch player to next player in index with round.makeNewTurn() and reassign this.player;
   }
 
   buyVowel() {
-    //checkCurrentPlayer();
+    // if incorrect switch player to next player in index with round.makeNewTurn() and reassign this.player;
   }
 
   solvePuzzle() {
-    //checkCurrentPlayer();
+    // if incorrect switch player to next player in index with round.makeNewTurn() and reassign this.player;
   }
 
   winRound() {
-    //checkCurrentPlayer();
-  }
-
-  checkCurrentPlayer() {
-    //switch if necessary
+    // if incorrect switch player to next player in index with round.makeNewTurn() and reassign this.player;
   }
 }
 
