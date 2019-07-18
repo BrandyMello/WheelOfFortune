@@ -49,11 +49,7 @@ class Wheel {
       let randomIndex = Math.floor(Math.random() * Math.floor(6));
       let randomPrize = this.currentWheel[randomIndex]
       return randomPrize
-    }
-
-
-
-  
+    }  
 }
 
 export default Wheel;

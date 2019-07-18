@@ -20,8 +20,7 @@ describe('Turn', function () {
         round = new Round(game)
         turn = new Turn(round, 'Julian');
         puzzle = new Puzzle()
-        puzzleAnswer = puzzle.correctAnswer.split()
-        // console.log(puzzleAnswer)
+     
         it('should be a function', () => {
             expect(Turn).to.be.a('function');
         });

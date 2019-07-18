@@ -29,7 +29,6 @@ $('.startGameBtn').click((e) => {
   game = new Game(player1, player2, player3);
   game.addPlayers();
   appendPlayers(player1, player2, player3);
-
 })
 
 function appendPlayers(p1, p2, p3) {
@@ -49,30 +48,33 @@ function appendPlayers(p1, p2, p3) {
 }
 
 console.log('This is the JavaScript entry file - your code begins here.');
+
+
+
 // This is the base functionality for creating our alphabet buttons, as far as where 
 // they will appear in our files, I thought this would be the best place to keep it for now.
-let consonants = ['b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'v', 'w', 'x', 'y', 'z']
-let vowels = ['a', 'e', 'i', 'o', 'u'] 
-const alphabet = $(".alphabet")
+// let consonants = ['b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'v', 'w', 'x', 'y', 'z']
+// let vowels = ['a', 'e', 'i', 'o', 'u'] 
+// const alphabet = $(".alphabet")
 
-function consonantButtons() {
-    var consonantAppend = consonants.map(letter => {
-       $("<button/>"), {
-           text: letter, 
-           click: function (){},
-       }
-    })
-    alphabet.append(consonantAppend).trigger('create');
-}
+// function consonantButtons() {
+//     var consonantAppend = consonants.map(letter => {
+//        $("<button/>"), {
+//            text: letter, 
+//            click: function (){},
+//        }
+//     })
+//     alphabet.append(consonantAppend).trigger('create');
+// }
 
-consonantButtons()
-function vowelButtons() {
-    var vowelAppend = vowels.map(letter => {
-        $("<button/>"), {
-            text: letter,
-            click: function () {},
-        }
-    })
-    alphabet.append(vowelAppend);
-}
-vowelButtons()
+// consonantButtons()
+// function vowelButtons() {
+//     var vowelAppend = vowels.map(letter => {
+//         $("<button/>"), {
+//             text: letter,
+//             click: function () {},
+//         }
+//     })
+//     alphabet.append(vowelAppend);
+// }
+// vowelButtons()
