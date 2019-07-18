@@ -15,14 +15,19 @@ class Game {
     this.player2 = new Player(p2);
     this.player3 = new Player(p3);
     this.roundCounter = 0;
-    this.round = this.startNewRound();
-    this.puzzleSlayer = null;
     this.round;
+    this.puzzleBank = [];
+    this.currentPuzzle;
+    this.puzzleSlayer = null;
+  
   }
 
   startGame() {
     this.addPlayers();
-    this.round = this.startNewRound();
+    this.createPuzzleBank();
+    this.startNewRound();
+    
+
   }
 
   addPlayers() {
@@ -36,8 +41,24 @@ class Game {
        this.puzzleSlayer()
     } else {
       this.roundCounter ++;
-      return new Round(this)
+      this.choosePuzzle();
+      this.round = new Round(this.players, this.currentPuzzle);
     }
+  }
+
+  createPuzzleBank() {
+    let randomNum = Math.ceil(Math.random() * 23);
+    let oneWrdPzl = data.puzzles.one_word_answers.puzzle_bank[randomNum];
+    let twoWrdPzl = data.puzzles.two_word_answers.puzzle_bank[randomNum];
+    let threeWrdPzl = data.puzzles.three_word_answers.puzzle_bank[randomNum];
+    let fourWrdPzl = data.puzzles.four_word_answers.puzzle_bank[randomNum];
+    this.puzzleBank.push(oneWrdPzl, twoWrdPzl, threeWrdPzl, fourWrdPzl);
+    return this.puzzleBank;
+  }
+
+  choosePuzzle() {
+    let bank = this.createPuzzleBank();
+    this.currentPuzzle = bank[this.round -1];
   }
 
   puzzleSlayer() {

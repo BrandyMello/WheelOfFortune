@@ -70,4 +70,15 @@ describe('Game', () => {
     })
   })
 
+   describe('createPuzzleBank', () => {
+    it('should create a puzzle bank', function () {
+    expect(round.puzzleBank.length).to.eql(4);
+    })
+  });
+
+   describe('choosePuzzle', () => {
+    it('should choose a puzzle from the puzzle bank', function() {
+    expect(round.choosePuzzle()).to.be.an('object');
+    });
+  });
 

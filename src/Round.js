@@ -4,14 +4,12 @@ import Game from './Game';
 import Wheel from './Wheel';
 
 class Round {
-  constructor(game) {
-    this.game = game;
-    this.round = this.game.roundCounter;
-    this.puzzleBank = [];
-    this.puzzle = this.choosePuzzle();
+  constructor(playersList, currentPuzzle) {
+    this.players = playersList;  
+    this.puzzle = currentPuzzle;
     this.turn = this.makeNewTurn();
     this.wheel = new Wheel();
-    this.currentRoundWheel = this.wheel.generateCurrentWheel()
+    this.currentRoundWheel = this.wheel.generateCurrentWheel();
   }
 
   makeNewTurn(player) {
@@ -25,20 +23,9 @@ class Round {
   }
   
 
-  createPuzzleBank() {
-    let randomNum = Math.ceil(Math.random() * 23);
-    let oneWrdPzl = data.puzzles.one_word_answers.puzzle_bank[randomNum];
-    let twoWrdPzl = data.puzzles.two_word_answers.puzzle_bank[randomNum];
-    let threeWrdPzl = data.puzzles.three_word_answers.puzzle_bank[randomNum];
-    let fourWrdPzl = data.puzzles.four_word_answers.puzzle_bank[randomNum];
-    this.puzzleBank.push(oneWrdPzl, twoWrdPzl, threeWrdPzl, fourWrdPzl);
-    return this.puzzleBank;
-  }
+  
 
-  choosePuzzle() {
-    let bank = this.createPuzzleBank();
-    return bank[this.round -1];
-  }
+  
 }
 
 export default Round;
