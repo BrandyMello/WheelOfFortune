@@ -1,30 +1,39 @@
+import Puzzle from './Puzzle';
+import Round from './Round';
+import Turn from './Turn';
+import Wheel from './Wheel';
 class Turn {
   constructor(round, player) {
-    this.player = player;
     this.round = round;
     this.player = player;
+    this.lettersRemaining = Puzzle.correctAnswer.split() || [];
   }
-
 
   spinwheel() {
-    //wheel.findWheelPrize()
-    // if incorrect switch player to next player in index with round.makeNewTurn(player) and reassign this.player;
+    Round.wheel.chooseWheelPrize()
+    Wheel.wheelPrize === 'BANKRUPT' || 'LOSE A TURN' ? Round.makeNewTurn() : this.checkPlayerGuess()
   }
 
-  chooseConsonant() {
-    // if incorrect switch player to next player in index with round.makeNewTurn() and reassign this.player;
+  // findRemainingLetters(correctAnswer) {
+  //   let lettersRemaining = correctAnswer.toLowerCase().split('')
+  // }
+
+  checkPlayerGuess(guess, potentialEarnings) {
+    console.log(lettersRemaining)
+    lettersRemaining.forEach(letter => letter.includes(guess) ? Player.roundScore + potentialEarnings : Round.makeNewTurn())
   }
 
-  buyVowel() {
-    // if incorrect switch player to next player in index with round.makeNewTurn() and reassign this.player;
+  canPlayerAffordVowel() {
+    console.log(round.makeNewTurn())
+    Player.roundScore >= 100 ? this.checkPlayerGuess() : Round.makeNewTurn();
   }
 
   solvePuzzle() {
-    // if incorrect switch player to next player in index with round.makeNewTurn() and reassign this.player;
+    // right answer: add all money + call game.startNewTurn()
   }
 
   winRound() {
-    // if incorrect switch player to next player in index with game.startNewRound() and reassign this.player;
+    game.startNewRound()
   }
 }
 
