@@ -62,16 +62,12 @@ describe('Game', () => {
   });
 });
 
+   describe('startGame', () => {
+    it('should initialize the game with the three new players', () => {
+      chai.spy.on(game,['addPlayers'], () => {});
+      game.startGame()
+      expect(game.addPlayers).to.have.been.called(1);
+    })
+  })
 
-
-
-  //  describe('startGame', () => {
-  //   it('should initialize the game with the three new players', () => {
-  //     chai.spy.on(game,['startGame'], () => {});
-  //     game.startGame()
-  //     expect(game.addPlayers).to.have.been.called(1);
-  //   })
-  // })
-
-  //startGame will be a spy to test that this.addPlayers() has been called.
 

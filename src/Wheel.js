@@ -1,4 +1,4 @@
-
+import data from '../src/data';
 //Wheel is a class with access to the data correlated to the wheel options.
 
 //a property of this class can be wheelData where the array of the entirety of options for the wheel are stored --- this will be found via a method -
@@ -25,29 +25,33 @@
 // should be able to invoke the findWheelPrize method
 //store findWheelPrize as another property -- (bonusWheelPrize)
 
-
-
-
-
 class Wheel {
   constructor() {
-    this.wheelData = [];
+    this.wheelData = this.findWheelData();
     this.bonusWheelData = [];
-    this.currentWheel = [];//generateCurrentWheel()
-    this.wheelPrize = null; // chooseWheelPrize()
+    this.currentWheel = this.generateCurrentWheel();
+    this.wheelPrize = this.chooseWheelPrize();
+    console.log(this.wheelPrize)
   }
 
-  findWheelData() {
+    findWheelData() {
+    return data.wheel
+    }
 
-  }
+    generateCurrentWheel() {
+      let max = this.wheelData.length - 6;
+      let randomIndex = Math.floor(Math.random() * Math.floor(max));
+      let randomWheel = (this.wheelData.slice(randomIndex,randomIndex + 6))
+      return randomWheel;
+    }
 
-  generateCurrentWheel() {
+    chooseWheelPrize() {
+      let randomIndex = Math.floor(Math.random() * Math.floor(6));
+      let randomPrize = this.currentWheel[randomIndex]
+      return randomPrize
+    }
 
-  }
 
-  chooseWheelPrize() {
-
-  }
 
   
 }

@@ -2,6 +2,7 @@ class Turn {
   constructor(round, player) {
     this.player = player;
     this.round = round;
+    this.player = player;
   }
 
 
@@ -23,7 +24,7 @@ class Turn {
   }
 
   winRound() {
-    // if incorrect switch player to next player in index with round.makeNewTurn() and reassign this.player;
+    // if incorrect switch player to next player in index with game.startNewRound() and reassign this.player;
   }
 }
 
