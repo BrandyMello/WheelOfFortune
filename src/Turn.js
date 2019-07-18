@@ -1,29 +1,41 @@
+import data from './data';
+import Player from './Player';
+import Round from './Round';
+import Puzzle from './Puzzle';
+import Game from './Game';
+import Wheel from './Wheel';
 class Turn {
-  constructor(player, round) {
-    this.player = player;
+  constructor(round, player) {
     this.round = round;
+    this.player = player;
+    this.lettersRemaining = Puzzle.correctAnswer.split() || [];
   }
-
 
   spinwheel() {
-    //wheel.findWheelPrize()
-    // if incorrect switch player to next player in index with round.makeNewTurn() and reassign this.player;
+    round.wheel.chooseWheelPrize()
+    Wheel.WheelPrize === 'BANKRUPT' || 'LOSE A TURN' ? Round.makeNewTurn() : this.checkPlayerGuess()
   }
 
-  chooseConsonant() {
-    // if incorrect switch player to next player in index with round.makeNewTurn() and reassign this.player;
+  // findRemainingLetters(correctAnswer) {
+  //   let lettersRemaining = correctAnswer.toLowerCase().split('')
+  // }
+
+  checkPlayerGuess(guess, potentialEarnings) {
+    console.log(lettersRemaining)
+    lettersRemaining.forEach(letter => letter.includes(guess) ? Player.roundScore + potentialEarnings : Round.makeNewTurn())
   }
 
-  buyVowel() {
-    // if incorrect switch player to next player in index with round.makeNewTurn() and reassign this.player;
+  canPlayerAffordVowel() {
+    console.log(round.makeNewTurn())
+    Player.roundScore >= 100 ? this.checkPlayerGuess() : Round.makeNewTurn();
   }
 
   solvePuzzle() {
-    // if incorrect switch player to next player in index with round.makeNewTurn() and reassign this.player;
+    // right answer: add all money + call game.startNewTurn()
   }
 
   winRound() {
-    // if incorrect switch player to next player in index with round.makeNewTurn() and reassign this.player;
+    game.startNewRound()
   }
 }
 
@@ -46,7 +58,7 @@ export default Turn;
 // 
 
 // spinWheel will be called from the Turn class when a player clicks the spin button
-//and that will really just call the findWheelPrize method inside of Wheel Class
+// and that will really just call the findWheelPrize method inside of Wheel Class
 
 
 // 

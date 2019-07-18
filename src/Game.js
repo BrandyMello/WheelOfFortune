@@ -6,7 +6,6 @@ import Round from './Round';
 // .then(data => console.log(data))
 // .catch(error => console.log(error));
 
-
 class Game {
   constructor(p1, p2, p3) {
     this.data = data;
@@ -15,13 +14,12 @@ class Game {
     this.player2 = new Player(p2);
     this.player3 = new Player(p3);
     this.roundCounter = 0;
-    // this.round = this.startNewRound();
+    this.round = this.startNewRound();
     this.puzzleSlayer = null;
   }
 
   startGame() {
     this.addPlayers();
-
   }
 
   addPlayers() {
@@ -31,7 +29,7 @@ class Game {
   }
 
   startNewRound() {
-    if(this.roundCounter > 4) {
+    if(this.roundCounter === 4) {
        this.puzzleSlayer()
     } else {
       this.roundCounter ++;
