@@ -39,7 +39,7 @@ describe('Turn', function () {
         expect(turn.findRemainingLetters('beepers')).to.eql(['b', 'e', 'e', 'p', 'e', 'r', 's'])
     })
 
-    it.only('should check to see if a guess is included in the puzzle', () => {
+    it('should check to see if a guess is included in the puzzle', () => {
         expect(turn.checkPlayerGuess('b', 600)).to.eql(false)
     });
 
