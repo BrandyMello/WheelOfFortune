@@ -16,7 +16,6 @@ import Game from './Game';
 //On submit of names - start game button
 
 $( document ).ready(() => {
-
 });
 
 let game; 
@@ -63,8 +62,10 @@ function consonantButtons() {
            click: function (){},
        }
     })
-    alphabet.append(consonantAppend);
+    alphabet.append(consonantAppend).trigger('create');
 }
+
+consonantButtons()
 function vowelButtons() {
     var vowelAppend = vowels.map(letter => {
         $("<button/>"), {
@@ -74,3 +75,4 @@ function vowelButtons() {
     })
     alphabet.append(vowelAppend);
 }
+vowelButtons()
