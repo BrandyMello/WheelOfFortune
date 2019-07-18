@@ -51,9 +51,6 @@ class Wheel {
       this.wheelPrize = randomPrize;
     }
 
-
-
-  
 }
 
 export default Wheel;

@@ -7,11 +7,16 @@ class Turn {
     this.round = round;
     this.player = player;
     this.lettersRemaining = Puzzle.correctAnswer.split() || [];
+    this.potentialEarnings = 0;
   }
 
   spinwheel() {
     Round.wheel.chooseWheelPrize()
-    Wheel.wheelPrize === 'BANKRUPT' || 'LOSE A TURN' ? Round.makeNewTurn() : this.checkPlayerGuess()
+    if (Wheel.chooseWheelPrize() === 'BANKRUPT' || 'LOSE A TURN') {
+      Round.makeNewTurn()
+    }  else {
+      this.potentialEarnings = Wheel.chooseWheelPrize()
+    }
   }
 
   // findRemainingLetters(correctAnswer) {
@@ -24,7 +29,6 @@ class Turn {
   }
 
   canPlayerAffordVowel() {
-    console.log(round.makeNewTurn())
     Player.roundScore >= 100 ? this.checkPlayerGuess() : Round.makeNewTurn();
   }
 
