@@ -4,6 +4,7 @@ import Game from '../src/Game';
 import data from '../src/data';
 import Player from '../src/Player';
 import Round from '../src/Round';
+// import Wheel from '../src/Wheel';
 
 
 const expect = chai.expect;
@@ -46,10 +47,10 @@ describe('Game', () => {
  
   describe('startNewRound', () => {
     it('should start a new round if the it is not the the 4th round', () => {
-    expect(game.startNewRound()).to.eql(new Round(game))
+    expect(game.startNewRound()).to.be.an.instanceOf(Round);
     });
   });
-});
+
 
   describe('puzzleSlayer', () => {
     it('should return the winner of all of the rounds', () => {
@@ -59,17 +60,14 @@ describe('Game', () => {
       expect(game.puzzleSlayer().to.eql(new BonusRound('object')))
     });
   });
+});
 
+   describe('startGame', () => {
+    it('should initialize the game with the three new players', () => {
+      chai.spy.on(game,['addPlayers'], () => {});
+      game.startGame()
+      expect(game.addPlayers).to.have.been.called(1);
+    })
+  })
 
-
-
-  //  describe('startGame', () => {
-  //   it('should initialize the game with the three new players', () => {
-  //     chai.spy.on(game,['startGame'], () => {});
-  //     game.startGame()
-  //     expect(game.addPlayers).to.have.been.called(1);
-  //   })
-  // })
-
-  //startGame will be a spy to test that this.addPlayers() has been called.
 

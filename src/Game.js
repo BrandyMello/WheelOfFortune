@@ -17,11 +17,12 @@ class Game {
     this.roundCounter = 0;
     this.round = this.startNewRound();
     this.puzzleSlayer = null;
+    this.round;
   }
 
   startGame() {
     this.addPlayers();
-
+    this.round = this.startNewRound();
   }
 
   addPlayers() {
@@ -31,7 +32,7 @@ class Game {
   }
 
   startNewRound() {
-    if(this.roundCounter > 4) {
+    if(this.roundCounter === 4) {
        this.puzzleSlayer()
     } else {
       this.roundCounter ++;

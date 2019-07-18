@@ -1,33 +1,39 @@
+import Puzzle from './Puzzle';
+import Round from './Round';
+import Turn from './Turn';
+import Wheel from './Wheel';
 class Turn {
-  constructor(player, round) {
-    this.player = player;
+  constructor(round, player) {
     this.round = round;
+    this.player = player;
+    this.lettersRemaining = Puzzle.correctAnswer.split() || [];
   }
-
 
   spinwheel() {
-    //wheel.findWheelPrize()
-    //checkCurrentPlayer();
+    Round.wheel.chooseWheelPrize()
+    Wheel.wheelPrize === 'BANKRUPT' || 'LOSE A TURN' ? Round.makeNewTurn() : this.checkPlayerGuess()
   }
 
-  chooseConsonant() {
-    //checkCurrentPlayer();
+  // findRemainingLetters(correctAnswer) {
+  //   let lettersRemaining = correctAnswer.toLowerCase().split('')
+  // }
+
+  checkPlayerGuess(guess, potentialEarnings) {
+    console.log(lettersRemaining)
+    lettersRemaining.forEach(letter => letter.includes(guess) ? Player.roundScore + potentialEarnings : Round.makeNewTurn())
   }
 
-  buyVowel() {
-    //checkCurrentPlayer();
+  canPlayerAffordVowel() {
+    console.log(round.makeNewTurn())
+    Player.roundScore >= 100 ? this.checkPlayerGuess() : Round.makeNewTurn();
   }
 
   solvePuzzle() {
-    //checkCurrentPlayer();
+    // right answer: add all money + call game.startNewTurn()
   }
 
   winRound() {
-    //checkCurrentPlayer();
-  }
-
-  checkCurrentPlayer() {
-    //switch if necessary
+    game.startNewRound()
   }
 }
 
