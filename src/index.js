@@ -16,6 +16,8 @@ import Game from './Game';
 //On submit of names - start game button
 
 $( document ).ready(() => {
+  consonantButtons();
+   vowelButtons();
 });
 
 let game; 
