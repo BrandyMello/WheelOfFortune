@@ -10,7 +10,8 @@ class Round {
     this.puzzleBank = [];
     this.puzzle = this.choosePuzzle();
     this.turn = this.makeNewTurn();
-    // this.wheel = new Wheel();
+    this.wheel = new Wheel();
+    this.currentRoundWheel = this.wheel.generateCurrentWheel()
   }
 
   makeNewTurn(player) {

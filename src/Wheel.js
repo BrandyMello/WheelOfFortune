@@ -29,9 +29,9 @@ class Wheel {
   constructor() {
     this.wheelData = this.findWheelData();
     this.bonusWheelData = [];
-    this.currentWheel = this.generateCurrentWheel();
+    this.currentWheel;
     this.wheelPrize;
-    console.log(this.wheelPrize)
+
   }
 
     findWheelData() {
@@ -42,13 +42,15 @@ class Wheel {
       let max = this.wheelData.length - 6;
       let randomIndex = Math.floor(Math.random() * Math.floor(max));
       let randomWheel = (this.wheelData.slice(randomIndex,randomIndex + 6))
-      return randomWheel;
+      this.currentWheel = randomWheel;
     }
 
     chooseWheelPrize() {
       let randomIndex = Math.floor(Math.random() * Math.floor(6));
       let randomPrize = this.currentWheel[randomIndex]
       this.wheelPrize = randomPrize;
+      console.log(this.wheelPrize)
+
     }
 
 }
