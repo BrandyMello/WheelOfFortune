@@ -2,6 +2,7 @@ import data from './data';
 import Player from './Player';
 import Game from './Game';
 import Wheel from './Wheel';
+import Turn from './Turn';
 
 class Round {
   constructor(game) {
@@ -14,13 +15,17 @@ class Round {
   }
 
   makeNewTurn(player) {
-    // let playerIndex = this.game.players
-    // if (this.playerIndex < this.game.players.length -1) {
-    //   playerIndex ++;
-    // } else {
-    //   let playerIndex = 0;
-    // }
-    // return new Turn(this, this.game.players[playerIndex]);
+    const turn = new Turn();
+    // console.log(this.game.player1);
+    if (turn.player === game.player1) {
+      turn.player = game.player2;
+    }
+    if (turn.player === game.player2) {
+      turn.player = game.player3;
+    }
+    if (turn.player === game.player3) {
+      turn.player = game.player1;
+    }
   }
   
 
