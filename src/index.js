@@ -64,8 +64,10 @@ function consonantButtons() {
            click: function (){},
        }
     })
-    alphabet.append(consonantAppend);
+    alphabet.append(consonantAppend).trigger('create');
 }
+
+consonantButtons()
 function vowelButtons() {
     var vowelAppend = vowels.map(letter => {
         $("<button/>"), {
@@ -75,3 +77,4 @@ function vowelButtons() {
     })
     alphabet.append(vowelAppend);
 }
+vowelButtons()

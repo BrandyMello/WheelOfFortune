@@ -10,24 +10,33 @@ class Round {
     this.puzzleBank = [];
     this.puzzle = this.choosePuzzle();
     this.turn = this.makeNewTurn();
-    this.wheel = new Wheel();
+    // this.wheel = new Wheel();
   }
 
-  makeNewTurn() {
-    //conditionals - how to loop through an array and back again
-    //return new Turn(this, this.game.players[++])
+  makeNewTurn(player) {
+    // let playerIndex = this.game.players
+    // if (this.playerIndex < this.game.players.length -1) {
+    //   playerIndex ++;
+    // } else {
+    //   let playerIndex = 0;
+    // }
+    // return new Turn(this, this.game.players[playerIndex]);
   }
+  
 
   createPuzzleBank() {
-    // console.log(data);
+    let randomNum = Math.ceil(Math.random() * 23);
+    let oneWrdPzl = data.puzzles.one_word_answers.puzzle_bank[randomNum];
+    let twoWrdPzl = data.puzzles.two_word_answers.puzzle_bank[randomNum];
+    let threeWrdPzl = data.puzzles.three_word_answers.puzzle_bank[randomNum];
+    let fourWrdPzl = data.puzzles.four_word_answers.puzzle_bank[randomNum];
+    this.puzzleBank.push(oneWrdPzl, twoWrdPzl, threeWrdPzl, fourWrdPzl);
+    return this.puzzleBank;
   }
 
   choosePuzzle() {
-    this.createPuzzleBank();
-    return this.puzzleBank[this.round -1];
-    // console.log(this.round -1)
-    //has to be called in turn at the end of a turn???
-    //needs to be an instantiated instance of puzzle/save the return to variable and pass through instantiation
+    let bank = this.createPuzzleBank();
+    return bank[this.round -1];
   }
 }
 

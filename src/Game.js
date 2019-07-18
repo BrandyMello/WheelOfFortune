@@ -17,11 +17,12 @@ class Game {
     this.roundCounter = 0;
     this.round = this.startNewRound();
     this.puzzleSlayer = null;
+    this.round;
   }
 
   startGame() {
     this.addPlayers();
-
+    this.round = this.startNewRound();
   }
 
   addPlayers() {

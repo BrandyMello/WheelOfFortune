@@ -4,6 +4,7 @@ import Game from '../src/Game';
 import data from '../src/data';
 import Player from '../src/Player';
 import Round from '../src/Round';
+// import Wheel from '../src/Wheel';
 
 
 const expect = chai.expect;
@@ -46,7 +47,7 @@ describe('Game', () => {
  
   describe('startNewRound', () => {
     it('should start a new round if the it is not the the 4th round', () => {
-    expect(game.startNewRound()).to.be.an.instanceOf(Round)
+    expect(game.startNewRound()).to.be.an.instanceOf(Round);
     });
   });
 
@@ -69,5 +70,4 @@ describe('Game', () => {
     })
   })
 
-  // startGame will be a spy to test that this.addPlayers() has been called.
 
