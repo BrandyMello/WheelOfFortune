@@ -31,6 +31,7 @@ class Wheel {
     this.bonusWheelData = [];
     this.currentWheel;
     this.wheelPrize;
+
   }
 
     findWheelData() {
@@ -49,11 +50,9 @@ class Wheel {
       let randomPrize = this.currentWheel[randomIndex]
       this.wheelPrize = randomPrize;
       console.log(this.wheelPrize)
+
     }
 
-
-
-  
 }
 
 export default Wheel;
