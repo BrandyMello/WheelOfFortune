@@ -16,6 +16,7 @@ class Game {
     this.player3 = new Player(p3);
     this.roundCounter = 0;
     this.round;
+    this.nextPlayer = players[0];
     this.puzzleBank = [];
     this.currentPuzzle;
     this.puzzleSlayer = null;
@@ -42,7 +43,7 @@ class Game {
     } else {
       this.roundCounter ++;
       this.choosePuzzle();
-      this.round = new Round(this.players, this.currentPuzzle);
+      this.round = new Round(this.players, this.currentPuzzle, this.nextPlayer);
     }
   }
 
@@ -59,6 +60,10 @@ class Game {
   choosePuzzle() {
     let bank = this.createPuzzleBank();
     this.currentPuzzle = bank[this.round -1];
+  }
+
+  endRound() {
+    this.currentPlayer = this.round.findCurrentPlayer(this.nextPlayer)
   }
 
   puzzleSlayer() {
