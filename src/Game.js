@@ -16,7 +16,7 @@ class Game {
     this.player3 = new Player(p3);
     this.roundCounter = 0;
     this.round;
-    this.nextPlayer = players[0];
+    this.nextPlayer = this.players[0];
     this.puzzleBank = [];
     this.currentPuzzle;
     this.puzzleSlayer = null;

@@ -8,7 +8,7 @@ class Round {
     this.players = playersList;  
     this.currentPlayer = currentPlayer;
     this.puzzle = currentPuzzle;
-    this.turn = this.makeNewTurn();
+    // this.turn = this.makeNewTurn();
     this.currentRoundWheel = this.makeNewWheel();
   }
 
