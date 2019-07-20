@@ -5,7 +5,6 @@
   </head>
   <body>
     <h1>Wheel of Fortune</h1>
-    <p class="category">Phrase or Category</p>
     <div class="puzzle">
       <p class="letter"></p>
       <!-- We can append as many as needed here -->
@@ -33,6 +32,7 @@
       <button class="alphabet" id="alphabet-js x">X</button>
       <button class="alphabet" id="alphabet-js y">Y</button>
       <button class="alphabet" id="alphabet-js z">Z</button>
+      <div>
       <!-- VOWELS -->
       <button class="alphabet" id="alphabet-js a">A</button>
       <button class="alphabet" id="alphabet-js e">E</button>
@@ -40,8 +40,83 @@
       <button class="alphabet" id="alphabet-js o">O</button>
       <button class="alphabet" id="alphabet-js u">U</button>
     </div>
+    </div>
+    <h2>Category : <span class="category"><span>
+    <table class="display-board">
+      <tr>
+        <td class="row1-1"></td>
+        <td class="row1-2"></td>
+        <td class="row1-3"></td>
+        <td class="row1-4"></td>
+        <td class="row1-5"></td>
+        <td class="row1-6"></td>
+        <td class="row1-7"></td>
+        <td class="row1-8"></td>
+        <td class="row1-9"></td>
+        <td class="row1-10"></td>
+        <td class="row1-11"></td>
+        <td class="row1-12"></td>
+        <td class="row1-13"></td>
+        <td class="row1-14"></td>
+        <td class="row1-15"></td>
+        <td class="row1-16"></td>
+      </tr>
+      <tr>
+        <td class="row2-1"></td>
+        <td class="row2-2"></td>
+        <td class="row2-3"></td>
+        <td class="row2-4"></td>
+        <td class="row2-5"></td>
+        <td class="row2-6"></td>
+        <td class="row2-7"></td>
+        <td class="row2-8"></td>
+        <td class="row2-9"></td>
+        <td class="row2-10"></td>
+        <td class="row2-11"></td>
+        <td class="row2-12"></td>
+        <td class="row2-13"></td>
+        <td class="row2-14"></td>
+        <td class="row2-15"></td>
+        <td class="row2-16"></td>
+      </tr>
+      <tr>
+        <td class="row3-1"></td>
+        <td class="row3-2"></td>
+        <td class="row3-3"></td>
+        <td class="row3-4"></td>
+        <td class="row3-5"></td>
+        <td class="row3-6"></td>
+        <td class="row3-7"></td>
+        <td class="row3-8"></td>
+        <td class="row3-9"></td>
+        <td class="row3-10"></td>
+        <td class="row3-11"></td>
+        <td class="row3-12"></td>
+        <td class="row3-13"></td>
+        <td class="row3-14"></td>
+        <td class="row3-15"></td>
+        <td class="row3-16"></td>
+      </tr>
+      <tr>
+        <td class="row4-1"></td>
+        <td class="row4-2"></td>
+        <td class="row4-3"></td>
+        <td class="row4-4"></td>
+        <td class="row4-5"></td>
+        <td class="row4-6"></td>
+        <td class="row4-7"></td>
+        <td class="row4-8"></td>
+        <td class="row4-9"></td>
+        <td class="row4-10"></td>
+        <td class="row4-11"></td>
+        <td class="row4-12"></td>
+        <td class="row4-13"></td>
+        <td class="row4-14"></td>
+        <td class="row4-15"></td>
+        <td class="row4-16"></td>
+      </tr>
+    </table>
     <p>ROUND: <span class="round"></span></p>
-    <p>USED LETTERS: <span class="used-letters"></span></p>
     <p>VOWELS COST $100 EACH</p>
     <div class ="initialIntake">
       Player1: <input class="player1-name" type="text" placeholder="Player One Name"> 
@@ -49,28 +124,27 @@
       Player3: <input class="player3-name" type="text" placeholder="Player Three Name"> 
       <button class="startGameBtn">START GAME</button>
     </div>
-    <div class="player1">
-      <p class="p1-name">Name:</p>
-      <p class="p1-round-score">Current Score:</p>
-      <p class="p1-grand-total">Grand Total:</p>
+    <div class ="call-to-action">
+      <button class="spin-wheel-btn">Spin Wheel!</button>
 
-      
-      
+    <div class="player1">
+      <p class="p1-name">Name : </p>
+      <p class="p1-round-score">Current Score : </p>
+      <p class="p1-grand-total">Grand Total : </p>
     </div>
+    <hr>
     <div class="player2">
-      <p class="p2-name">Name:</p>
-      <p class="p2-round-score">Current Score:</p>
-      <p class="p2-grand-total">Grand Total:</p>
-      
-      
+      <p class="p2-name">Name : </p>
+      <p class="p2-round-score">Current Score : </p>
+      <p class="p2-grand-total">Grand Total : </p>
     </div>
+    <hr>
     <div class="player3">
-      <p class="p3-name">Name:</p>
-      <p class="p3-round-score">Current Score:</p>
-      <p class="p3-grand-total">Grand Total:</p>
-      
-      
+      <p class="p3-name">Name : </p>
+      <p class="p3-round-score">Current Score : </p>
+      <p class="p3-grand-total">Grand Total : </p>
     </div>
+    
     <div class="wheel"></div>
     
 

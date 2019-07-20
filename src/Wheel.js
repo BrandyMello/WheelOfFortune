@@ -27,16 +27,11 @@ import data from '../src/data';
 
 class Wheel {
   constructor() {
-    this.wheelData = this.findWheelData();
-    this.bonusWheelData = [];
+    this.wheelData = data.wheel;
     this.currentWheel;
     this.wheelPrize;
-
   }
 
-    findWheelData() {
-    return data.wheel
-    }
 
     generateCurrentWheel() {
       let max = this.wheelData.length - 6;

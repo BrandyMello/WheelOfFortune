@@ -24,12 +24,6 @@ describe('Round', function() {
     expect(round).to.be.an.instanceOf(Round);
   });
 
-  it('should create a puzzle bank', function () {
-    expect(round.puzzleBank.length).to.eql(4);
-  });
-
-  it('should choose a puzzle from the puzzle bank', function() {
-    expect(round.choosePuzzle()).to.be.an('object');
-  });
+ 
 });
 
