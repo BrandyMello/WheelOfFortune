@@ -25,9 +25,9 @@ let game;
 
 $('.startGameBtn').click((e) => {
   e.preventDefault();
-  let player1 = $('.player1-name').val();
-  let player2 = $('.player2-name').val();
-  let player3 = $('.player3-name').val();
+  let player1 = $('.player1-name__display').val();
+  let player2 = $('.player2-name__display').val();
+  let player3 = $('.player3-name__display').val();
   game = new Game(player1, player2, player3);
   game.addPlayers();
   appendPlayers(player1, player2, player3);

@@ -5,32 +5,32 @@ import Wheel from './Wheel';
 
 class Round {
   constructor(playersList, currentPuzzle, currentPlayer) {
-    this.players = playersList;  
-    this.currentPlayer = currentPlayer;
-    this.puzzle = currentPuzzle;
-    this.currentRoundWheel = this.makeNewWheel();
-    this.potentialEarnings = 0;
-    this.lettersRemaining = [];
-    this.matchingLetters;
+    this.players = playersList
+    this.currentPlayer = currentPlayer
+    this.puzzle = currentPuzzle
+    this.currentRoundWheel = this.makeNewWheel()
+    this.potentialEarnings = 0
+    this.lettersRemaining = []
+    this.matchingLetters
+    this.canAffordVowel = false
   }
 
   findNextPlayer(player) {
    if (player === players[0]) {
-     return player = players[1];
+     return player = players[1]
    }
    if (player === players[1]) {
-     return player = players[2];
+     return player = players[2]
    }
    if (player === players[2]) {
-     return player = players[0];
+     return player = players[0]
    }
   }
 
   makeNewWheel() {
-    let wheel = new Wheel();
-    wheel.generateCurrentWheel();
+    let wheel = new Wheel()
+    wheel.generateCurrentWheel()
     this.getAnswer()
-
   } 
   
 spinwheel() {
@@ -51,6 +51,13 @@ checkPlayerGuess(guess) {
   let matchingLetters = this.lettersRemaining.find(letter => letter === guess)
   return this.lettersRemaining.filter(letter => letter !== matchingLetters)
 }
+
+canPlayerAffordVowel() {
+  if (this.potentialEarnings >=100) {
+    this.canAffordVowel = true
+  }
+}
+
 }
 
 export default Round;

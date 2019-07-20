@@ -16,9 +16,7 @@ class Turn {
 
   
 
-  canPlayerAffordVowel() {
-    Player.roundScore >= 100 ? this.checkPlayerGuess() : Round.makeNewTurn();
-  }
+  
 
   solvePuzzle() {
     // right answer: add all money + call game.startNewTurn()
