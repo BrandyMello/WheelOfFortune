@@ -21,6 +21,10 @@ describe('Wheel', () => {
   it('should instantiate an new instance of Wheel', () => {
     expect(wheel).to.be.an.instanceOf(Wheel);
   });
+
+  it.only('should generate a new wheel', () => {
+    expect(wheel.generateCurrentWheel()).to.eql('idk')
+  })
 });
 
 

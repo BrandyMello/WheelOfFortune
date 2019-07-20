@@ -35,7 +35,7 @@ describe('Round', function() {
     })).to.eql(['T', 'a', 'm', 'a', 'g', 'o', 't', 'c', 'h', 'i'])
   });
 
-  it.only('should remove the guess from the letters remaining', function() {
+  it('should remove the guess from the letters remaining', function() {
     round.getAnswer({
           category: 'The 90s',
           number_of_words: 1,

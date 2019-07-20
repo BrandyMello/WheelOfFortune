@@ -37,6 +37,12 @@ class Wheel {
       let randomIndex = Math.floor(Math.random() * Math.floor(max));
       let randomWheel = (this.wheelData.slice(randomIndex,randomIndex + 6))
       this.currentWheel = randomWheel;
+      return this.currentWheel.map(function(wheelItem) {
+          return {
+            label: wheelItem,
+            value: wheelItem
+          }
+        })
     }
 
     chooseWheelPrize() {
