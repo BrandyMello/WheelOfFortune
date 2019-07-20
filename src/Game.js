@@ -13,7 +13,7 @@ class Game {
     this.player3 = new Player(p3);
     this.roundCounter = 0;
     this.round;
-    this.nextPlayer = this.players[0];
+    this.nextPlayer = this.player1;
     console.log("inside o game", this.nextPlayer)
     this.puzzleBank = [];
     this.currentPuzzle;
@@ -21,6 +21,7 @@ class Game {
   }
 
   startGame() {
+    this.addPlayers();
     this.createPuzzleBank();
     this.startNewRound();
   }

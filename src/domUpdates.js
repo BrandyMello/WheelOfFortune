@@ -25,9 +25,7 @@ export default {
   },
 
   appendCurrentPlayerName(game) {
-    console.log("playerArray", game.players)
-    console.log("currentPlayer", game.nextPlayer)
-    $('.current-player-name').append(game.nextPlayer);
+    $('.current-player-name').append(game.nextPlayer.name);
   },
 
   appendPuzzle(game) {

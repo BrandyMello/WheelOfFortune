@@ -30,7 +30,6 @@ $('.startGameBtn').click((e) => {
   let player3 = $('.player3-name').val();
   game = new Game(data, player1, player2, player3)
   game.startGame();
-  game.addPlayers();
   dom.appendPlayers(game, player1, player2, player3);
   dom.appendPuzzle(game);
   dom.appendRoundNumber(game);
