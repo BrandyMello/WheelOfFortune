@@ -14,11 +14,6 @@ export default {
     $('.p3-name').append(p3);
     $('.p3-round-score').append(game.players[2].roundScore);
     $('.p3-grand-total').append(game.players[2].grandTotal)
-    console.log(game.currentPuzzle);
-  },
-
-  appendPuzzle(game) {
-    console.log("game", game.choosePuzzle(game.data));
   },
 
   appendRoundNumber(game) {
@@ -33,6 +28,16 @@ export default {
     console.log("playerArray", game.players)
     console.log("currentPlayer", game.nextPlayer)
     $('.current-player-name').append(game.nextPlayer);
+  },
+
+  appendPuzzle(game) {
+    let puzzleAnswer = game.currentPuzzle.correct_answer.toUpperCase().split('');
+    let displayPuzzleAnswer = puzzleAnswer.map((letter, index) => {
+      if (letter !== " ") {
+        $(`.letter-${index}`).html(puzzleAnswer[`${index}`]).addClass('puzzle-display');
+      }
+    });
+    
   }
 
 }

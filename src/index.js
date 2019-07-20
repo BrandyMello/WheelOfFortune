@@ -29,8 +29,6 @@ $('.startGameBtn').click((e) => {
   let player2 = $('.player2-name').val();
   let player3 = $('.player3-name').val();
   game = new Game(data, player1, player2, player3)
-  console.log(data);
-   console.log('in start click');
   game.startGame();
   game.addPlayers();
   dom.appendPlayers(game, player1, player2, player3);

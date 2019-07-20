@@ -21,9 +21,6 @@ class Game {
   }
 
   startGame() {
-    // console.log('in startGame ');
-    // this.data = data;
-    console.log('game class', this.data)
     this.createPuzzleBank();
     this.startNewRound();
   }
