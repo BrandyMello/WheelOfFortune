@@ -16,7 +16,7 @@ let game;
 describe('Game', () => {
   
   beforeEach(() => {
-    game = new Game('Brandy','Lacy','Julian');
+    game = new Game(data, 'Brandy','Lacy','Julian');
   });
 
   it('should be a function', () => {

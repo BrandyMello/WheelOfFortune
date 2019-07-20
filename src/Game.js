@@ -5,7 +5,7 @@ import dom from './domUpdates.js'
 
 
 class Game {
-  constructor(data, p1, p2, p3) {
+  constructor(data,p1, p2, p3) {
     this.data = data;
     this.players = [];
     this.player1 = new Player(p1);
@@ -17,24 +17,19 @@ class Game {
     this.puzzleBank = [];
     this.currentPuzzle;
     this.puzzleSlayer = null;
-  
   }
 
-  startGame(data) {
-    console.log('in startGame game class');
+  startGame() {
+    // console.log('in startGame ');
     // this.data = data;
-    console.log(this.data)
+    console.log('game class', this.data)
     this.createPuzzleBank();
     this.startNewRound();
-    this.roundcounter ++;
-    
-
   }
 
   addPlayers() {
     this.players.push(this.player1, this.player2, this.player3);
-    return this.players;
-    
+    return this.players; 
   }
 
   startNewRound() {
