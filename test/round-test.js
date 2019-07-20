@@ -24,6 +24,27 @@ describe('Round', function() {
     expect(round).to.be.an.instanceOf(Round);
   });
 
- 
+  it('should get the answer from the puzzle', function() {
+    expect(round.getAnswer({
+      category: 'The 90s',
+      number_of_words: 1,
+      total_number_of_letters: 10,
+      first_word: 10,
+      description: 'Puzzles pertaining to the decade in question.',
+      correct_answer: 'Tamagotchi',
+    })).to.eql(['T', 'a', 'm', 'a', 'g', 'o', 't', 'c', 'h', 'i'])
+  });
+
+  it.only('should remove the guess from the letters remaining', function() {
+    round.getAnswer({
+          category: 'The 90s',
+          number_of_words: 1,
+          total_number_of_letters: 10,
+          first_word: 10,
+          description: 'Puzzles pertaining to the decade in question.',
+          correct_answer: 'Tamagotchi',
+        })
+    expect(round.checkPlayerGuess('a')).to.eql(['T', 'm', 'g', 'o', 't', 'c', 'h', 'i'])
+  });
 });
 

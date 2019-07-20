@@ -8,8 +8,10 @@ class Round {
     this.players = playersList;  
     this.currentPlayer = currentPlayer;
     this.puzzle = currentPuzzle;
-    // this.turn = this.makeNewTurn();
     this.currentRoundWheel = this.makeNewWheel();
+    this.potentialEarnings = 0;
+    this.lettersRemaining = [];
+    this.matchingLetters;
   }
 
   findNextPlayer(player) {
@@ -27,25 +29,28 @@ class Round {
   makeNewWheel() {
     let wheel = new Wheel();
     wheel.generateCurrentWheel();
+    this.getAnswer()
+
   } 
   
+spinwheel() {
+  wheel.chooseWheelPrize();
+  if (wheel.chooseWheelPrize() === 'BANKRUPT' || 'LOSE A TURN') {
+    this.findNextPlayer()
+  } else {
+    this.checkPlayerGuess()
+  }
+}
 
+getAnswer(currentPuzzle) {
+  this.lettersRemaining = currentPuzzle.correct_answer.split('')
+  return this.lettersRemaining
+}
 
-
-  
-
-  
+checkPlayerGuess(guess) {
+  let matchingLetters = this.lettersRemaining.find(letter => letter === guess)
+  return this.lettersRemaining.filter(letter => letter !== matchingLetters)
+}
 }
 
 export default Round;
-
-
-// At the beginning of the game the round number will be assigned to 1.
-// 
-// 
-// 
-// 
-// 
-// 
-// 
-// 

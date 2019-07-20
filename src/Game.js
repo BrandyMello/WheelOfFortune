@@ -5,8 +5,6 @@ import Round from './Round';
 // .then(response => response.json())
 // .then(data => console.log(data))
 // .catch(error => console.log(error));
-
-
 class Game {
   constructor(p1, p2, p3) {
     this.data = data;
@@ -20,21 +18,17 @@ class Game {
     this.puzzleBank = [];
     this.currentPuzzle;
     this.puzzleSlayer = null;
-  
   }
 
   startGame() {
     this.addPlayers();
     this.createPuzzleBank();
     this.startNewRound();
-    
-
   }
 
   addPlayers() {
     this.players.push(this.player1, this.player2, this.player3);
     return this.players;
-    
   }
 
   startNewRound() {

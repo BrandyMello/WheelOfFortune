@@ -32,7 +32,6 @@ class Wheel {
     this.wheelPrize;
   }
 
-
     generateCurrentWheel() {
       let max = this.wheelData.length - 6;
       let randomIndex = Math.floor(Math.random() * Math.floor(max));
@@ -45,7 +44,6 @@ class Wheel {
       let randomPrize = this.currentWheel[randomIndex]
       this.wheelPrize = randomPrize;
       console.log(this.wheelPrize)
-
     }
 
 }
