@@ -20,10 +20,10 @@ class Game {
   
   }
 
-  startGame(data) {
+  startGame() {
     // this.addPlayers();
-    this.choosePuzzle(data);
-    // this.startNewRound();
+    this.createPuzzleBank();
+    this.startNewRound();
     this.roundcounter ++;
     
 
@@ -48,17 +48,16 @@ class Game {
   createPuzzleBank() {
     let randomNum = Math.ceil(Math.random() * 23);
     let oneWrdPzl = this.data.puzzles.one_word_answers.puzzle_bank[randomNum];
-    console.log(oneWrdPzl);
     let twoWrdPzl = this.data.puzzles.two_word_answers.puzzle_bank[randomNum];
     let threeWrdPzl = this.data.puzzles.three_word_answers.puzzle_bank[randomNum];
     let fourWrdPzl = this.data.puzzles.four_word_answers.puzzle_bank[randomNum];
-    return this.puzzleBank.push(oneWrdPzl, twoWrdPzl, threeWrdPzl, fourWrdPzl);
-    
+    this.puzzleBank.push(oneWrdPzl, twoWrdPzl, threeWrdPzl, fourWrdPzl);
+    return this.puzzleBank;
   }
 
   choosePuzzle() {
-    let bank = this.createPuzzleBank();
-    this.currentPuzzle = bank[this.round -1];
+    this.currentPuzzle = this.puzzleBank[this.roundCounter -1];
+    return this.currentPuzzle;
   }
 
   endRound() {
