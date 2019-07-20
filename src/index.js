@@ -34,7 +34,10 @@ $('.startGameBtn').click((e) => {
   game.startGame();
   game.addPlayers();
   dom.appendPlayers(game, player1, player2, player3);
-  // dom.appendPuzzle(game);
+  dom.appendPuzzle(game);
+  dom.appendRoundNumber(game);
+  dom.appendCategory(game);
+  dom.appendCurrentPlayerName(game);
 })
 
 

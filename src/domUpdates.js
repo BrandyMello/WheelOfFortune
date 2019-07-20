@@ -15,10 +15,24 @@ export default {
     $('.p3-round-score').append(game.players[2].roundScore);
     $('.p3-grand-total').append(game.players[2].grandTotal)
     console.log(game.currentPuzzle);
-  }
+  },
 
-  // appendPuzzle(game) {
-  //   console.log(game.choosePuzzle(game.data));
-  // }
+  appendPuzzle(game) {
+    console.log("game", game.choosePuzzle(game.data));
+  },
+
+  appendRoundNumber(game) {
+    $('.round').append(game.roundCounter);
+  },
+
+  appendCategory(game) {
+    $('.category').append(game.currentPuzzle.category);
+  },
+
+  appendCurrentPlayerName(game) {
+    console.log("playerArray", game.players)
+    console.log("currentPlayer", game.nextPlayer)
+    $('.current-player-name').append(game.nextPlayer);
+  }
 
 }
