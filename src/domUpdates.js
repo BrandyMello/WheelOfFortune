@@ -21,7 +21,7 @@ export default {
     console.log(puzzleAnswer);
     let displayPuzzleAnswer = puzzleAnswer.map((letter, index) => {
       if (letter !== " ") {
-        $(`.row2-${index}`).html(puzzleAnswer[`${index}`]).addClass('puzzle-display');
+        $(`.letter-${index}`).html(puzzleAnswer[`${index}`]).addClass('puzzle-display');
       }
     });
     
