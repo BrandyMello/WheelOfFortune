@@ -1,5 +1,7 @@
 import $ from 'jquery';
 
+
+
 export default {
 
  appendPlayers(game, p1, p2, p3) {
@@ -12,11 +14,11 @@ export default {
     $('.p3-name').append(p3);
     $('.p3-round-score').append(game.players[2].roundScore);
     $('.p3-grand-total').append(game.players[2].grandTotal)
-    console.log(game.choosePuzzle());
+    console.log(game.currentPuzzle);
   }
 
   // appendPuzzle(game) {
-
+  //   console.log(game.choosePuzzle(game.data));
   // }
 
 }
