@@ -13,12 +13,19 @@ export default {
     $('.p2-grand-total').append(game.players[1].grandTotal);
     $('.p3-name').append(p3);
     $('.p3-round-score').append(game.players[2].roundScore);
-    $('.p3-grand-total').append(game.players[2].grandTotal)
-    console.log(game.currentPuzzle);
-  }
+    $('.p3-grand-total').append(game.players[2].grandTotal);
+  },
 
-  // appendPuzzle(game) {
-  //   console.log(game.choosePuzzle(game.data));
-  // }
+  appendPuzzle(game) {
+    let puzzleAnswer = game.currentPuzzle.correct_answer.toUpperCase().split('');
+    console.log(puzzleAnswer);
+    let displayPuzzleAnswer = puzzleAnswer.map((letter, index) => {
+      if (letter !== " ") {
+        $(`.row2-${index}`).html(puzzleAnswer[`${index}`]).addClass('puzzle-display');
+      }
+    });
+    
+    // game.choosePuzzle(game.data)
+  }
 
 }

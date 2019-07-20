@@ -20,13 +20,12 @@ class Game {
   
   }
 
-  startGame(data) {
-    console.log('in startGame game class');
-    // this.data = data;
-    console.log(this.data)
+  startGame() {
+    // console.log('in startGame game class');
+    // // this.data = data;
+    console.log('From game class', this.data)
     this.createPuzzleBank();
     this.startNewRound();
-    this.roundcounter ++;
     
 
   }

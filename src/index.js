@@ -31,10 +31,10 @@ $('.startGameBtn').click((e) => {
   game = new Game(data, player1, player2, player3)
   console.log(data);
    console.log('in start click');
-  game.startGame(data);
+  game.startGame();
   game.addPlayers();
   dom.appendPlayers(game, player1, player2, player3);
-  // dom.appendPuzzle(game);
+  dom.appendPuzzle(game);
 })
 
 
