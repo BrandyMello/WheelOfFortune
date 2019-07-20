@@ -22,8 +22,9 @@ class Game {
 
   startGame(data) {
     // this.addPlayers();
-    this.createPuzzleBank(data);
-    this.startNewRound();
+    this.choosePuzzle(data);
+    // this.startNewRound();
+    this.roundcounter ++;
     
 
   }
@@ -44,14 +45,15 @@ class Game {
     }
   }
 
-  createPuzzleBank(data) {
+  createPuzzleBank() {
     let randomNum = Math.ceil(Math.random() * 23);
-    let oneWrdPzl = data.puzzles.one_word_answers.puzzle_bank[randomNum];//data.data
-    let twoWrdPzl = data.puzzles.two_word_answers.puzzle_bank[randomNum];
-    let threeWrdPzl = data.puzzles.three_word_answers.puzzle_bank[randomNum];
-    let fourWrdPzl = data.puzzles.four_word_answers.puzzle_bank[randomNum];
-    this.puzzleBank.push(oneWrdPzl, twoWrdPzl, threeWrdPzl, fourWrdPzl);
-    return this.puzzleBank;
+    let oneWrdPzl = this.data.puzzles.one_word_answers.puzzle_bank[randomNum];
+    console.log(oneWrdPzl);
+    let twoWrdPzl = this.data.puzzles.two_word_answers.puzzle_bank[randomNum];
+    let threeWrdPzl = this.data.puzzles.three_word_answers.puzzle_bank[randomNum];
+    let fourWrdPzl = this.data.puzzles.four_word_answers.puzzle_bank[randomNum];
+    return this.puzzleBank.push(oneWrdPzl, twoWrdPzl, threeWrdPzl, fourWrdPzl);
+    
   }
 
   choosePuzzle() {

@@ -12,7 +12,11 @@ export default {
     $('.p3-name').append(p3);
     $('.p3-round-score').append(game.players[2].roundScore);
     $('.p3-grand-total').append(game.players[2].grandTotal)
-    console.log(game.data);
+    console.log(game.choosePuzzle());
   }
+
+  // appendPuzzle(game) {
+
+  // }
 
 }

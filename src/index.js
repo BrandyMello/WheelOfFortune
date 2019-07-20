@@ -37,6 +37,7 @@ $('.startGameBtn').click((e) => {
   .catch(error => console.log(error));
   game.addPlayers();
   dom.appendPlayers(game, player1, player2, player3);
+  // dom.appendPuzzle();
 })
 
 
