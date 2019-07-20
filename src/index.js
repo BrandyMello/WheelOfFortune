@@ -141,7 +141,7 @@ function spin(d) {
         .each("end", function () {
             //mark question as seen
             d3.select(".slice:nth-child(" + (picked + 1) + ") path")
-                .attr("fill", "#111");
+                .attr("fill", "yellow");
             //populate question
             d3.select("#question h1")
                 .text(data[picked].question);
@@ -160,7 +160,7 @@ svg.append("g")
     .append("path")
     .attr("d", "M-" + (r * .15) + ",0L0," + (r * .05) + "L0,-" + (r * .05) + "Z")
     .style({
-        "fill": "black"
+        "fill": "pink"
     });
 //draw spin circle
 container.append("circle")
