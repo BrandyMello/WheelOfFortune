@@ -5,6 +5,8 @@ import Round from './Round';
 // .then(response => response.json())
 // .then(data => console.log(data))
 // .catch(error => console.log(error));
+
+
 class Game {
   constructor(p1, p2, p3) {
     this.data = data;
@@ -13,22 +15,20 @@ class Game {
     this.player2 = new Player(p2);
     this.player3 = new Player(p3);
     this.roundCounter = 0;
-    this.round;
-    this.nextPlayer = this.players[0];
-    this.puzzleBank = [];
-    this.currentPuzzle;
+    this.round = this.startNewRound();
     this.puzzleSlayer = null;
+    this.round;
   }
 
   startGame() {
     this.addPlayers();
-    this.createPuzzleBank();
-    this.startNewRound();
+    this.round = this.startNewRound();
   }
 
   addPlayers() {
     this.players.push(this.player1, this.player2, this.player3);
     return this.players;
+    
   }
 
   startNewRound() {
@@ -36,28 +36,8 @@ class Game {
        this.puzzleSlayer()
     } else {
       this.roundCounter ++;
-      this.choosePuzzle();
-      this.round = new Round(this.players, this.currentPuzzle, this.nextPlayer);
+      return new Round(this)
     }
-  }
-
-  createPuzzleBank() {
-    let randomNum = Math.ceil(Math.random() * 23);
-    let oneWrdPzl = data.puzzles.one_word_answers.puzzle_bank[randomNum];
-    let twoWrdPzl = data.puzzles.two_word_answers.puzzle_bank[randomNum];
-    let threeWrdPzl = data.puzzles.three_word_answers.puzzle_bank[randomNum];
-    let fourWrdPzl = data.puzzles.four_word_answers.puzzle_bank[randomNum];
-    this.puzzleBank.push(oneWrdPzl, twoWrdPzl, threeWrdPzl, fourWrdPzl);
-    return this.puzzleBank;
-  }
-
-  choosePuzzle() {
-    let bank = this.createPuzzleBank();
-    this.currentPuzzle = bank[this.round -1];
-  }
-
-  endRound() {
-    this.currentPlayer = this.round.findCurrentPlayer(this.nextPlayer)
   }
 
   puzzleSlayer() {

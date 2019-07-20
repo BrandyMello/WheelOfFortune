@@ -15,23 +15,23 @@ class Round {
     this.canAffordVowel = false
   }
 
-  findNextPlayer(player) {
-   if (player === players[0]) {
-     return player = players[1]
-   }
-   if (player === players[1]) {
-     return player = players[2]
-   }
-   if (player === players[2]) {
-     return player = players[0]
-   }
+findNextPlayer(player) {
+  if (player === players[0]) {
+    return player = players[1]
   }
+  if (player === players[1]) {
+    return player = players[2]
+  }
+  if (player === players[2]) {
+    return player = players[0]
+  }
+}
 
-  makeNewWheel() {
-    let wheel = new Wheel()
-    wheel.generateCurrentWheel()
-    this.getAnswer()
-  } 
+makeNewWheel() {
+  let wheel = new Wheel()
+  wheel.generateCurrentWheel()
+  this.getAnswer()
+} 
   
 spinwheel() {
   wheel.chooseWheelPrize();
