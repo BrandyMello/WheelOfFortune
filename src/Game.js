@@ -1,10 +1,7 @@
 import data from './data';
 import Player from './Player';
 import Round from './Round';
-// fetch("https://fe-apps.herokuapp.com/api/v1/gametime/1903/wheel-of-fortune/data")
-// .then(response => response.json())
-// .then(data => console.log(data))
-// .catch(error => console.log(error));
+import dom from './domUpdates.js'
 
 
 class Game {
@@ -23,9 +20,9 @@ class Game {
   
   }
 
-  startGame() {
-    this.addPlayers();
-    this.createPuzzleBank();
+  startGame(data) {
+    // this.addPlayers();
+    this.createPuzzleBank(data);
     this.startNewRound();
     
 
@@ -47,9 +44,9 @@ class Game {
     }
   }
 
-  createPuzzleBank() {
+  createPuzzleBank(data) {
     let randomNum = Math.ceil(Math.random() * 23);
-    let oneWrdPzl = data.puzzles.one_word_answers.puzzle_bank[randomNum];
+    let oneWrdPzl = data.puzzles.one_word_answers.puzzle_bank[randomNum];//data.data
     let twoWrdPzl = data.puzzles.two_word_answers.puzzle_bank[randomNum];
     let threeWrdPzl = data.puzzles.three_word_answers.puzzle_bank[randomNum];
     let fourWrdPzl = data.puzzles.four_word_answers.puzzle_bank[randomNum];

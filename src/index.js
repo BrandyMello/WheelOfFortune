@@ -12,6 +12,8 @@ import './images/turing-logo.png'
 
 import Game from './Game';
 
+import dom from './domUpdates.js'
+
 
 //On submit of names - start game button
 
@@ -29,25 +31,15 @@ $('.startGameBtn').click((e) => {
   let player2 = $('.player2-name').val();
   let player3 = $('.player3-name').val();
   game = new Game(player1, player2, player3);
+  fetch("https://fe-apps.herokuapp.com/api/v1/gametime/1903/wheel-of-fortune/data")
+  .then(response => response.json())
+  .then(data => game.startGame(data.data, player1, player2, player3))
+  .catch(error => console.log(error));
   game.addPlayers();
-  appendPlayers(player1, player2, player3);
+  dom.appendPlayers(game, player1, player2, player3);
 })
 
-function appendPlayers(p1, p2, p3) {
-  $('.p1-name').append(p1);
-  $('.p1-round-score').append(game.players[0].roundScore);
-  $('.p1-grand-total').append(game.players[0].grandTotal);
 
-
-  $('.p2-name').append(p2);
-  $('.p2-round-score').append(game.players[1].roundScore);
-  $('.p2-grand-total').append(game.players[1].grandTotal);
-
-  $('.p3-name').append(p3);
-  $('.p3-round-score').append(game.players[2].roundScore);
-  $('.p3-grand-total').append(game.players[2].grandTotal)
-
-}
 
 console.log('This is the JavaScript entry file - your code begins here.');
 
