@@ -36,8 +36,39 @@ $('.startGameBtn').click((e) => {
   dom.appendCategory(game);
   dom.appendCurrentPlayerName(game);
   dom.appendWheelPrizes(game);
+  consonantButtons(game);
+  vowelButtons(game);
 })
 
+
+let consonants = ['b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'v', 'w', 'x', 'y', 'z']
+let vowels = ['a', 'e', 'i', 'o', 'u']
+const consonantDiv = $(".consonant-div")
+const vowelDiv = $(".vowel-div")
+
+function consonantButtons(game) {
+  consonants.forEach(letter => {
+      var button = $('<button/>', {
+        text: letter,
+        click: function () {
+          game.round.checkPlayerGuess(letter);
+        }
+      });
+      consonantDiv.append(button);
+  })
+}
+
+function vowelButtons(game) {
+  vowels.forEach(letter => {
+      var button = $('<button/>', {
+        text: letter,
+        click: function () {
+          game.round.checkPlayerGuess(letter);
+        }
+      });
+      vowelDiv.append(button);
+  })
+}
 
 
 console.log('This is the JavaScript entry file - your code begins here.');

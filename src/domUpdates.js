@@ -2,7 +2,6 @@ import $ from 'jquery';
 import {scaleLinear} from "d3-scale";
 
 
-
 export default {
 
  appendPlayers(game, p1, p2, p3) {
@@ -41,11 +40,11 @@ export default {
   appendWheelPrizes(game) {
     let newWheel = game.round.currentRoundWheel;
     console.log("newWheel", newWheel)
-    makeDomWheel(newWheel);
+    makeDomWheel(newWheel, game);
   }
 }
   
-  function makeDomWheel(data) {
+  function makeDomWheel(data, game) {
 
 
 
@@ -147,10 +146,12 @@ function spin(d) {
             oldrotation = rotation;
 
             /* Get the result value from object "data" */
-            console.log(data[picked].value)
+            game.round.spinWheel(data[picked].value)
+            // console.log(data[picked].value)
 
             /* Comment the below line for restrict spin to sngle time */
             container.on("click", spin);
+
         });
 }
 //make arrow
