@@ -13,7 +13,6 @@ class Round {
     // this.turn = this.makeNewTurn();
     this.currentRoundWheel = this.makeNewWheel();
     this.wheelPrize;
-    console.log("wheelprize", this.wheelPrize)
   }
 
   findNextPlayer() {
@@ -37,12 +36,12 @@ class Round {
     return wheel.generateCurrentWheel();
   } 
   
-  chooseWheelPrize() {
-    let randomIndex = Math.floor(Math.random() * Math.floor(6));
-    let randomPrize = this.currentRoundWheel[randomIndex]
-    this.wheelPrize = randomPrize;
-    return this.wheelPrize;
-  }
+  // chooseWheelPrize() {
+  //   let randomIndex = Math.floor(Math.random() * Math.floor(6));
+  //   let randomPrize = this.currentRoundWheel[randomIndex]
+  //   this.wheelPrize = randomPrize;
+  //   return this.wheelPrize;
+  // }
 
   // checkPlayerGuess(guess) {
   // let matchingLetters = this.lettersRemaining.find(letter => letter === guess)

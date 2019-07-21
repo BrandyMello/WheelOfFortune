@@ -41,12 +41,11 @@ export default {
   appendWheelPrizes(game) {
     let newWheel = game.round.currentRoundWheel;
     console.log("newWheel", newWheel)
-    makeDomWheel(newWheel);
+    makeDomWheel(newWheel, game);
   }
 }
   
-  function makeDomWheel(data) {
-
+  function makeDomWheel(data, game) {
 
 
 var padding = {
@@ -147,7 +146,9 @@ function spin(d) {
             oldrotation = rotation;
 
             /* Get the result value from object "data" */
-            console.log(data[picked].value)
+            console.log(data[picked].value);
+            game.round.wheelPrize = data[picked].value;
+            console.log('Game.Round',game.round.wheelPrize)
 
             /* Comment the below line for restrict spin to sngle time */
             container.on("click", spin);
