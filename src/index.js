@@ -35,6 +35,7 @@ $('.startGameBtn').click((e) => {
   dom.appendRoundNumber(game);
   dom.appendCategory(game);
   dom.appendCurrentPlayerName(game);
+  dom.appendWheelPrizes(game);
 })
 
 

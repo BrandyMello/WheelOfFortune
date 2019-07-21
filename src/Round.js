@@ -1,16 +1,19 @@
-import data from './data';
+// import data from './data';
 import Player from './Player';
 import Game from './Game';
 import Wheel from './Wheel';
 
 class Round {
-  constructor(playersList, currentPuzzle, currentPlayer) {
+  constructor(data, playersList, currentPuzzle, currentPlayer) {
+    this.data = data;
+    console.log("data", this.data)
     this.players = playersList;  
     this.puzzle = currentPuzzle;
     this.currentPlayer = currentPlayer;
     // this.turn = this.makeNewTurn();
     this.currentRoundWheel = this.makeNewWheel();
     this.wheelPrize;
+    console.log("wheelprize", this.wheelPrize)
   }
 
   findNextPlayer() {
@@ -30,14 +33,15 @@ class Round {
  }
 
   makeNewWheel() {
-    let wheel = new Wheel();
-    wheel.generateCurrentWheel();
+    let wheel = new Wheel(this.data);
+    return wheel.generateCurrentWheel();
   } 
   
   chooseWheelPrize() {
     let randomIndex = Math.floor(Math.random() * Math.floor(6));
     let randomPrize = this.currentRoundWheel[randomIndex]
     this.wheelPrize = randomPrize;
+    return this.wheelPrize;
   }
 
   // checkPlayerGuess(guess) {

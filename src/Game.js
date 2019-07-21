@@ -1,4 +1,4 @@
-import data from './data';
+// import data from './data';
 import Player from './Player';
 import Round from './Round';
 import dom from './domUpdates.js'
@@ -36,7 +36,8 @@ class Game {
     } else {
       this.roundCounter ++;
       this.choosePuzzle();
-      this.round = new Round(this.players, this.currentPuzzle, this.nextPlayer);
+      this.round = new Round(this.data, this.players, this.currentPuzzle, this.nextPlayer);
+      // this.round.makeNewWheel();
     }
   }
 
