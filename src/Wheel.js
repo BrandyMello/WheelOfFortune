@@ -29,9 +29,7 @@ class Wheel {
   constructor() {
     this.wheelData = data.wheel;
     this.currentWheel;
-    this.wheelPrize;
   }
-
 
     generateCurrentWheel() {
       let max = this.wheelData.length - 6;
@@ -39,15 +37,6 @@ class Wheel {
       let randomWheel = (this.wheelData.slice(randomIndex,randomIndex + 6))
       this.currentWheel = randomWheel;
     }
-
-    chooseWheelPrize() {
-      let randomIndex = Math.floor(Math.random() * Math.floor(6));
-      let randomPrize = this.currentWheel[randomIndex]
-      this.wheelPrize = randomPrize;
-      console.log(this.wheelPrize)
-
-    }
-
 }
 
 export default Wheel;

@@ -14,7 +14,6 @@ class Game {
     this.roundCounter = 0;
     this.round;
     this.nextPlayer = this.player1;
-    console.log("inside o game", this.nextPlayer)
     this.puzzleBank = [];
     this.currentPuzzle;
     this.puzzleSlayer = null;

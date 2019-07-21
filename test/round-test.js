@@ -13,7 +13,8 @@ describe('Round', function() {
 
   beforeEach(function() {
     game = new Game();
-    round = new Round(game);
+    game.startGame()
+    round = new Round(game.players, game.currentPuzzle, game.nextPlayer);
   });
 
   it('should be a function', () => {
