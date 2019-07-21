@@ -2,6 +2,7 @@
 import Player from './Player';
 import Game from './Game';
 import Wheel from './Wheel';
+import dom from './domUpdates.js'
 
 class Round {
   constructor(data, playersList, currentPuzzle, currentPlayer) {
@@ -13,7 +14,7 @@ class Round {
     // this.turn = this.makeNewTurn();
     this.currentRoundWheel = this.makeNewWheel();
     this.wheelPrize;
-    console.log("wheelprize", this.wheelPrize)
+    this.lettersRemaining;
   }
 
   findNextPlayer() {
@@ -44,10 +45,24 @@ class Round {
     return this.wheelPrize;
   }
 
-  // checkPlayerGuess(guess) {
-  // let matchingLetters = this.lettersRemaining.find(letter => letter === guess)
+  checkPlayerGuess(guess) {
+    let puzzleAnswer = this.puzzle['correct_answer'];
+    let letterCounter = 0;
+    this.lettersRemaining = puzzleAnswer.split('').filter(letter => {
+      if(letter.toUpperCase() !== guess) {
+        return letter
+      } else {
+       letterCounter++
+       this.currentPlayer.roundScore = this.wheelPrize * letterCounter;
+       dom.appendLetter(letter)
+      }
+    });
+  
+  
+
+  // let matchingLetters = this.puzzle.find(letter => letter === guess)
   // return this.lettersRemaining.filter(letter => letter !== matchingLetters);
-// }
+}
 
      // findNextPlayer(player) {
   //  if (player === players[0]) {

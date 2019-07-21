@@ -36,8 +36,16 @@ $('.startGameBtn').click((e) => {
   dom.appendCategory(game);
   dom.appendCurrentPlayerName(game);
   dom.appendWheelPrizes(game);
+  dom.reappearAlphabet();
 })
 
+$(document).ready(function() {
+  $('.spin-wheel-btn').on('click', function () {
+    dom.showWheelPrize(game);
+  });
 
+  $('.alphabet').on('click', function(e) {
+  dom.disappearButton(e, game);
+  });
+});
 
-console.log('This is the JavaScript entry file - your code begins here.');
