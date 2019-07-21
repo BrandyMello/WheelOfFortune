@@ -57,9 +57,9 @@ class Round {
        dom.appendLetter(letter)
       }
     });
-    console.log("thisPLayer", this.currentPlayer.roundScore)
-    console.log("puzzle", this.lettersRemaining)
-    console.log("letterCounter", letterCounter)
+  
+  
+
   // let matchingLetters = this.puzzle.find(letter => letter === guess)
   // return this.lettersRemaining.filter(letter => letter !== matchingLetters);
 }
