@@ -38,6 +38,11 @@ $('.startGameBtn').click((e) => {
   dom.appendWheelPrizes(game);
 })
 
+$(document).ready(function() {
+$('.spin-wheel-btn').on('click', function () {
+    dom.showWheelPrize (game);
+  });
+});
 
 
 console.log('This is the JavaScript entry file - your code begins here.');

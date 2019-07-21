@@ -77,3 +77,21 @@ text {
   -webkit-transform: translate(0, -50%);
   transform: translate(0, -50%);
 }
+
+.game-info {
+  display: flex;
+  justify-content: space-between;
+  margin: 50px;
+  border: 2px solid black;
+  padding: 10px;
+}
+
+.div-wheel-prize-display {
+  height: 150px;
+  width: 20%;
+  margin-left: 75%;
+  border: 2px solid black;
+  text-align: center;
+  padding-top: 10px;
+  font-size: 26px;
+}
