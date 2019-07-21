@@ -13,7 +13,8 @@ describe('Round', function() {
 
   beforeEach(function() {
     game = new Game();
-    round = new Round(game);
+    game.startGame()
+    round = new Round(game.players, game.currentPuzzle, game.nextPlayer);
   });
 
   it('should be a function', () => {
@@ -24,12 +25,6 @@ describe('Round', function() {
     expect(round).to.be.an.instanceOf(Round);
   });
 
-  it('should create a puzzle bank', function () {
-    expect(round.puzzleBank.length).to.eql(4);
-  });
-
-  it('should choose a puzzle from the puzzle bank', function() {
-    expect(round.choosePuzzle()).to.be.an('object');
-  });
+ 
 });
 

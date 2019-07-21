@@ -16,7 +16,7 @@ let game;
 describe('Game', () => {
   
   beforeEach(() => {
-    game = new Game('Brandy','Lacy','Julian');
+    game = new Game(data, 'Brandy','Lacy','Julian');
   });
 
   it('should be a function', () => {
@@ -70,4 +70,15 @@ describe('Game', () => {
     })
   })
 
+   describe('createPuzzleBank', () => {
+    it('should create a puzzle bank', function () {
+    expect(game.puzzleBank.length).to.eql(4);
+    })
+  });
+
+   describe('choosePuzzle', () => {
+    it('should choose a puzzle from the puzzle bank', function() {
+    expect(game.choosePuzzle()).to.be.an('object');
+    });
+  });
 

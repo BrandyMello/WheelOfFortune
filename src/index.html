@@ -5,12 +5,91 @@
   </head>
   <body>
     <h1>Wheel of Fortune</h1>
-    <p class="category">Phrase or Category</p>
     <div class="puzzle">
       <p class="letter"></p>
       <!-- We can append as many as needed here -->
     </div>
+    <table class="display-board">
+      <tr>
+        <td class="row-no-block"></td>
+        <td class="row-no-block"></td>
+        <td class="row1"></td>
+        <td class="row1"></td>
+        <td class="row1"></td>
+        <td class="row1"></td>
+        <td class="row1"></td>
+        <td class="row1"></td>
+        <td class="row1"></td>
+        <td class="row1"></td>
+        <td class="row1"></td>
+        <td class="row1"></td>
+        <td class="row1"></td>
+        <td class="row1"></td>
+        <td class="row-no-block"></td>
+        <td class="row-no-block"></td>
+      </tr>
+      <tr class="display-puzzle-answer">
+        <td class="row2"></td>
+        <td class="letter-0"></td>
+        <td class="letter-1"></td>
+        <td class="letter-2"></td>
+        <td class="letter-3"></td>
+        <td class="letter-4"></td>
+        <td class="letter-5"></td>
+        <td class="letter-6"></td>
+        <td class="letter-7"></td>
+        <td class="letter-8"></td>
+        <td class="letter-9"></td>
+        <td class="letter-10"></td>
+        <td class="letter-11"></td>
+        <td class="letter-12"></td>
+        <td class="letter-13"></td>
+        <td class="row2-end"></td>
+      </tr>
+      <tr>
+        <td class="row3"></td>
+        <td class="letter-14"></td>
+        <td class="letter-15"></td>
+        <td class="letter-16"></td>
+        <td class="letter-17"></td>
+        <td class="letter-18"></td>
+        <td class="letter-19"></td>
+        <td class="letter-20"></td>
+        <td class="letter-21"></td>
+        <td class="letter-22"></td>
+        <td class="letter-23"></td>
+        <td class="letter-24"></td>
+        <td class="letter-25"></td>
+        <td class="letter-26"></td>
+        <td class="letter-27"></td>
+        <td class="row3-end"></td>
+      </tr>
+      <tr>
+        <td class="row-no-block"></td>
+        <td class="row-no-block"></td>
+        <td class="letter-28"></td>
+        <td class="letter-29"></td>
+        <td class="letter-30"></td>
+        <td class="letter-31"></td>
+        <td class="letter-32"></td>
+        <td class="letter-33"></td>
+        <td class="letter-34"></td>
+        <td class="letter-35"></td>
+        <td class="letter-36"></td>
+        <td class="letter-37"></td>
+        <td class="letter-38"></td>
+        <td class="letter-39"></td>
+        <td class="row-no-block"></td>
+        <td class="row-no-block"></td>
+      </tr>
+    </table>
+    <h2><span class="category"></span></h2>
+    <div class="game-info">
+    <p>ROUND: <span class="round"></span></p>
+    <p><span class="current-player-name"></span> it's your turn!</p>
+    </div>
     <div class="alphabet">
+
 <!-- CONSONANTS -->
       <button class="alphabet" id="alphabet-js b">B</button>
       <button class="alphabet" id="alphabet-js c">C</button>
@@ -33,6 +112,7 @@
       <button class="alphabet" id="alphabet-js x">X</button>
       <button class="alphabet" id="alphabet-js y">Y</button>
       <button class="alphabet" id="alphabet-js z">Z</button>
+      <div>
       <!-- VOWELS -->
       <button class="alphabet" id="alphabet-js a">A</button>
       <button class="alphabet" id="alphabet-js e">E</button>
@@ -40,8 +120,7 @@
       <button class="alphabet" id="alphabet-js o">O</button>
       <button class="alphabet" id="alphabet-js u">U</button>
     </div>
-    <p>ROUND: <span class="round"></span></p>
-    <p>USED LETTERS: <span class="used-letters"></span></p>
+    </div>
     <p>VOWELS COST $100 EACH</p>
     <div class ="initialIntake">
       Player1: <input class="player1-name" type="text" placeholder="Player One Name"> 
@@ -49,34 +128,36 @@
       Player3: <input class="player3-name" type="text" placeholder="Player Three Name"> 
       <button class="startGameBtn">START GAME</button>
     </div>
-    <div class="player1">
-      <p class="p1-name">Name:</p>
-      <p class="p1-round-score">Current Score:</p>
-      <p class="p1-grand-total">Grand Total:</p>
+    <div class ="call-to-action">
+      <button class="spin-wheel-btn">Spin Wheel!</button>
 
-      
-      
+    <div class="player1">
+      <p class="p1-name">Name : </p>
+      <p class="p1-round-score">Current Score : </p>
+      <p class="p1-grand-total">Grand Total : </p>
     </div>
+    <hr>
     <div class="player2">
-      <p class="p2-name">Name:</p>
-      <p class="p2-round-score">Current Score:</p>
-      <p class="p2-grand-total">Grand Total:</p>
-      
-      
+      <p class="p2-name">Name : </p>
+      <p class="p2-round-score">Current Score : </p>
+      <p class="p2-grand-total">Grand Total : </p>
     </div>
+    <hr>
     <div class="player3">
-      <p class="p3-name">Name:</p>
-      <p class="p3-round-score">Current Score:</p>
-      <p class="p3-grand-total">Grand Total:</p>
-      
-      
+      <p class="p3-name">Name : </p>
+      <p class="p3-round-score">Current Score : </p>
+      <p class="p3-grand-total">Grand Total : </p>
     </div>
+    
     <div class="wheel"></div>
     
+    <div id="chart"></div>
+    <div id="question">
+      <h1></h1>
+    </div>
 
-
-
-
+    <!-- Do not include the index.js or main.bundle.js file here - it is done automatically by the webpack server -->
+    <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
 
     <!-- Do not include the index.js or main.bundle.js file here - it is done automatically by the webpack server -->
   </body>

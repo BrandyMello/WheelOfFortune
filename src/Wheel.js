@@ -1,4 +1,4 @@
-import data from '../src/data';
+// import data from '../src/data';
 //Wheel is a class with access to the data correlated to the wheel options.
 
 //a property of this class can be wheelData where the array of the entirety of options for the wheel are stored --- this will be found via a method -
@@ -26,34 +26,36 @@ import data from '../src/data';
 //store findWheelPrize as another property -- (bonusWheelPrize)
 
 class Wheel {
-  constructor() {
-    this.wheelData = this.findWheelData();
-    this.bonusWheelData = [];
+  constructor(data) {
+    this.wheelData = data.wheel;
     this.currentWheel;
-    this.wheelPrize;
-
   }
 
-    findWheelData() {
-    return data.wheel
-    }
+//     generateCurrentWheel() {
+//       console.log("gnw", this.wheelData)
+//       let max = this.wheelData.length - 6;
+//       let randomIndex = Math.floor(Math.random() * Math.floor(max));
+//       let randomWheel = (this.wheelData.slice(randomIndex,randomIndex + 6))
+//       this.currentWheel = randomWheel;
+//       return this.currentWheel;
+//     }
+// }
 
-    generateCurrentWheel() {
+ generateCurrentWheel() {
       let max = this.wheelData.length - 6;
       let randomIndex = Math.floor(Math.random() * Math.floor(max));
       let randomWheel = (this.wheelData.slice(randomIndex,randomIndex + 6))
       this.currentWheel = randomWheel;
-    }
-
-    chooseWheelPrize() {
-      let randomIndex = Math.floor(Math.random() * Math.floor(6));
-      let randomPrize = this.currentWheel[randomIndex]
-      this.wheelPrize = randomPrize;
-      console.log(this.wheelPrize)
-
-    }
-
+      return this.currentWheel.map(function(wheelItem) {
+          return {
+            label: wheelItem,
+            value: wheelItem
+          }
+        })
+  }
 }
+
+
 
 export default Wheel;
 
