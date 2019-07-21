@@ -33,7 +33,10 @@ export default {
     let puzzleAnswer = game.currentPuzzle.correct_answer.toUpperCase().split('');
     let displayPuzzleAnswer = puzzleAnswer.map((letter, index) => {
       if (letter !== " ") {
-        $(`.letter-${index}`).html(puzzleAnswer[`${index}`]).addClass('puzzle-display');
+        $(`.letter-${index}`).html(puzzleAnswer[`${index}`]).addClass(`puzzle-display puzzle-display-${letter}`).css({
+          'color': 'white'
+        });
+        console.log("letterinpuzzle", letter)
       }
     })
   }, 
@@ -47,8 +50,37 @@ export default {
   showWheelPrize(game) {
     game.round.chooseWheelPrize();
     $('.display-wheel-prize').append(game.round.wheelPrize);
-  }
+  },
+
+  disappearButton(e, game) {
+    let guessedLetter = $(e.target).text();
+    console.log("tagetLetter", guessedLetter)
+    $(e.target).closest('button')
+      .css({
+        'transition': 'transform 4s',
+        'transform- style': 'preserve - 3d',
+        'transform': 'rotateX(90deg)'
+      }).fadeOut(1000);
+      game.round.checkPlayerGuess(guessedLetter);
+    // $(e.target).closest('button')
+    //   .attr('disabled');
+
+    console.log("in button")
+  },
+
+  reappearAlphabet() {
+    $('.alphabet').fadeIn(1000).css({
+    'transition': 'transform 4s',
+    'transform- style': 'preserve - 3d',
+    'transform': 'rotateX(360deg)'
+  })
+  },
+
+  appendLetter(approvedLetter) {
+   
+ }
 }
+   
   
   function makeDomWheel(data, game) {
 
