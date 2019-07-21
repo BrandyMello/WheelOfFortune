@@ -62,7 +62,8 @@ var padding = {
     oldrotation = 0,
     picked = 100000,
     oldpick = [],
-    color = d3.scale.category10();
+    color = d3.scaleLinear().domain([1, 6])
+      .range(["#754CD0", "#F97267"])
 
 console.log("inside", data)
 var svg = d3.select('#chart')
