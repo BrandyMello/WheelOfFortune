@@ -1,4 +1,5 @@
 import $ from 'jquery';
+import {scaleLinear} from "d3-scale";
 
 
 
@@ -47,6 +48,7 @@ export default {
   function makeDomWheel(data) {
 
 
+
 var padding = {
         top: 20,
         right: 40,
@@ -60,7 +62,7 @@ var padding = {
     oldrotation = 0,
     picked = 100000,
     oldpick = [],
-    color = d3.scale.category20();
+    color = d3.scale.category10();
 
 console.log("inside", data)
 var svg = d3.select('#chart')
@@ -202,6 +204,7 @@ function getRandomNumbers() {
     return array;
   }
 }
+
 
  //category20c()
 //randomNumbers = getRandomNumbers();
