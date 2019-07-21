@@ -40,7 +40,7 @@ $('.startGameBtn').click((e) => {
 
 $(document).ready(function() {
 $('.spin-wheel-btn').on('click', function () {
-    dom.showWheelPrize (game);
+    dom.showWheelPrize(game);
   });
 });
 

@@ -41,7 +41,7 @@ export default {
   appendWheelPrizes(game) {
     let newWheel = game.round.currentRoundWheel;
     console.log("newWheel", newWheel)
-    makeDomWheel(newWheel, game);
+    // makeDomWheel(newWheel, game);
   },
 
   showWheelPrize(game) {
