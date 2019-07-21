@@ -61,7 +61,7 @@ var padding = {
     picked = 100000,
     oldpick = [],
     color = d3.scale.category20();
-// var data = data;
+
 console.log("inside", data)
 var svg = d3.select('#chart')
     .append("svg")
