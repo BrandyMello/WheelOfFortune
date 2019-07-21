@@ -3,7 +3,7 @@ import {scaleLinear} from "d3-scale";
 
 
 
-export default {
+ const domUpdates = {
 
  appendPlayers(game, p1, p2, p3) {
     $('.p1-name').append(p1);
@@ -77,11 +77,18 @@ export default {
   },
 
   appendLetter(approvedLetter) {
-   
+    console.log('apprLetter', approvedLetter)
+    $(`.puzzle-display-${approvedLetter}`).css({
+        'color': 'black',
+        'transition': 'transform 4s',
+        'transform- style': 'preserve - 3d',
+        'transform': 'rotateX(360deg)'
+      }).fadeIn(1000);
+
  }
 }
    
-  
+  export default domUpdates;
   function makeDomWheel(data, game) {
 
 

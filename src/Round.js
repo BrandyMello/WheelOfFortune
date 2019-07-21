@@ -2,6 +2,7 @@
 import Player from './Player';
 import Game from './Game';
 import Wheel from './Wheel';
+import dom from './domUpdates.js'
 
 class Round {
   constructor(data, playersList, currentPuzzle, currentPlayer) {
@@ -53,7 +54,7 @@ class Round {
       } else {
        letterCounter++
        this.currentPlayer.roundScore = this.wheelPrize * letterCounter;
-       // dom.appendLetter(letter)
+       dom.appendLetter(letter)
       }
     });
     console.log("thisPLayer", this.currentPlayer.roundScore)
