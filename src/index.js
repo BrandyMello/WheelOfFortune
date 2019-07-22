@@ -45,7 +45,9 @@ $(document).ready(function() {
   });
 
   $('.alphabet').on('click', function(e) {
-  dom.disappearButton(e, game);
+    e.preventDefault();
+    let targetLetter = e.target;
+  dom.disappearButton(targetLetter, game);
   });
 });
 

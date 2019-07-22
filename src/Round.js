@@ -22,8 +22,9 @@ class Round {
    if (playerIndex === 2) {
     this.currentPlayer = this.players[0]
    } else {
-   this.currentPlayer = this.players[playerIndex+1]
+   this.currentPlayer = this.players[playerIndex + 1];
    }
+   console.log('Player switch', this.currentPlayer);
   }
 
  spinWheel() {
@@ -45,7 +46,7 @@ class Round {
     return this.wheelPrize;
   }
 
-  checkPlayerGuess(guess) {
+  checkPlayerGuess(guess, game) {
     let puzzleAnswer = this.puzzle['correct_answer'];
     let letterCounter = 0;
     this.lettersRemaining = puzzleAnswer.split('').filter(letter => {
@@ -54,7 +55,8 @@ class Round {
       } else {
        letterCounter++
        this.currentPlayer.roundScore = this.wheelPrize * letterCounter;
-       dom.appendLetter(letter)
+       dom.appendLetter(letter);
+       dom.updateScore(this.currentPlayer);
       }
     });
   

@@ -12,7 +12,7 @@ class Game {
     this.player2 = new Player(p2);
     this.player3 = new Player(p3);
     this.roundCounter = 0;
-    this.round;
+    this.round = {};
     this.nextPlayer = this.player1;
     this.puzzleBank = [];
     this.currentPuzzle;

@@ -52,20 +52,16 @@ import {scaleLinear} from "d3-scale";
     $('.display-wheel-prize').append(game.round.wheelPrize);
   },
 
-  disappearButton(e, game) {
-    let guessedLetter = $(e.target).text();
-    console.log("tagetLetter", guessedLetter)
-    $(e.target).closest('button')
+  disappearButton(letter, game) {
+    let guessedLetter = $(letter).text();
+    console.log("targetLetter", guessedLetter)
+    $(letter).closest('button')
       .css({
         'transition': 'transform 4s',
         'transform- style': 'preserve - 3d',
         'transform': 'rotateX(90deg)'
       }).fadeOut(1000);
       game.round.checkPlayerGuess(guessedLetter);
-    // $(e.target).closest('button')
-    //   .attr('disabled');
-
-    console.log("in button")
   },
 
   reappearAlphabet() {
@@ -77,15 +73,17 @@ import {scaleLinear} from "d3-scale";
   },
 
   appendLetter(approvedLetter) {
-    console.log('apprLetter', approvedLetter)
     $(`.puzzle-display-${approvedLetter}`).css({
         'color': 'black',
         'transition': 'transform 4s',
         'transform- style': 'preserve - 3d',
         'transform': 'rotateX(360deg)'
       }).fadeIn(1000);
+  },
 
- }
+  updateScore(player) {
+    console.log(player);
+  }
 }
    
   export default domUpdates;
