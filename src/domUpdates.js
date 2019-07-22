@@ -7,13 +7,13 @@ import {scaleLinear} from "d3-scale";
 
  appendPlayers(game, p1, p2, p3) {
     $('.p1-name').append(p1);
-    $('.p1-round-score').append(game.players[0].roundScore);
+    $('.p1-round-score-span').append(game.players[0].roundScore);
     $('.p1-grand-total').append(game.players[0].grandTotal);
     $('.p2-name').append(p2);
-    $('.p2-round-score').append(game.players[1].roundScore);
+    $('.p2-round-score-span').append(game.players[1].roundScore);
     $('.p2-grand-total').append(game.players[1].grandTotal);
     $('.p3-name').append(p3);
-    $('.p3-round-score').append(game.players[2].roundScore);
+    $('.p3-round-score-span').append(game.players[2].roundScore);
     $('.p3-grand-total').append(game.players[2].grandTotal)
   },
 
@@ -32,6 +32,9 @@ import {scaleLinear} from "d3-scale";
   appendPuzzle(game) {
     let puzzleAnswer = game.currentPuzzle.correct_answer.toUpperCase().split('');
     let displayPuzzleAnswer = puzzleAnswer.map((letter, index) => {
+      // if(letter === "-" || letter === "&" || letter === "\"") {
+
+      // }
       if (letter !== " ") {
         $(`.letter-${index}`).html(puzzleAnswer[`${index}`]).addClass(`puzzle-display puzzle-display-${letter}`);
         console.log("letterinpuzzle", letter)
@@ -47,6 +50,7 @@ import {scaleLinear} from "d3-scale";
 
   showWheelPrize(game) {
     game.round.chooseWheelPrize();
+    $('.display-wheel-prize').empty()
     $('.display-wheel-prize').append(game.round.wheelPrize);
   },
 
@@ -74,13 +78,43 @@ import {scaleLinear} from "d3-scale";
     $(`.puzzle-display-${approvedLetter}`).addClass(`puzzle-display puzzle-display-${approvedLetter} display-letter`).fadeIn(1000);
   },
 
-  updateScore(player) {
-    console.log(player);
+  updateScore(player, playersList) {
+    console.log("INSIDE", player);
+    console.log("INSIDE_NAME", player.name);
+    console.log("INSIDE2", playersList); 
+    console.log("INSIDE2_index", playersList[0]['name']);
+    if(player.name === playersList[0].name){
+      $('.p1-round-score-span').empty();
+      $('.p1-round-score-span').append(player.roundScore);
+    } else if(player.name === playersList[1]) {
+      $('.p2-round-score').append(player.roundScore);
+    } else if(player.name === playersList[2]) {
+      $('.p3-round-score').append(player.roundScore);
+    }
+  },
+ 
+  disableAlphabet() {
+    $('.alphabet').attr("disabled", true);
+  },
+
+  enableAlphabet() {
+    $('.alphabet').removeAttr("disabled");
   }
-}
-   
+
+}   
   export default domUpdates;
+
+
+
+
+
   function makeDomWheel(data, game) {
+
+
+
+
+
+
 
 
 // var padding = {
