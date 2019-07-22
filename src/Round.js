@@ -7,7 +7,6 @@ import dom from './domUpdates.js'
 class Round {
   constructor(data, playersList, currentPuzzle, currentPlayer) {
     this.data = data;
-    console.log("data", this.data)
     this.players = playersList;  
     this.puzzle = currentPuzzle;
     this.currentPlayer = currentPlayer;
