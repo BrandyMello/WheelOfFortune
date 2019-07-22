@@ -22,15 +22,16 @@ class Round {
    if (playerIndex === 2) {
     this.currentPlayer = this.players[0]
    } else {
-   this.currentPlayer = this.players[playerIndex+1]
+   this.currentPlayer = this.players[playerIndex + 1];
    }
+   console.log('Player switch', this.currentPlayer);
   }
 
  spinWheel() {
   this.chooseWheelPrize();
-  if (this.wheelPrize === "BANKRUPT" || "LOSE A TURN") {
-  this.findNextPlayer();
-  } 
+  // if (this.wheelPrize === "BANKRUPT" || "LOSE A TURN") {
+  // this.findNextPlayer();
+  // } 
  }
 
   makeNewWheel() {
@@ -45,16 +46,19 @@ class Round {
     return this.wheelPrize;
   }
 
-  checkPlayerGuess(guess) {
+  checkPlayerGuess(guess, game) {
     let puzzleAnswer = this.puzzle['correct_answer'];
     let letterCounter = 0;
-    this.lettersRemaining = puzzleAnswer.split('').filter(letter => {
-      if(letter.toUpperCase() !== guess) {
+    this.lettersRemaining = puzzleAnswer.toUpperCase().split('').filter(letter => {
+      if(letter !== guess) {
         return letter
       } else {
        letterCounter++
-       this.currentPlayer.roundScore = this.wheelPrize * letterCounter;
-       dom.appendLetter(letter)
+       if(this.wheelPrize !== "BANKRUPT" || "LOSE A TURN") {
+        this.currentPlayer.roundScore = this.wheelPrize * letterCounter;
+       }
+       dom.appendLetter(letter);
+       dom.updateScore(this.currentPlayer);
       }
     });
   
