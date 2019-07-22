@@ -47,7 +47,7 @@ $(document).ready(function() {
   $('.alphabet').on('click', function(e) {
     e.preventDefault();
     let targetLetter = e.target;
-  dom.disappearButton(targetLetter, game);
+    dom.disappearButton(targetLetter, game);
   });
 });
 

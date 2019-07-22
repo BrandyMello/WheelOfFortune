@@ -29,9 +29,9 @@ class Round {
 
  spinWheel() {
   this.chooseWheelPrize();
-  if (this.wheelPrize === "BANKRUPT" || "LOSE A TURN") {
-  this.findNextPlayer();
-  } 
+  // if (this.wheelPrize === "BANKRUPT" || "LOSE A TURN") {
+  // this.findNextPlayer();
+  // } 
  }
 
   makeNewWheel() {
@@ -49,12 +49,14 @@ class Round {
   checkPlayerGuess(guess, game) {
     let puzzleAnswer = this.puzzle['correct_answer'];
     let letterCounter = 0;
-    this.lettersRemaining = puzzleAnswer.split('').filter(letter => {
-      if(letter.toUpperCase() !== guess) {
+    this.lettersRemaining = puzzleAnswer.toUpperCase().split('').filter(letter => {
+      if(letter !== guess) {
         return letter
       } else {
        letterCounter++
-       this.currentPlayer.roundScore = this.wheelPrize * letterCounter;
+       if(this.wheelPrize !== "BANKRUPT" || "LOSE A TURN") {
+        this.currentPlayer.roundScore = this.wheelPrize * letterCounter;
+       }
        dom.appendLetter(letter);
        dom.updateScore(this.currentPlayer);
       }

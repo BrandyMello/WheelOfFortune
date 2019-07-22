@@ -33,9 +33,7 @@ import {scaleLinear} from "d3-scale";
     let puzzleAnswer = game.currentPuzzle.correct_answer.toUpperCase().split('');
     let displayPuzzleAnswer = puzzleAnswer.map((letter, index) => {
       if (letter !== " ") {
-        $(`.letter-${index}`).html(puzzleAnswer[`${index}`]).addClass(`puzzle-display puzzle-display-${letter}`).css({
-          'color': 'white'
-        });
+        $(`.letter-${index}`).html(puzzleAnswer[`${index}`]).addClass(`puzzle-display puzzle-display-${letter}`);
         console.log("letterinpuzzle", letter)
       }
     })
@@ -73,12 +71,7 @@ import {scaleLinear} from "d3-scale";
   },
 
   appendLetter(approvedLetter) {
-    $(`.puzzle-display-${approvedLetter}`).css({
-        'color': 'black',
-        'transition': 'transform 4s',
-        'transform- style': 'preserve - 3d',
-        'transform': 'rotateX(360deg)'
-      }).fadeIn(1000);
+    $(`.puzzle-display-${approvedLetter}`).addClass(`puzzle-display puzzle-display-${approvedLetter} display-letter`).fadeIn(1000);
   },
 
   updateScore(player) {

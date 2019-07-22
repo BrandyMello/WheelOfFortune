@@ -29,11 +29,15 @@ table {
     }
       .puzzle-display {
         background-color: white;
+        color: white;
         text-align: center;
       }
-    // .hide-letter {
-    //   color: white;
-    // }
+      .display-letter {
+        color: black;
+        transition: transform 4s;
+        transform-style: preserve-3d;
+        transform: rotateX(360deg);
+      }
 }
 
 h2 {
@@ -54,8 +58,8 @@ h2 {
 }
 
 .alphabet {
-  width: 50px;
-  height: 50px;
+  width: 30px;
+  height: 30px;
   margin: 15px 2px;
   font-size: 20px;
 }
@@ -77,7 +81,7 @@ text {
 #question {
   position: absolute;
   width: 400px;
-  height: 500px;
+  height: 400px;
   top: 0;
   left: 520px;
 }
@@ -103,7 +107,7 @@ text {
 }
 
 .div-wheel-prize-display {
-  height: 150px;
+  height: 80px;
   width: 20%;
   margin-left: 75%;
   border: 2px solid black;
