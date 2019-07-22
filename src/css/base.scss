@@ -1,7 +1,7 @@
 /* This is an example of using Sass, otherwise plain CSS works too*/
-$primary-background: lavender;
 $main-logo: #F1C40F;
-$border: #261663;
+$border: #261663; 
+$primary-color: #91508cc4; 
 
 body {
   // background-color: $primary-background;
@@ -110,7 +110,7 @@ h3 {
 }
 
 .initial-intake {
-  background-color: #91508cc4;
+  background-color: $primary-color;
   width: 50%;
     p {
     color: $main-logo;
@@ -173,7 +173,7 @@ h3 {
 }
 
 .vowel-info {
-  background-color: #91508cc4;
+  background-color: $primary-color;
   color: $main-logo;
   display: inline-block;
   margin: 0;
@@ -215,7 +215,7 @@ text {
 }
 
 .game-info {
-  background-color: #91508cc4;
+  background-color: $primary-color;
   color: $main-logo;
   display: flex;
   justify-content: space-between;
@@ -246,10 +246,10 @@ text {
 .div-wheel-prize-display {
     animation: rotate-scale-up 0.65s linear both;
     align-items: center;
-    background-color: #91508cc4;
+    background-color: $primary-color;
     border-radius: 50%;
-    border: 2px solid #261663;
-    color: #F1C40F;
+    border: 2px solid $border;
+    color: $main-logo;
     display: flex;
     float: right;
     font-size: 20px;
@@ -318,10 +318,18 @@ text {
 }
 
 .player-container {
-  background-color: #91508cc4;
+  background-color: $primary-color;
   border-top: 2px solid $border;
   color: $main-logo;;
   display:flex;
   justify-content: space-between;
-
+  align-items: center;
+    
+    .player1, 
+    .player2,
+    .player3 {
+      border-right: 2px solid $border;
+      width: 33%;
+      text-align: center;
+    }
 }

@@ -55,7 +55,6 @@ class Round {
         return letter
       } else {
        letterCounter++
-       // if(this.wheelPrize !== "BANKRUPT" || "LOSE A TURN") {
        }
        dom.appendLetter(letter);
        
