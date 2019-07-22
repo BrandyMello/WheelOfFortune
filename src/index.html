@@ -4,7 +4,15 @@
     <title>Wheel Of Fortune</title>
   </head>
   <body>
-    <h1>Wheel of Fortune</h1>
+    <header>
+      <h1 class= "header">Wheel of Fortune</h1>
+    </header>
+    <main>
+      <section class="splash-welcome">
+        <h3 class="splash-welcome"> Wheel of Fortune!</h3>
+      </section>
+      <section class="splash-intake">
+      </section>
     <div class="puzzle">
       <p class="letter"></p>
       <!-- We can append as many as needed here -->
@@ -91,8 +99,8 @@
     </div>
     <div class="div-wheel-prize-display">You landed on: <span class="display-wheel-prize"></span></div>
     <div class="alphabet-container">
-
 <!-- CONSONANTS -->
+    <div class="consonants">
       <button class="alphabet" id="alphabet-js-b">B</button>
       <button class="alphabet" id="alphabet-js-c">C</button>
       <button class="alphabet" id="alphabet-js-d">D</button>
@@ -114,8 +122,10 @@
       <button class="alphabet" id="alphabet-js-x">X</button>
       <button class="alphabet" id="alphabet-js-y">Y</button>
       <button class="alphabet" id="alphabet-js-z">Z</button>
-      <div>
+    </div>
       <!-- VOWELS -->
+    <div class="vowels">
+      <p class="vowel-info"> VOWELS COST $100 </p>
       <button class="alphabet" id="alphabet-js-a">A</button>
       <button class="alphabet" id="alphabet-js-e">E</button>
       <button class="alphabet" id="alphabet-js-i">I</button>
@@ -123,14 +133,7 @@
       <button class="alphabet" id="alphabet-js-u">U</button>
     </div>
     </div>
-    <p>VOWELS COST $100 EACH</p>
-    <div class ="initialIntake">
-      Player1: <input class="player1-name" type="text" placeholder="Player One Name"> 
-      Player2: <input class="player2-name" type="text" placeholder="Player Two Name"> 
-      Player3: <input class="player3-name" type="text" placeholder="Player Three Name"> 
-      <button class="startGameBtn">START GAME</button>
-    </div>
-    <div class ="call-to-action">
+    <div class ="player-container">
 
     <div class="player1">
       <p class="p1-name">Name : </p>
@@ -159,5 +162,6 @@
 
     <!-- Do not include the index.js or main.bundle.js file here - it is done automatical3js.org/d3-scale.v3.min.js"></script> -->
     <!-- Do not include the index.js or main.bundle.js file here - it is done automatically by the webpack server -->
+    </main>
   </body>
 </html>
