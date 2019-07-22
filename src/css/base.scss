@@ -245,16 +245,77 @@ text {
   }
 
 .div-wheel-prize-display {
-  height: 125px;
-  width: 20%;
-  float:right;
-  margin-right: 5%;
-  border: 2px solid $border;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 125px;
+    width: 20%;
+    float: right;
+    margin-right: 5%;
+    border: 2px solid #261663;
+    padding-top: 10px;
+    font-size: 20px;
+    color: #F1C40F;
+    background-color: #91508cc4;
+    border-radius: 50%;
+     animation: rotate-scale-up 0.65s linear both;
+}
+
+@keyframes h3 {
+  0% {
+            transform: scale(1)rotateZ(0);
+            transform: scale(1) rotateZ(0);
+    }
+  50% {
+            transform: scale(2) rotateZ(180deg);
+            transform: scale(2) rotateZ(180deg);
+    }
+  100% {
+            transform: scale(1) rotateZ(360deg);
+            transform: scale(1) rotateZ(360deg);
+  }
+}
+
+@keyframes rotate-scale-up {
+  0% {
+    transform: scale(1) rotateZ(0);
+            transform: scale(1) rotateZ(0);
+  }
+  50% {
+    transform: scale(2) rotateZ(180deg);
+            transform: scale(2) rotateZ(180deg);
+  }
+  100% {
+    transform: scale(1) rotateZ(360deg);
+            transform: scale(1) rotateZ(360deg);
+  }
+}
+
+.solve-btn {
+  display: inline;
+  width: 15%;
+  height: 40px;
+  margin: 0% 1% 0% 5%;
+  border: 0;
+  line-height: 2.5;
+  padding: 0px 10px;
+  font-size: 15px;
   text-align: center;
-  padding-top: 10px;
-  font-size: 26px;
-  color: $main-logo;
-  background-color: #91508cc4;
+  color: $border;
+  background-color: $main-logo;
+  border-radius: 8px;
+  background-image: linear-gradient(to top left,
+  rgba(0, 0, 0, .2),
+  rgba(0, 0, 0, .2) 30%,
+  rgba(0, 0, 0, 0));
+  box-shadow: inset 2px 2px 3px rgba(255, 255, 255, .6),
+              inset -2px -2px 3px rgba(0, 0, 0, .6);
+}
+
+.solve-puzzle-input {
+  width: 39%;
+  height: 25px;
+  margin: 10px 5%;
 }
 
 .player-container {
