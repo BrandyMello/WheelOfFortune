@@ -8,7 +8,7 @@ import $ from 'jquery';
 import './css/base.scss';
 
 // An example of how you tell webpack to use an image (also need to link to it in the index.html)
-import './images/turing-logo.png'
+// import './images/turing-logo.png'
 
 import Game from './Game';
 
@@ -46,8 +46,8 @@ $(document).ready(function () {
 });
  
 
-let consonants = ['b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'v', 'w', 'x', 'y', 'z']
-let vowels = ['a', 'e', 'i', 'o', 'u']
+let consonants = ['B', 'C', 'D', 'F', 'G', 'H', 'J', 'K', 'L', 'M', 'N', 'P', 'Q', 'R', 'S', 'T', 'V', 'W', 'X', 'Y', 'Z']
+let vowels = ['A', 'E', 'I', 'O', 'U']
 const consonantDiv = $('.consonant-div')
 const vowelDiv = $('.vowel-div')
 

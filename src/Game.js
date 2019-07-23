@@ -1,7 +1,7 @@
 // import data from './data';
 import Player from './Player';
 import Round from './Round';
-import dom from './domUpdates.js'
+import domUpdates from './domUpdates.js'
 
 
 class Game {
@@ -16,7 +16,8 @@ class Game {
     this.nextPlayer = this.player1;
     this.puzzleBank = [];
     this.currentPuzzle;
-    this.puzzleSlayer = null;
+    this.winner = null;
+    // this.roundInstance = new Round()
   }
 
   startGame() {
@@ -32,11 +33,11 @@ class Game {
 
   startNewRound() {
     if(this.roundCounter === 4) {
-       this.puzzleSlayer()
+       this.winner()
     } else {
       this.roundCounter ++;
       this.choosePuzzle();
-      this.round = new Round(this.data, this.players, this.currentPuzzle, this.nextPlayer);
+      this.round = new Round(this.data, this.players, this.currentPuzzle, this.nextPlayer, this);
       // this.round.makeNewWheel();
     }
   }
@@ -60,7 +61,7 @@ class Game {
     this.currentPlayer = this.round.findCurrentPlayer(this.nextPlayer)
   }
 
-  puzzleSlayer() {
+  winner() {
     var organize = players.sort((a,b) => {
        return b.grandTotal - a.grandTotal
     })

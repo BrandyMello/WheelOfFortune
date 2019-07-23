@@ -1,47 +1,192 @@
-/* This is an example of using Sass, otherwise plain CSS works too*/
 $primary-background: lavender;
+$main-logo: #F1C40F;
+$border: #261663;
 
 body {
-  background-color: $primary-background;
+  // background-color: $primary-background;
+  // background-image: url('images/palm2.png');
+  background-color: pink;
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.display-board {
+  display: inline-block;
+}
+
+h1 {
+  text-align: center;
+  color: $main-logo;
+  font-family: Arial, Helvetica, sans-serif;
+
+}
+
+.start-game-btn {
+  display: block;
+  margin: 10px 50px;
 }
 
 table {
-  width:100%;
-  background-color:green;
+  width: 80%;
+  margin: 0% 10%;
+  background-color: green;
   border: 2px solid black;
-  
-    tr {
+
+  tr {
     border: 2px solid black;
-    }
-    td {
+  }
+
+  td {
     border: 2px solid black;
-    width:50px;
-    height:50px;
-    }
-      .puzzle-display {
-        background-color: white;
-        text-align: center;
-      }
-    // .hide-letter {
-    //   color: white;
-    // }
+    width: 50px;
+    height: 50px;
+  }
+
+  .puzzle-display {
+    background-color: white;
+    color: white;
+    text-align: center;
+  }
+
+  .display-letter {
+    color: black;
+    transition: transform 4s;
+    transform-style: preserve-3d;
+    transform: rotateX(360deg);
+  }
 }
 
 h2 {
-  border: 2px solid black;
-  height:50px;
-  margin-left: 13%;
+  height: 25px;
+  margin: 1% 0% 1% 13%;
+  ;
   text-align: center;
-  width:74%;
+  width: 74%;
+  color: $main-logo;
+}
+
+h3 {
+  text-align: center;
+  margin: 10% 1%;
+  height: 400px;
+  font-weight: bold;
+  font-size: 70px;
+  color: $main-logo;
+  animation: rotate-scale-up 0.65s linear both;
+}
+
+@keyframes h3 {
+  0% {
+    transform: scale(1)rotateZ(0);
+    transform: scale(1) rotateZ(0);
+  }
+
+  50% {
+    transform: scale(2) rotateZ(180deg);
+    transform: scale(2) rotateZ(180deg);
+  }
+
+  100% {
+    transform: scale(1) rotateZ(360deg);
+    transform: scale(1) rotateZ(360deg);
+  }
+}
+
+@keyframes rotate-scale-up {
+  0% {
+    transform: scale(1) rotateZ(0);
+    transform: scale(1) rotateZ(0);
+  }
+
+  50% {
+    transform: scale(2) rotateZ(180deg);
+    transform: scale(2) rotateZ(180deg);
+  }
+
+  100% {
+    transform: scale(1) rotateZ(360deg);
+    transform: scale(1) rotateZ(360deg);
+  }
+}
+
+.splash-intake {
+  display: flex;
+  margin-top: 50px;
+  justify-content: center;
+  width: 100%;
+}
+
+.initial-intake {
+  width: 50%;
+  background-color: #91508cc4;
+
+  p {
+    margin: 13% 30%;
+    text-align: center;
+    color: $main-logo;
+  }
+}
+
+.splash-input {
+  margin: 5px;
+  text-align: center;
+}
+
+.start-game-btn {
+  width: 37%;
+  height: 50px;
+  margin: 3% 32%;
+  border: 0;
+  line-height: 2.5;
+  padding: 0 20px;
+  font-size: 15px;
+  text-align: center;
+  color: #fff;
+  text-shadow: 1px 1px 1px #000;
+  background-color: $main-logo;
+  border-radius: 8px;
+  background-image: linear-gradient(to top left,
+      rgba(0, 0, 0, .2),
+      rgba(0, 0, 0, .2) 30%,
+      rgba(0, 0, 0, 0));
+  box-shadow: inset 2px 2px 3px rgba(255, 255, 255, .6),
+    inset -2px -2px 3px rgba(0, 0, 0, .6);
 }
 
 .row-no-block {
   // background-color: white;
   border: none;
+  opacity: 0.1;
 }
 
 .current-player-name {
   font-weight: bold;
+}
+
+.alphabet {
+  width: 50px;
+  height: 50px;
+  margin: 10px 2px;
+  font-size: 20px;
+}
+
+.consonants {
+  width: 70%;
+  padding: 5px;
+}
+
+.vowels {
+  display: inline-block;
+  padding: 5px;
+}
+
+.vowel-info {
+  display: inline-block;
+  color: $main-logo;
+  background-color: #91508cc4;
+  margin: 0;
+  padding: 13px;
 }
 
 text {
@@ -61,7 +206,7 @@ text {
 #question {
   position: absolute;
   width: 400px;
-  height: 500px;
+  height: 400px;
   top: 0;
   left: 520px;
 }
@@ -76,4 +221,56 @@ text {
   top: 50%;
   -webkit-transform: translate(0, -50%);
   transform: translate(0, -50%);
+}
+
+.game-info {
+  display: flex;
+  justify-content: space-between;
+  margin: 1% 13%;
+  padding: 10px;
+  color: $main-logo;
+  background-color: #91508cc4;
+}
+
+.spin-wheel-btn {
+  width: 20%;
+  height: 50px;
+  margin: 0% 0%;
+  border: 0;
+  line-height: 2.5;
+  padding: 0px 10px;
+  font-size: 15px;
+  text-align: center;
+  color: $border;
+  background-color: $main-logo;
+  border-radius: 8px;
+  background-image: linear-gradient(to top left,
+      rgba(0, 0, 0, .2),
+      rgba(0, 0, 0, .2) 30%,
+      rgba(0, 0, 0, 0));
+  box-shadow: inset 2px 2px 3px rgba(255, 255, 255, .6),
+    inset -2px -2px 3px rgba(0, 0, 0, .6);
+}
+
+.div-wheel-prize-display {
+  height: 125px;
+  width: 20%;
+  float: right;
+  margin-right: 5%;
+  border: 2px solid $border;
+  text-align: center;
+  padding-top: 10px;
+  font-size: 26px;
+  color: $main-logo;
+  background-color: #91508cc4;
+}
+
+.player-container {
+  display: flex;
+  justify-content: space-between;
+  background-color: #91508cc4;
+  border-top: 2px solid $border;
+  color: $main-logo;
+  ;
+
 }

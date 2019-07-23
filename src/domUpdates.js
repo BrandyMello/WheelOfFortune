@@ -1,9 +1,7 @@
 import $ from 'jquery';
 import {scaleLinear} from "d3-scale";
 
-
 const domUpdates = {
-
  appendPlayers(game, p1, p2, p3) {
     $('.p1-name').append(p1);
     $('.p1-round-score').append(game.players[0].roundScore);
@@ -25,8 +23,13 @@ const domUpdates = {
   },
 
   appendCurrentPlayerName(game) {
-    $('.current-player-name').append(game.nextPlayer.name);
+    $('.current-player-name').text(game.round.currentPlayer.name);
   },
+
+  appendNextPlayerName(playerName) {
+      $('.current-player-name').text(playerName);
+  },
+
 
   appendPuzzle(game) {
     let puzzleAnswer = game.currentPuzzle.correct_answer.toUpperCase().split('');
@@ -69,7 +72,7 @@ const domUpdates = {
   }
 }
   
-  function makeDomWheel(data, game) {
+function makeDomWheel(data, game) {
 var padding = {
         top: 20,
         right: 40,
@@ -130,16 +133,16 @@ arcs.append("text").attr("transform", function (d) {
     });
 container.on("click", spin);
 
-function spin(d) {
+function spin() {
 
     container.on("click", null);
     //all slices have been seen, all done
     console.log("OldPick: " + oldpick.length, "Data length: " + data.length);
-    if (oldpick.length == data.length) {
-        console.log("done");
-        container.on("click", null);
-        return;
-    }
+    // if (oldpick.length == data.length) {
+    //     console.log("done");
+    //     container.on("click", null);
+    //     return;
+    // }
     var ps = 360 / data.length,
         pieslice = Math.round(1440 / data.length),
         rng = Math.floor((Math.random() * 1440) + 360);
@@ -169,7 +172,7 @@ function spin(d) {
 
             /* Get the result value from object "data" */
             game.round.spinWheel(data[picked].value)
-            // console.log(data[picked].value)
+            console.log(data[picked].value)
 
             /* Comment the below line for restrict spin to sngle time */
             container.on("click", spin);
