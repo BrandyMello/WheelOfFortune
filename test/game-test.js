@@ -4,7 +4,6 @@ import Game from '../src/Game';
 import data from '../src/data';
 import Player from '../src/Player';
 import Round from '../src/Round';
-// import Wheel from '../src/Wheel';
 
 
 const expect = chai.expect;
