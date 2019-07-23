@@ -30,7 +30,7 @@ const domUpdates = {
 
   appendPuzzle(game) {
     let puzzleAnswer = game.currentPuzzle.correct_answer.toUpperCase().split('');
-    let displayPuzzleAnswer = puzzleAnswer.map((letter, index) => {
+    puzzleAnswer.map((letter, index) => {
       if (letter !== " ") {
         $(`.letter-${index}`).html(puzzleAnswer[`${index}`]).addClass(`puzzle-display puzzle-display-${letter}`);
         console.log("letter in puzzle", letter)
@@ -56,8 +56,8 @@ const domUpdates = {
       game.round.checkPlayerGuess(guessedLetter);
   },
 
-  appendLetter(approvedLetter) {
-      $(`.puzzle-display-${approvedLetter}`).addClass(`puzzle-display puzzle-display-${approvedLetter} display-letter`).fadeIn(500);
+  appendLetter(correctGuess) {
+      $(`.puzzle-display-${correctGuess}`).addClass(`puzzle-display puzzle-display-${correctGuess} display-letter`).fadeIn(500);
   }
 }
   
