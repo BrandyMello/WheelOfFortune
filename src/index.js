@@ -74,11 +74,14 @@ $('.start-game-btn').click((e) => {
   dom.appendCurrentPlayerName(game);
   dom.appendWheelPrizes(game);
   dom.reappearAlphabet();
+  dom.disableAlphabet();
 })
 
 $(document).ready(function() {
   $('.spin-wheel-btn').on('click', function () {
     dom.showWheelPrize(game);
+    
+    dom.enableConsonant();
   });
 
   $('.alphabet').on('click', function(e) {
