@@ -36,6 +36,7 @@ $('.startGameBtn').click((e) => {
   domUpdates.appendCategory(game);
   domUpdates.appendCurrentPlayerName(game);
   domUpdates.appendWheelPrizes(game);
+  domUpdates.reappearAlphabet();
   consonantButtons(game);
   vowelButtons(game);
 })

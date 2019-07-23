@@ -56,6 +56,14 @@ const domUpdates = {
       game.round.checkPlayerGuess(guessedLetter);
   },
 
+  reappearAlphabet() {
+    $('.alphabet').fadeIn(1000).css({
+        'transition': 'transform 4s',
+        'transform- style': 'preserve - 3d',
+        'transform': 'rotateX(360deg)'
+    })
+  },
+
   appendLetter(correctGuess) {
       $(`.puzzle-display-${correctGuess}`).addClass(`puzzle-display puzzle-display-${correctGuess} display-letter`).fadeIn(500);
   }
