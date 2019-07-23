@@ -100,8 +100,12 @@ import {scaleLinear} from "d3-scale";
     $('.alphabet').attr("disabled", true);
   },
 
-  enableAlphabet() {
-    $('.alphabet').removeAttr("disabled");
+  enableConsonant() {
+    $('.consonant').removeAttr("disabled");
+  },
+
+  enableCVowel() {
+    $('.vowel').removeAttr("disabled");
   }
 
 }   

@@ -43,6 +43,7 @@ class Round {
     this.wheelPrize = randomPrize;
     if (this.wheelPrize === "BANKRUPT" || this.wheelPrize === "LOSE A TURN") {
       this.findNextPlayer();
+      dom.disableAlphabet();
       dom.appendNextPlayerName(this.currentPlayer); 
       // dom.disableAlphabet()
     }
