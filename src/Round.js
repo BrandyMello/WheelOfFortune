@@ -26,14 +26,11 @@ class Round {
    console.log('Player switch', this.currentPlayer);
   }
 
- spinWheel() {
-  this.chooseWheelPrize();
-  if (this.wheelPrize === "BANKRUPT" || "LOSE A TURN") {
-    dom.disableAlphabet()
-  // this.findNextPlayer();
-  // } 
-  }
- }
+ // spinWheel() {
+ //  this.chooseWheelPrize();
+ //  console.log("YoWheelPrize", this.wheelPrize)
+  
+ // }
 
   makeNewWheel() {
     let wheel = new Wheel(this.data);
@@ -44,7 +41,11 @@ class Round {
     let randomIndex = Math.floor(Math.random() * Math.floor(6));
     let randomPrize = this.currentRoundWheel[randomIndex]
     this.wheelPrize = randomPrize;
-    return this.wheelPrize;
+    if (this.wheelPrize === "BANKRUPT" || this.wheelPrze === "LOSE A TURN") {
+    // dom.disableAlphabet()
+  this.findNextPlayer();
+  dom.appendNextPlayerName(this.currentPlayer); 
+    }
   }
 
   checkPlayerGuess(guess, game) {
@@ -59,14 +60,11 @@ class Round {
        dom.appendLetter(letter);
        
        console.log("letterCounter", letterCounter)
-        console.log("this.player", this.currentPlayer);
-        console.log("arrayOPlayers", this.players);
+  
       })
       this.currentPlayer.roundScore += this.wheelPrize * letterCounter;
       dom.updateScore(this.currentPlayer, this.players);
-       console.log("letters Remaining", this.lettersRemaining)
       return this.lettersRemaining
-      console.log("letters Remaining", this.lettersRemaining)
     };
 
     //I think there is a loop happening here because it appears to me that the lettersRemaining is being reassigned to the entire puzzle answer everytime this method is called. 

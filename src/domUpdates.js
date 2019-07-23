@@ -29,6 +29,11 @@ import {scaleLinear} from "d3-scale";
     $('.current-player-name').append(game.nextPlayer.name);
   },
 
+  appendNextPlayerName(currentPlayer) {
+    $('.current-player-name').empty();
+    $('.current-player-name').append(currentPlayer.name);
+  },
+
   appendPuzzle(game) {
     let puzzleAnswer = game.currentPuzzle.correct_answer.toUpperCase().split('');
     let displayPuzzleAnswer = puzzleAnswer.map((letter, index) => {
@@ -79,17 +84,15 @@ import {scaleLinear} from "d3-scale";
   },
 
   updateScore(player, playersList) {
-    console.log("INSIDE", player);
-    console.log("INSIDE_NAME", player.name);
-    console.log("INSIDE2", playersList); 
-    console.log("INSIDE2_index", playersList[0]['name']);
     if(player.name === playersList[0].name){
       $('.p1-round-score-span').empty();
       $('.p1-round-score-span').append(player.roundScore);
-    } else if(player.name === playersList[1]) {
-      $('.p2-round-score').append(player.roundScore);
-    } else if(player.name === playersList[2]) {
-      $('.p3-round-score').append(player.roundScore);
+    } else if(player.name === playersList[1].name) {
+      $('.p2-round-score-span').empty();
+      $('.p2-round-score-span').append(player.roundScore);
+    } else if(player.name === playersList[2].name) {
+      $('.p3-round-score-span').empty();
+      $('.p3-round-score-span').append(player.roundScore);
     }
   },
  

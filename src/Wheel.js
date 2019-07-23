@@ -6,9 +6,9 @@ class Wheel {
   }
 
  generateCurrentWheel() {
-      let max = this.wheelData.length - 6;
+      let max = this.wheelData.length - 8;
       let randomIndex = Math.floor(Math.random() * Math.floor(max));
-      let randomWheel = (this.wheelData.slice(randomIndex,randomIndex + 6))
+      let randomWheel = (this.wheelData.slice(randomIndex,randomIndex + 8))
       this.currentWheel = randomWheel;
       return this.currentWheel;   
   }
