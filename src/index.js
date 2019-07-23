@@ -17,13 +17,15 @@ import domUpdates from './domUpdates.js'
 
 let game; 
 let data;
-   
+let startButton = $('.startGameBtn');
+startButton.prop('disabled', false)
+
 fetch("https://fe-apps.herokuapp.com/api/v1/gametime/1903/wheel-of-fortune/data")
  .then(response => response.json())
  .then(remoteData => data = remoteData.data)
  .catch(error => console.log(error));
 
-$('.startGameBtn').click((e) => {
+startButton.click((e) => {
   e.preventDefault();
   let player1 = $('.player1-name').val();
   let player2 = $('.player2-name').val();
@@ -52,6 +54,7 @@ const consonantDiv = $('.consonant-div')
 const vowelDiv = $('.vowel-div')
 
 function consonantButtons(game) {
+  startButton.prop('disabled', true)
   consonants.forEach(letter => {
       var button = $('<button/>', {
         text: letter,
@@ -62,7 +65,6 @@ function consonantButtons(game) {
         }
       });
       consonantDiv.append(button);
-      console.log(button)
   })
 }
 

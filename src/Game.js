@@ -17,7 +17,6 @@ class Game {
     this.puzzleBank = [];
     this.currentPuzzle;
     this.winner = null;
-    // this.roundInstance = new Round()
   }
 
   startGame() {
@@ -38,7 +37,6 @@ class Game {
       this.roundCounter ++;
       this.choosePuzzle();
       this.round = new Round(this.data, this.players, this.currentPuzzle, this.nextPlayer, this);
-      // this.round.makeNewWheel();
     }
   }
 

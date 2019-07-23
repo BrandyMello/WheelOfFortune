@@ -4,14 +4,14 @@ import {scaleLinear} from "d3-scale";
 const domUpdates = {
  appendPlayers(game, p1, p2, p3) {
     $('.p1-name').append(p1);
-    $('.p1-round-score').append(game.players[0].roundScore);
-    $('.p1-grand-total').append(game.players[0].grandTotal);
+    // $('.p1-round-score').append(game.players[0].roundScore);
+    // $('.p1-grand-total').append(game.players[0].grandTotal);
     $('.p2-name').append(p2);
-    $('.p2-round-score').append(game.players[1].roundScore);
-    $('.p2-grand-total').append(game.players[1].grandTotal);
+    // $('.p2-round-score').append(game.players[1].roundScore);
+    // $('.p2-grand-total').append(game.players[1].grandTotal);
     $('.p3-name').append(p3);
-    $('.p3-round-score').append(game.players[2].roundScore);
-    $('.p3-grand-total').append(game.players[2].grandTotal)
+    // $('.p3-round-score').append(game.players[2].roundScore);
+    // $('.p3-grand-total').append(game.players[2].grandTotal)
   },
 
   appendRoundNumber(game) {
@@ -43,7 +43,6 @@ const domUpdates = {
 
   appendWheelPrizes(game) {
     let newWheel = game.round.currentRoundWheel;
-    console.log("newWheel", newWheel)
     makeDomWheel(newWheel, game);
   },
 
@@ -56,7 +55,6 @@ const domUpdates = {
               'transform- style': 'preserve - 3d',
               'transform': 'rotateX(90deg)'
           }).fadeOut(500);
-      game.round.checkPlayerGuess(guessedLetter);
   },
 
   reappearAlphabet() {
@@ -69,6 +67,16 @@ const domUpdates = {
 
   appendLetter(correctGuess) {
       $(`.puzzle-display-${correctGuess}`).addClass(`puzzle-display puzzle-display-${correctGuess} display-letter`).fadeIn(500);
+  },
+
+  appendScore(allPlayers, currentPlayer) {
+    const playerToUpdateIndex = allPlayers.indexOf(currentPlayer) 
+    let newScore = currentPlayer.roundScore
+    $(`.p${playerToUpdateIndex + 1}-round-score`).text(newScore)
+  },
+
+  gameMessage(message) {
+    $('.message').text(message)
   }
 }
   
@@ -89,7 +97,6 @@ var padding = {
     color = d3.scaleLinear().domain([1, 6])
       .range(["#754CD0", "#F97267"])
 
-console.log("inside", data)
 var svg = d3.select('#chart')
     .append("svg")
     .data([data])
@@ -137,12 +144,11 @@ function spin() {
 
     container.on("click", null);
     //all slices have been seen, all done
-    console.log("OldPick: " + oldpick.length, "Data length: " + data.length);
-    // if (oldpick.length == data.length) {
-    //     console.log("done");
-    //     container.on("click", null);
-    //     return;
-    // }
+    if (oldpick.length == 25) {
+        console.log("done");
+        container.on("click", null);
+        return;
+    }
     var ps = 360 / data.length,
         pieslice = Math.round(1440 / data.length),
         rng = Math.floor((Math.random() * 1440) + 360);

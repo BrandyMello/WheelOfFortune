@@ -38,9 +38,9 @@ describe('Turn', function () {
         expect(turn.findRemainingLetters('beepers')).to.eql(['b', 'e', 'e', 'p', 'e', 'r', 's'])
     })
 
-    it('should check to see if a guess is included in the puzzle', () => {
-        expect(turn.checkPlayerGuess('b', 600)).to.eql(false)
-    });
+    // it('should check to see if a guess is included in the puzzle', () => {
+    //     // expect(turn.checkPlayerGuess('b', 600)).to.eql(false)
+    // });
 
     it('should be able to check to see if a player can afford a vowel', () => {
         expect(turn.canPlayerAffordVowel()).to.be.eql(false);

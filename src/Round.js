@@ -7,7 +7,6 @@ import domUpdates from './domUpdates';
 class Round {
   constructor(data, playersList, currentPuzzle, currentPlayer, game) {
     this.data = data;
-    console.log("data", this.data)
     this.players = playersList;  
     this.puzzle = currentPuzzle;
     this.currentPlayer = currentPlayer;
@@ -18,7 +17,31 @@ class Round {
     this.game = game;
   }
 
-  findNextPlayer(game) {
+  makeNewWheel() {
+    let wheel = new Wheel(this.data);
+    return wheel.generateCurrentWheel();
+  }
+
+  spinWheel(value) {
+    if (value === "BANKRUPT" || value === "LOSE A TURN") {
+      this.findNextPlayer();
+    } else {
+      this.wheelPrize = value;
+    }
+  }
+
+  checkPlayerGuess(guess) {
+      let puzzleAnswer = this.puzzle['correct_answer'];
+      this.lettersRemaining = puzzleAnswer.toUpperCase().split('')
+        if (this.lettersRemaining.includes(guess)) {
+          domUpdates.appendLetter(guess)
+          this.updateScore()
+        } 
+        this.findNextPlayer();
+  }
+
+
+  findNextPlayer() {
     if (this.players.length === 3) {
       switch (this.currentPlayer) {
         case this.players[0]:
@@ -27,49 +50,23 @@ class Round {
           break;
         case this.players[1]:
           this.currentPlayer = this.players[2]
-          domUpdates.appendNextPlayerName(game.players[this.currentPlayer])
+          domUpdates.appendNextPlayerName(this.players[2].name)
           break;
         case this.players[2]:
           this.currentPlayer = this.players[0]
-          domUpdates.appendNextPlayerName(game.players[this.currentPlayer])
+          domUpdates.appendNextPlayerName(this.players[0].name)
           break;
         default:
-         return;
+          return;
       }
-  }
+    }
 }
 
-spinWheel(value) {
-  this.wheelPrize = value;
-  console.log(this.wheelPrize)
-  if (this.wheelPrize === "BANKRUPT" || this.wheelPrize === "LOSE A TURN") {
-    this.findNextPlayer(this.game);
-  } 
-}
-
-  makeNewWheel() {
-    let wheel = new Wheel(this.data);
-    return wheel.generateCurrentWheel();
-  } 
-  
-  getAnswer(currentPuzzle) {
-   this.lettersRemaining = currentPuzzle.correct_answer.split('')
-   return this.lettersRemaining;
+  updateScore() {
+    let winnings = this.currentPlayer.roundScore += this.wheelPrize
+    domUpdates.appendScore(this.players, this.currentPlayer)
   }
-  checkPlayerGuess(guess, game) {
-      let puzzleAnswer = this.puzzle['correct_answer'];
-      if (this.wheelPrize === "BANKRUPT" || "LOSE A TURN") {
-        this.findNextPlayer(game);
-      } else {
-      this.lettersRemaining = puzzleAnswer.toUpperCase().split('').filter(letter => {
-        if (letter !== guess) {
-          return letter
-        } 
-          domUpdates.appendLetter(letter);
-          // domUpdates.updateScore(this.currentPlayer);
-        })
-}
-}
+
 }
 
 export default Round;
