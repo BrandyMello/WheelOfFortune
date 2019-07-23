@@ -42,18 +42,22 @@ class Round {
    this.lettersRemaining = currentPuzzle.correct_answer.split('')
    return this.lettersRemaining;
   }
-  
-  checkPlayerGuess(guess) {
-  let matchingLetters = this.lettersRemaining.find(letter => letter === guess)
-  return this.lettersRemaining.filter(letter => letter !== matchingLetters);
+  checkPlayerGuess(guess, game) {
+      let puzzleAnswer = this.puzzle['correct_answer'];
+      let letterCounter = 0;
+      this.lettersRemaining = puzzleAnswer.toUpperCase().split('').filter(letter => {
+        if (letter !== guess) {
+          return letter
+        } else {
+          letterCounter++
+          if (this.wheelPrize !== "BANKRUPT" || "LOSE A TURN") {
+            this.currentPlayer.roundScore = this.wheelPrize * letterCounter;
+          }
+          domUpdates.appendLetter(letter);
+          // domUpdates.updateScore(this.currentPlayer);
+        }
+      })
 }
-
-//   canPlayerAffordVowel() {
-//   if (this.potentialEarnings >=100) {
-//    ////The player can not use the potential earning ie” wheelPrize because they have not “won” it yet. To buy a vowel they must spend from their player.roundScore///
-//    this.canAffordVowel = true
-//  }
 }
 
 export default Round;
-

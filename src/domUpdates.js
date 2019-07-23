@@ -2,7 +2,7 @@ import $ from 'jquery';
 import {scaleLinear} from "d3-scale";
 
 
-export default {
+const domUpdates = {
 
  appendPlayers(game, p1, p2, p3) {
     $('.p1-name').append(p1);
@@ -32,7 +32,8 @@ export default {
     let puzzleAnswer = game.currentPuzzle.correct_answer.toUpperCase().split('');
     let displayPuzzleAnswer = puzzleAnswer.map((letter, index) => {
       if (letter !== " ") {
-        $(`.letter-${index}`).html(puzzleAnswer[`${index}`]).addClass('puzzle-display');
+        $(`.letter-${index}`).html(puzzleAnswer[`${index}`]).addClass(`puzzle-display puzzle-display-${letter}`);
+        console.log("letter in puzzle", letter)
       }
     })
   }, 
@@ -41,13 +42,26 @@ export default {
     let newWheel = game.round.currentRoundWheel;
     console.log("newWheel", newWheel)
     makeDomWheel(newWheel, game);
+  },
+
+  disappearButton(letter, game) {
+      let guessedLetter = $(letter).text();
+      console.log("targetLetter", guessedLetter)
+      $(letter).closest('button')
+          .css({
+              'transition': 'transform 4s',
+              'transform- style': 'preserve - 3d',
+              'transform': 'rotateX(90deg)'
+          }).fadeOut(500);
+      game.round.checkPlayerGuess(guessedLetter);
+  },
+
+  appendLetter(approvedLetter) {
+      $(`.puzzle-display-${approvedLetter}`).addClass(`puzzle-display puzzle-display-${approvedLetter} display-letter`).fadeIn(500);
   }
 }
   
   function makeDomWheel(data, game) {
-
-
-
 var padding = {
         top: 20,
         right: 40,
@@ -207,6 +221,7 @@ function getRandomNumbers() {
   }
 }
 
+export default domUpdates;
 
  //category20c()
 //randomNumbers = getRandomNumbers();
