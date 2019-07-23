@@ -1,7 +1,7 @@
 /* This is an example of using Sass, otherwise plain CSS works too*/
-$primary-background: lavender;
 $main-logo: #F1C40F;
-$border: #261663;
+$border: #261663; 
+$primary-color: #91508cc4; 
 
 body {
   // background-color: $primary-background;
@@ -19,29 +19,28 @@ body {
 }
 
 h1 {
-  text-align:center;
   color: $main-logo;
-  font-family: SF Fortune Wheel;
-
+  text-align:center;
 }
+
 .start-game-btn {
   display:block;
   margin: 10px 50px;
 }
 
 table {
-  width: 80%;
-  margin:0% 10%;
   background-color:green;
   border: 2px solid black;
+  margin:0% 10%;
+  width: 80%;
   
     tr {
     border: 2px solid black;
     }
     td {
     border: 2px solid black;
-    width:50px;
     height:50px;
+    width:50px;
     }
       .puzzle-display {
         background-color: white;
@@ -57,21 +56,21 @@ table {
 }
 
 h2 {
+  color: $main-logo;
   height: 25px;
   margin: 1% 0% 1% 13%;;
   text-align: center;
   width: 74%;
-  color: $main-logo;
 }
 
 h3 {
-  text-align: center;
-  margin: 10% 1%;
-  height:400px;
-  font-weight: bold;
-  font-size: 70px;
-  color: $main-logo; 
   animation: rotate-scale-up 0.65s linear both;
+  color: $main-logo; 
+  font-size: 70px;
+  font-weight: bold;
+  height:400px;
+  margin: 10% 1%;
+  text-align: center;
 }
 
 @keyframes h3 {
@@ -105,18 +104,18 @@ h3 {
 }
 .splash-intake {
   display: flex;
-  margin-top: 50px;
   justify-content: center;
+  margin-top: 50px;
   width: 100%;
 }
 
 .initial-intake {
+  background-color: $primary-color;
   width: 50%;
-  background-color: #91508cc4;
     p {
+    color: $main-logo;
     margin: 13% 30%;
     text-align: center;
-    color: $main-logo;
     }
 }
 
@@ -157,15 +156,15 @@ h3 {
 }
 
 .alphabet {
-  width: 50px;
+  font-size: 20px;
   height: 50px;
   margin: 10px 2px;
-  font-size: 20px;
+  width: 50px;
 }
 
 .consonants {
-  width:70%;
   padding: 5px;
+  width:70%;
 }
 
 .vowels {
@@ -174,9 +173,9 @@ h3 {
 }
 
 .vowel-info {
-  display: inline-block;
+  background-color: $primary-color;
   color: $main-logo;
-  background-color: #91508cc4;
+  display: inline-block;
   margin: 0;
   padding: 13px;
 }
@@ -188,19 +187,19 @@ text {
 }
 
 #chart {
-  position: relative;
-  width: 500px;
   height: 500px;
-  top: 0;
   left: 0;
+  position: relative;
+  top: 0;
+  width: 500px;
 }
 
 #question {
-  position: absolute;
-  width: 400px;
   height: 400px;
-  top: 0;
   left: 520px;
+  position: absolute;
+  top: 0;
+  width: 400px;
 }
 
 #question h1 {
@@ -216,26 +215,26 @@ text {
 }
 
 .game-info {
+  background-color: $primary-color;
+  color: $main-logo;
   display: flex;
   justify-content: space-between;
   margin: 1% 13%;
   padding: 10px;
-  color: $main-logo;
-  background-color: #91508cc4;
 }
 
 .spin-wheel-btn {
-  width: 20%;
-  height: 50px;
-  margin: 0% 0%;
-  border: 0;
-  line-height: 2.5;
-  padding: 0px 10px;
-  font-size: 15px;
-  text-align: center;
-  color: $border;
   background-color: $main-logo;
   border-radius: 8px;
+  border: 0;
+  color: $border;
+  font-size: 15px;
+  height: 50px;
+  line-height: 2.5;
+  margin: 0% 0%;
+  padding: 0px 10px;
+  text-align: center;
+  width: 20%;
   background-image: linear-gradient(to top left,
   rgba(0, 0, 0, .2),
   rgba(0, 0, 0, .2) 30%,
@@ -245,23 +244,92 @@ text {
   }
 
 .div-wheel-prize-display {
-  height: 125px;
-  width: 20%;
-  float:right;
-  margin-right: 5%;
-  border: 2px solid $border;
+    animation: rotate-scale-up 0.65s linear both;
+    align-items: center;
+    background-color: $primary-color;
+    border-radius: 50%;
+    border: 2px solid $border;
+    color: $main-logo;
+    display: flex;
+    float: right;
+    font-size: 20px;
+    height: 150px;
+    justify-content: space-around;
+    margin-right: 10%;
+    padding-top: 10px;
+    width: 150px;
+}
+
+@keyframes h3 {
+  0% {
+            transform: scale(1)rotateZ(0);
+            transform: scale(1) rotateZ(0);
+    }
+  50% {
+            transform: scale(2) rotateZ(180deg);
+            transform: scale(2) rotateZ(180deg);
+    }
+  100% {
+            transform: scale(1) rotateZ(360deg);
+            transform: scale(1) rotateZ(360deg);
+  }
+}
+
+@keyframes rotate-scale-up {
+  0% {
+    transform: scale(1) rotateZ(0);
+            transform: scale(1) rotateZ(0);
+  }
+  50% {
+    transform: scale(2) rotateZ(180deg);
+            transform: scale(2) rotateZ(180deg);
+  }
+  100% {
+    transform: scale(1) rotateZ(360deg);
+            transform: scale(1) rotateZ(360deg);
+  }
+}
+
+.solve-btn {
+  background-color: $main-logo;
+  border-radius: 8px;
+  border: 0;
+  color: $border;
+  display: inline;
+  font-size: 15px;
+  height: 40px;
+  line-height: 2.5;
+  margin: 0% 1% 0% 5%;
+  padding: 0px 10px;
   text-align: center;
-  padding-top: 10px;
-  font-size: 26px;
-  color: $main-logo;
-  background-color: #91508cc4;
+  width: 15%;
+  background-image: linear-gradient(to top left,
+  rgba(0, 0, 0, .2),
+  rgba(0, 0, 0, .2) 30%,
+  rgba(0, 0, 0, 0));
+  box-shadow: inset 2px 2px 3px rgba(255, 255, 255, .6),
+              inset -2px -2px 3px rgba(0, 0, 0, .6);
+}
+
+.solve-puzzle-input {
+  height: 25px;
+  margin: 10px 5%;
+  width: 39%;
 }
 
 .player-container {
-  display:flex;
-  justify-content: space-between;
-  background-color: #91508cc4;
+  background-color: $primary-color;
   border-top: 2px solid $border;
   color: $main-logo;;
-
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+    
+    .player1, 
+    .player2,
+    .player3 {
+      border-right: 2px solid $border;
+      width: 33%;
+      text-align: center;
+    }
 }

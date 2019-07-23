@@ -26,12 +26,11 @@ class Round {
    console.log('Player switch', this.currentPlayer);
   }
 
- spinWheel() {
-  this.chooseWheelPrize();
-  // if (this.wheelPrize === "BANKRUPT" || "LOSE A TURN") {
-  // this.findNextPlayer();
-  // } 
- }
+ // spinWheel() {
+ //  this.chooseWheelPrize();
+ //  console.log("YoWheelPrize", this.wheelPrize)
+  
+ // }
 
   makeNewWheel() {
     let wheel = new Wheel(this.data);
@@ -42,7 +41,11 @@ class Round {
     let randomIndex = Math.floor(Math.random() * Math.floor(6));
     let randomPrize = this.currentRoundWheel[randomIndex]
     this.wheelPrize = randomPrize;
-    return this.wheelPrize;
+    if (this.wheelPrize === "BANKRUPT" || this.wheelPrize === "LOSE A TURN") {
+      this.findNextPlayer();
+      dom.appendNextPlayerName(this.currentPlayer); 
+      // dom.disableAlphabet()
+    }
   }
 
   checkPlayerGuess(guess, game) {
@@ -53,19 +56,24 @@ class Round {
         return letter
       } else {
        letterCounter++
-       if(this.wheelPrize !== "BANKRUPT" || "LOSE A TURN") {
-        this.currentPlayer.roundScore = this.wheelPrize * letterCounter;
        }
        dom.appendLetter(letter);
-       dom.updateScore(this.currentPlayer);
-      }
-    });
+       
+       console.log("letterCounter", letterCounter)
   
-  
+      })
+      this.currentPlayer.roundScore += this.wheelPrize * letterCounter;
+      dom.updateScore(this.currentPlayer, this.players);
+      return this.lettersRemaining
+    };
 
+    //I think there is a loop happening here because it appears to me that the lettersRemaining is being reassigned to the entire puzzle answer everytime this method is called. 
+  
+  
+}
   // let matchingLetters = this.puzzle.find(letter => letter === guess)
   // return this.lettersRemaining.filter(letter => letter !== matchingLetters);
-}
+
 
      // findNextPlayer(player) {
   //  if (player === players[0]) {
@@ -143,15 +151,25 @@ class Round {
 
   
 
-  
-}
+
 
 export default Round;
 
 
 // At the beginning of the game the round number will be assigned to 1.
 // 
-// 
+//  let puzzleAnswer = this.puzzle['correct_answer'];
+    // let letterCounter = 0;
+    // let filterRemainingLetters;
+    // filterRemainingLetters = puzzleAnswer.toUpperCase().split('').filter(letter => {
+    //   if(letter !== guess) {
+    //     return letter
+    //   } else {
+    //    letterCounter++
+    //    this.lettersRemaining.push(letter)
+    //    // if(this.wheelPrize !== "BANKRUPT" || "LOSE A TURN") {
+    //    }
+    //onto somthing here but too tired. need to look at it fresh. 
 // 
 // 
 // 
