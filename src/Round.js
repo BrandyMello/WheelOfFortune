@@ -41,10 +41,10 @@ class Round {
     let randomIndex = Math.floor(Math.random() * Math.floor(6));
     let randomPrize = this.currentRoundWheel[randomIndex]
     this.wheelPrize = randomPrize;
-    if (this.wheelPrize === "BANKRUPT" || this.wheelPrze === "LOSE A TURN") {
-    // dom.disableAlphabet()
-  this.findNextPlayer();
-  dom.appendNextPlayerName(this.currentPlayer); 
+    if (this.wheelPrize === "BANKRUPT" || this.wheelPrize === "LOSE A TURN") {
+      this.findNextPlayer();
+      dom.appendNextPlayerName(this.currentPlayer); 
+      // dom.disableAlphabet()
     }
   }
 
