@@ -56,7 +56,7 @@ import $ from 'jquery';
   },
 
   emptyWheelPrize() {
-    $('.display-wheel-prize').empty();
+    $('.display-wheel-prize').text('');
   },
 
   disappearButton(letter, game) {

@@ -75,10 +75,17 @@ $(document).ready(function() {
     dom.showWheelPrize(game);
   });
 
-  $('.alphabet').on('click', function(e) {
+  $('.consonant').on('click', function(e) {
     e.preventDefault();
     let targetLetter = e.target;
     dom.disappearButton(targetLetter, game);
+  });
+
+  $('.vowel').on('click', function(e) {
+    e.preventDefault();
+    let targetLetter = e.target;
+    dom.disappearButton(targetLetter, game);
+    game.round.takeVowelMoney()
   });
 });
 });
