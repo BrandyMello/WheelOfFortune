@@ -43,48 +43,56 @@ $(document).ready(function() {
   // domUpdates.disableUserInputButton();
 
 
-$('.start-game-btn').click((e) => {
-  e.preventDefault();
-  let player1 = $('.player1-name').val();
-  let player2 = $('.player2-name').val();
-  let player3 = $('.player3-name').val();
-  game = new Game(data, player1, player2, player3)
-  game.startGame();
-  $('.splash-intake').fadeOut();
-  $('.header').fadeIn();
-  $('.display-board').delay(1000).fadeIn();
-   $('.category').delay(1000).fadeIn();
-  $('.game-info').delay(1000).fadeIn();
-  $('.fieldset').delay(1000).fadeIn();
-  $('.alphabet-container').delay(1000).fadeIn();
-  $('.player-container').delay(1000).fadeIn();
-  $('.fieldset').delay(1000).fadeIn();
-   $('.div-wheel-prize-display').delay(1000).fadeIn();
-  dom.appendPlayers(game, player1, player2, player3);
-  dom.appendPuzzle(game);
-  dom.appendRoundNumber(game);
-  dom.appendCategory(game);
-  dom.appendCurrentPlayerName(game);
-  dom.appendWheelPrizes(game);
-  dom.reappearAlphabet();
-  dom.disableAlphabet()
-})
-
-$(document).ready(function() {
-  $('.spin-wheel-btn').on('click', function () {
-    dom.showWheelPrize(game);
-  });
-
-  $('.alphabet').on('click', function(e) {
-    e.preventDefault();
-    let targetLetter = e.target;
-    dom.disappearButton(targetLetter, game);
-  });
-
-  $('.solve-btn').on('click', function() {
-    let guess = $('.solve-puzzle-input').val();
-    game.round.checkSolveGuess(guess);
-  });
+ $('.start-game-btn').click((e) => {
+   e.preventDefault();
+   let player1 = $('.player1-name').val();
+   let player2 = $('.player2-name').val();
+   let player3 = $('.player3-name').val();
+   game = new Game(data, player1, player2, player3)
+   game.startGame();
+   $('.splash-intake').fadeOut();
+   $('.header').fadeIn();
+   $('.display-board').delay(1000).fadeIn();
+    $('.category').delay(1000).fadeIn();
+   $('.game-info').delay(1000).fadeIn();
+   $('.fieldset').delay(1000).fadeIn();
+   $('.alphabet-container').delay(1000).fadeIn();
+   $('.player-container').delay(1000).fadeIn();
+   $('.fieldset').delay(1000).fadeIn();
+    $('.div-wheel-prize-display').delay(1000).fadeIn();
+   dom.appendPlayers(game, player1, player2, player3);
+   dom.appendPuzzle(game);
+   dom.appendRoundNumber(game);
+   dom.appendCategory(game);
+   dom.appendCurrentPlayerName(game);
+   dom.appendWheelPrizes(game);
+   dom.reappearAlphabet();
+   dom.disableAlphabet()
+ })
+ 
+ $(document).ready(function() {
+   $('.spin-wheel-btn').on('click', function () {
+     dom.showWheelPrize(game);
+   });
+ 
+   $('.consonant').on('click', function(e) {
+     e.preventDefault();
+     let targetLetter = e.target;
+     dom.disappearButton(targetLetter, game);
+   });
+ 
+   $('.solve-btn').on('click', function() {
+     let guess = $('.solve-puzzle-input').val();
+     game.round.checkSolveGuess(guess);
+   })
+ 
+   $('.vowel').on('click', function(e) {
+     e.preventDefault();
+     let targetLetter = e.target;
+     dom.disappearButton(targetLetter, game);
+     game.round.takeVowelMoney()
+ 
+   });
+ });
 });
-});
-
+ 
