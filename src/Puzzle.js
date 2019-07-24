@@ -10,17 +10,3 @@ class Puzzle {
 }
 
 export default Puzzle;
-
-// 
-// 
-// 
-// 
-// 
-// 
-// 
-// 
-// 
-// 
-// 
-// 
-// 

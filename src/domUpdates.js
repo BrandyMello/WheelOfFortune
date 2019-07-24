@@ -1,7 +1,5 @@
 import $ from 'jquery';
 
-
-
  const domUpdates = {
 
  appendPlayers(game, p1, p2, p3) {
@@ -38,15 +36,12 @@ import $ from 'jquery';
     let displayPuzzleAnswer = puzzleAnswer.map((letter, index) => {
       if (letter !== " ") {
         $(`.letter-${index}`).html(puzzleAnswer[`${index}`]).addClass(`puzzle-display puzzle-display-${letter}`);
-        console.log("letterinpuzzle", letter)
       }
     })
   }, 
 
   appendWheelPrizes(game) {
     let newWheel = game.round.currentRoundWheel;
-    console.log("newWheel", newWheel)
-    // makeDomWheel(newWheel, game);
   },
 
   showWheelPrize(game) {
@@ -61,7 +56,6 @@ import $ from 'jquery';
 
   disappearButton(letter, game) {
     let guessedLetter = $(letter).text();
-    console.log("targetLetter", guessedLetter)
     $(letter).closest('button')
       .css({
         'transition': 'transform 4s',
@@ -76,7 +70,7 @@ import $ from 'jquery';
     'transition': 'transform 4s',
     'transform- style': 'preserve - 3d',
     'transform': 'rotateX(360deg)'
-  })
+    })
   },
 
   appendLetter(approvedLetter) {
@@ -140,7 +134,6 @@ import $ from 'jquery';
     }
     $('.solve-puzzle-input').val(''); 
   }
+} 
 
-
-}   
-  export default domUpdates;
+export default domUpdates;

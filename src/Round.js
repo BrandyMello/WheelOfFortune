@@ -1,4 +1,3 @@
-// import data from './data';
 import Player from './Player';
 import Game from './Game';
 import Wheel from './Wheel';
@@ -22,8 +21,7 @@ class Round {
    } else {
    this.currentPlayer = this.players[playerIndex + 1];
    }
-   this.checkIfPlayerCanBuyVowel()
-   console.log('Player switch', this.currentPlayer);
+   this.checkIfPlayerCanBuyVowel();
   }
 
   makeNewWheel() {
@@ -36,7 +34,7 @@ class Round {
     let randomIndex = Math.floor(Math.random() * Math.floor(6));
     let randomPrize = this.currentRoundWheel[randomIndex]
     this.wheelPrize = randomPrize;
-    if (this.wheelPrize === "BANKRUPT"){
+    if (this.wheelPrize === "BANKRUPT") {
       this.takeBankruptMoney()
       dom.disableAlphabet();
       dom.emptyWheelPrize();
@@ -60,14 +58,12 @@ class Round {
        letterCounter++
        }
        dom.appendLetter(letter);
-
       });
       if (puzzleAnswer.indexOf(guess) === -1) {
        this.findNextPlayer();
        dom.appendNextPlayerName(this.currentPlayer);
        dom.disableAlphabet();  
       };
-      
       this.currentPlayer.roundScore += this.wheelPrize * letterCounter;
       dom.updateScore(this.currentPlayer, this.players);
       this.checkIfPlayerCanBuyVowel();
@@ -80,19 +76,17 @@ class Round {
       }
     };
 
-  checkSolveGuess(guess) {
-    let puzzleAnswer = this.puzzle['correct_answer'].toUpperCase();
-    let guessInCaps = guess.toUpperCase();
-    if(guessInCaps === puzzleAnswer) {
-      this.currentPlayer.grandTotal += this.currentPlayer.roundScore;
-      dom.alertWin(this.currentPlayer.roundScore);
-      dom.appendGrandTotal(this.currentPlayer, this.players);
-    } 
-    this.findNextPlayer();
-    dom.appendNextPlayerName(this.currentPlayer);
-
-    console.log(puzzleAnswer);
-  }
+    checkSolveGuess(guess) {
+      let puzzleAnswer = this.puzzle['correct_answer'].toUpperCase();
+      let guessInCaps = guess.toUpperCase();
+      if(guessInCaps === puzzleAnswer) {
+        this.currentPlayer.grandTotal += this.currentPlayer.roundScore;
+        dom.alertWin(this.currentPlayer.roundScore);
+        dom.appendGrandTotal(this.currentPlayer, this.players);
+      } 
+      this.findNextPlayer();
+      dom.appendNextPlayerName(this.currentPlayer);
+    }
 
     takeVowelMoney() {
       this.currentPlayer.roundScore -= 100;
@@ -102,10 +96,7 @@ class Round {
     takeBankruptMoney() {
       this.currentPlayer.roundScore = 0;
       dom.updateScore(this.currentPlayer, this.players);
-    }
-
-  
+    }  
 }
   
-
 export default Round;
