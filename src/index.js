@@ -80,6 +80,11 @@ $(document).ready(function() {
     let targetLetter = e.target;
     dom.disappearButton(targetLetter, game);
   });
+
+  $('.solve-btn').on('click', function() {
+    let guess = $('.solve-puzzle-input').val();
+    game.round.checkSolveGuess(guess);
+  });
 });
 });
 

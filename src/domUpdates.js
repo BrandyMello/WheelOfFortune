@@ -118,7 +118,26 @@ import $ from 'jquery';
 
   enableVowel() {
     $('.vowel').removeAttr("disabled");
+  },
+
+  alertWin(score) {
+    alert('YOU WON!!!!');
+  },
+
+  appendGrandTotal(player, playersList) {
+   if(player.name === playersList[0].name){
+      $('.p1-round-score-span').html(0);
+      $('.p1-grand-total-span').append(player.grandTotal);
+    } else if(player.name === playersList[1].name) {
+      $('.p2-round-score-span').html(0);
+      $('.p2-grand-total-span').append(player.grandTotal);
+    } else if(player.name === playersList[2].name) {
+      $('.p3-round-score-span').html(0);
+      $('.p3-grand-total-span').append(player.grandTotal);
+    }
+    $('.solve-puzzle-input').val(''); 
   }
+
 
 }   
   export default domUpdates;

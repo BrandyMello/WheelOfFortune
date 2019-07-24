@@ -69,6 +69,21 @@ class Round {
       dom.updateScore(this.currentPlayer, this.players);
       return this.lettersRemaining
     };
+
+  checkSolveGuess(guess) {
+    let puzzleAnswer = this.puzzle['correct_answer'].toUpperCase();
+    let guessInCaps = guess.toUpperCase();
+    if(guessInCaps === puzzleAnswer) {
+      this.currentPlayer.grandTotal += this.currentPlayer.roundScore;
+      dom.alertWin(this.currentPlayer.roundScore);
+      dom.appendGrandTotal(this.currentPlayer, this.players);
+    } 
+    this.findNextPlayer();
+    dom.appendNextPlayerName(this.currentPlayer);
+
+    console.log(puzzleAnswer);
+    console.log(puzzleAnswer);
+  }
   
 }
   
