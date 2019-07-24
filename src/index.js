@@ -88,10 +88,15 @@ $(document).ready(function() {
     game.round.takeVowelMoney()
   });
 
-    $('.restart-game-btn').on('click', function() {
+  $('.solve-btn').on('click', function() {
+     let guess = $('.solve-puzzle-input').val();
+     game.round.checkSolveGuess(guess);
+   });
+
+  $('.restart-game-btn').on('click', function() {
       console.log( "I am in biotch")
             location.reload();
     });
   });
 });
-
+ 
