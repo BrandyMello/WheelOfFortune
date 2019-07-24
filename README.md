@@ -1,103 +1,70 @@
-# Webpack Starter Kit
+2 week group project for FE Mod 2 (weeks 4-5)
 
-## Clone This Repo
+Background and Description
+For this project you will solidify your understanding of object-oriented programming (OOP) principles by building out a game show. This is an opportunity to work with classes to build a program at a larger scale than you have with previous projects. This is also an opportunity for you to build out a program based on user stories - which is more aligned to what you can expect to see working with product managers in a production environment.
 
-That's right, _clone_ not fork. You will use this repo multiple times, but you can only fork a repository once. So here is what you need to do to clone the repo and still be able to push changes to your repo:
+Building software, at its core, is about solving problems. Generally speaking, the first step in finding a solution to the problem is to be sure that you have clearly identified the problem as well what features the solution must incorporate. From here, we can flesh out the requirements that specify what our program should have. You will be assigned to build one of the following games:
 
-1. Clone down this repo. Since you don't want to name your project "webpack-starter-kit", you can use an optional argument when you run `git clone` (you replace the `[...]` with the terminal command arguments): `git clone [remote-address] [what you want to name the repo]`
-1. Remove the default remote: `git remote rm origin` (notice that `git remote -v` not gives you back nothing)
-1. Create a new repo on GitHub with the name of `[what you want to name the repo]` to be consistent with naming
-1. Copy the address that you would use to clone down this repo - something like `git@github.com:...`
-1. Add this remote to your cloned down repo: `git remote add origin [address you copied in the previous step]` - do not include the brackets
+Wheel of Fortune
+Jeopardy
+Family Feud
+The rules of your assigned game will serve as the requirements for the spec.
 
-Now try to commit something and push it up to your new repo. If everything is setup correctly, you should see the changes on GitHub.
+Goals and Objectives
+Write a program from scratch
+Synthesize knowledge of OOP, classes, and JS fundamentals to create a playable game
+Demonstrate good GitHub collaboration and workflow within a large group
+Write modular, reusable code that follows SRP (Single Responibility Principle)
+Create a robust test suite that thoroughly tests all functionality of a client-side application
+Implement array iterator and mutator methods to work with game data
+Technologies
+You’ll be working with some new technologies for this project:
 
-## Setup
+the fetch API for sending/receiving data
+Sass for getting fancy with your CSS
 
-After one person has gone through the steps of cloning down this repo and editing the remote, everyone should clone down the repo. 
 
-Then install the library dependencies. Run:
+# GameTime Wheel-Of-Fortune!
 
-```bash
-npm install
-```
+This is the group project for Mod Two at Turing School Of Software and Design located in Denver, Colorado. 
+Timeline for the project to be completed is 13 days.  The details of this project are outlined in [this project spec](https://frontend.turing.io/projects/module-2/game-time.htmll).
 
-To verify that it is setup correctly, run `npm start` in your terminal. Go to `http://localhost:8080/` and you should see a page with some `h1` text and a pink background. If that's the case, you're good to go. Enter `control + c` in your terminal to stop the server at any time.
+This is a collaboration from:
+* Lacy Rudd  [github account](https://github.com/dawnlunacy) <br>
+* Brandy Mello [github account](https://github.com/BrandyMello)<br>
 
-## Where to Add Your Code
+[Github Repository Link](https://github.com/BrandyMello/WheelOfFortune)
+## Summary
+### The learning goals and objectives for this project are as follows: 
+* Write a program from scratch
+* Synthesize knowledge of OOP, classes, and JS fundamentals to create a playable game
+* Demonstrate good GitHub collaboration and workflow within a large group
+* Write modular, reusable code that follows SRP (Single Responibility Principle)
+* Create a robust test suite that thoroughly tests all functionality of a client-side application
+* Implement array iterator and mutator methods to work with game data
+* `Sass` in CSS
 
-### JavaScript
+* "For this project you will solidify your understanding of object-oriented programming (OOP) principles by building out a game show. This is an opportunity to work with classes to build a program at a larger scale than you have with previous projects. This is also an opportunity for you to build out a program based on user stories - which is more aligned to what you can expect to see working with product managers in a production environment."
 
-You have to be very intentional with where you add your feature code. This repo uses a tool called [webpack](https://webpack.js.org/) to combine many JavaScript files into one big file. Webpack enables you to have many, separate JavaScript files to keep your code organized and readable. Webpack expects all of your code files to be in a specific place, or else it doesn't know how to combine them all behind the scenes.
+## Testing
 
-**Create all of your feature code files in the `src` directory.**
-
-Since code is separated into multiple files, you need to use the `import` and `export` syntax to share code across file.
-
-Here is a video that walks through some information about [import and export](https://www.youtube.com/watch?v=_3oSWwapPKQ). There are a lot of resources out there about `import` and `export`, and resources will sometimes call them `ES6 modules`. It's something you will see in React and beyond.
-
-### HTML
-
-Add the HTML you need in the `index.html` file in the `./src` directory. There is some boilerplate HTML that exists from the start that you can modify.
-
-### CSS (SCSS/SASS)
-
-This project is setup to use SCSS/SASS files by default instead of your regular CSS files. Add your SCSS files in the `src/css` directory. There is a `base.scss` file already there, but you can change this file and add multiple SCSS files in this directory.
-
-This might sound weird, but you need to `import` your SCSS files in the JavaScript entry file (`index.js`) for the styles to be applied to your HTML. The example `base.scss` file has already been imported in the JavaScript entry file as an example.
-
-### Images
-
-Add your image files in the `src/images` directory. Similar to CSS files, you need to `import` image files in the JavaScript entry file (`index.js`). Then go into the HTML and add an `img` element with the `src` attribute pointing to the `images` directory. There is an example in the `index.html` file for you to see.
-
-## How to View Your Code in Action
-
-In the terminal, run:
-
-```bash
-npm start
-```
-
-You will see a bunch of lines output to your terminal. One of those lines will be something like:
-
-```bash
-Project is running at http://localhost:8080/
-```
-
-Go to `http://localhost:8080/` in your browser to view your code running in the browser.
-
----
-
-## Test Files Organization
-
-Similar to feature code, your test code needs to be put in a specific place for it to run successfully.
-
-**Put all of your test files in the `test` directory.** As a convention, all test filenames should end with `-test.js`. For instance: `box-test.js`.
-
-## Running Your Tests
-
-Run your test suite using the command:
-
-```bash
-npm test
-```
-
-The test results will output to the terminal.
-
----
+* This project implements Test Driven Development written by the collaborators. We used the `mocha` and `chai` libraries to complete testing.
+* This project also implements `spies` to implement testing. 
 
 ## Linting Your Code
 
-Run the command in your terminal `npm run lint` to run the linter on your JavaScript code. There will be errors and warnings right from the start in this starter kit - the linter is still running successfully.
+* This project implements the use of a linter. 
 
-Your linter will look at the JavaScript files you have within the `src` directory and the `test` directory. 
+## Data Model
+* This project uses a `fetch API` to retrieve the data that is being used to play the game. 
 
-## Webpack?
+## Packages
 
-If you look in the `package.json` file, you'll see one of the library dependencies called `webpack`. If you're interested in learning more about what Webpack is and how it works behind the scenes, take a look through the [Webpack configuration documentation](https://webpack.js.org/concepts/).
+* Wheel-Of-Fortune uses [Webpack](https://webpack.js.org/) 
 
-## Deploying to GitHub Pages
+## User-Interface 
+* This is also the second project at Turing where a prompt for the UI/UX design is not provided. We were allowed the creative freedom to design this. 
 
-_If you are finished with the functionality and testing of your project_, then you can consider deploying your project to the web! This way anyone can play it without cloning down your repo.
+## Demo
+![GameTime Demo](https://github.com/dawnlunacy/fitlit-starter-kit/blob/master/images/demo/FitLit-demo.gif)
 
-[GitHub Pages](https://pages.github.com/) is a great way to deploy your project to the web. Research deploying a Webpack project to GitHub Pages or ask your instructors about it if you get to that point. (Don't worry about this until your project is free of bugs and well tested!)
