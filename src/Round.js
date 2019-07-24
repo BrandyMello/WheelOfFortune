@@ -1,4 +1,3 @@
-// import data from './data';
 import Player from './Player';
 import Game from './Game';
 import Wheel from './Wheel';
@@ -80,19 +79,19 @@ class Round {
       }
     };
 
-  checkSolveGuess(guess) {
-    let puzzleAnswer = this.puzzle['correct_answer'].toUpperCase();
-    let guessInCaps = guess.toUpperCase();
-    if(guessInCaps === puzzleAnswer) {
-      this.currentPlayer.grandTotal += this.currentPlayer.roundScore;
-      dom.alertWin(this.currentPlayer.roundScore);
-      dom.appendGrandTotal(this.currentPlayer, this.players);
-    } 
-    this.findNextPlayer();
-    dom.appendNextPlayerName(this.currentPlayer);
-
-    console.log(puzzleAnswer);
-  }
+    checkSolveGuess(guess) {
+      let puzzleAnswer = this.puzzle['correct_answer'].toUpperCase();
+      let guessInCaps = guess.toUpperCase();
+      if(guessInCaps === puzzleAnswer) {
+        this.currentPlayer.grandTotal += this.currentPlayer.roundScore;
+        dom.alertWin(this.currentPlayer.roundScore);
+        dom.appendGrandTotal(this.currentPlayer, this.players);
+      } 
+      this.findNextPlayer();
+      dom.appendNextPlayerName(this.currentPlayer);
+  
+      console.log(puzzleAnswer);
+    }
 
     takeVowelMoney() {
       this.currentPlayer.roundScore -= 100;
@@ -102,9 +101,7 @@ class Round {
     takeBankruptMoney() {
       this.currentPlayer.roundScore = 0;
       dom.updateScore(this.currentPlayer, this.players);
-    }
-
-  
+    }  
 }
   
 

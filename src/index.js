@@ -1,12 +1,7 @@
-
 import $ from 'jquery';
-
 import './css/base.scss';
-
 import Game from './Game';
-
 import dom from './domUpdates.js'
-
 
 let game; 
 let data;
@@ -40,8 +35,6 @@ $(document).ready(function() {
       </p>
       <button class="start-game-btn">START GAME</button>
       </form>`).delay(3000).fadeIn('slow');
-  // domUpdates.disableUserInputButton();
-
 
 $('.start-game-btn').click((e) => {
   e.preventDefault();
