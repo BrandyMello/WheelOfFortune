@@ -22,6 +22,7 @@ class Round {
    } else {
    this.currentPlayer = this.players[playerIndex + 1];
    }
+   this.checkIfPlayerCanBuyVowel()
    console.log('Player switch', this.currentPlayer);
   }
 
@@ -41,38 +42,58 @@ class Round {
     let randomIndex = Math.floor(Math.random() * Math.floor(6));
     let randomPrize = this.currentRoundWheel[randomIndex]
     this.wheelPrize = randomPrize;
-    if (this.wheelPrize === "BANKRUPT" || this.wheelPrize === "LOSE A TURN") {
+    if (this.wheelPrize === "BANKRUPT"){
+      this.takeBankruptMoney()
       dom.disableAlphabet();
-      // dom.emptyWheelPrize();
+      dom.emptyWheelPrize();
+      this.findNextPlayer();
+      dom.appendNextPlayerName(this.currentPlayer); 
+    } else if (this.wheelPrize === "LOSE A TURN") {
+      dom.disableAlphabet();
+      dom.emptyWheelPrize();
       this.findNextPlayer();
       dom.appendNextPlayerName(this.currentPlayer); 
     }
   }
 
   checkPlayerGuess(guess, game) {
-    let puzzleAnswer = this.puzzle['correct_answer'];
+    let puzzleAnswer = this.puzzle['correct_answer'].toUpperCase().split('');
     let letterCounter = 0;
-    this.lettersRemaining = puzzleAnswer.toUpperCase().split('').filter(letter => {
+    this.lettersRemaining = puzzleAnswer.filter(letter => {
       if(letter !== guess) {
         return letter
       } else {
        letterCounter++
        }
        dom.appendLetter(letter);
-       
-       console.log("letterCounter", letterCounter)
-  
+       dom.disableConsonant();  
       });
-
-      if (this.lettersRemaining.indexOf(guess) === -1) {
-       this.findNextPlayer();
-       dom.appendNextPlayerName(this.currentPlayer);
-       dom.disableAlphabet();
-     }
+      if (puzzleAnswer.indexOf(guess) === -1) {
+        this.findNextPlayer();
+        dom.appendNextPlayerName(this.currentPlayer);
+        dom.disableAlphabet();
+      }
       this.currentPlayer.roundScore += this.wheelPrize * letterCounter;
       dom.updateScore(this.currentPlayer, this.players);
-      return this.lettersRemaining
+      this.checkIfPlayerCanBuyVowel();
+      return this.lettersRemaining;
     };
+
+    checkIfPlayerCanBuyVowel() {
+      if(this.currentPlayer.roundScore >= 100) {
+        dom.enableAlphabet();
+      }
+    };
+
+    takeVowelMoney() {
+      this.currentPlayer.roundScore -= 100;
+      dom.updateScore(this.currentPlayer, this.players);
+    };
+
+    takeBankruptMoney() {
+      this.currentPlayer.roundScore = 0;
+      dom.updateScore(this.currentPlayer, this.players);
+    }
   
 }
   
