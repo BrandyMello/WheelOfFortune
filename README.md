@@ -41,5 +41,5 @@ This is a collaboration from:
 * This is also the second project at Turing where a prompt for the UI/UX design is not provided. We were allowed the creative freedom to design this. 
 
 ## Demo
-![GameTime Demo](https://github.com/dawnlunacy/fitlit-starter-kit/blob/master/images/demo/FitLit-demo.gif)
+![GameTime Demo](https://github.com/BrandyMello/WheelOfFortune/blob/readme/src/images/wheel-of-fortune%20demo%201%20.gif)
 
