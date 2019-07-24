@@ -50,25 +50,21 @@ class Round {
   }
 
   checkPlayerGuess(guess, game) {
-    let puzzleAnswer = this.puzzle['correct_answer'];
+    let puzzleAnswer = this.puzzle['correct_answer'].toUpperCase().split('');
     let letterCounter = 0;
-    this.lettersRemaining = puzzleAnswer.toUpperCase().split('').filter(letter => {
+    this.lettersRemaining = puzzleAnswer.filter(letter => {
       if(letter !== guess) {
         return letter
       } else {
        letterCounter++
        }
        dom.appendLetter(letter);
-       
-       console.log("letterCounter", letterCounter)
-  
       });
-
-      if (this.lettersRemaining.indexOf(guess) === -1) {
+      if (puzzleAnswer.indexOf(guess) === -1) {
        this.findNextPlayer();
        dom.appendNextPlayerName(this.currentPlayer);
        dom.disableAlphabet();
-     }
+      }
       this.currentPlayer.roundScore += this.wheelPrize * letterCounter;
       dom.updateScore(this.currentPlayer, this.players);
       return this.lettersRemaining
