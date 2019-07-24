@@ -146,7 +146,6 @@ h3 {
 }
 
 .row-no-block {
-  // background-color: white;
   border: none;
   opacity: 0.1;
 }
@@ -184,34 +183,6 @@ text {
   font-family: Helvetica, Arial, sans-serif;
   font-size: 20px;
   pointer-events: none;
-}
-
-#chart {
-  height: 500px;
-  left: 0;
-  position: relative;
-  top: 0;
-  width: 500px;
-}
-
-#question {
-  height: 400px;
-  left: 520px;
-  position: absolute;
-  top: 0;
-  width: 400px;
-}
-
-#question h1 {
-  font-size: 50px;
-  font-weight: bold;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  position: absolute;
-  padding: 0;
-  margin: 0;
-  top: 50%;
-  -webkit-transform: translate(0, -50%);
-  transform: translate(0, -50%);
 }
 
 .game-info {
@@ -313,8 +284,29 @@ text {
 
 .solve-puzzle-input {
   height: 25px;
-  margin: 10px 5%;
+  margin: 10px 2%;
   width: 39%;
+}
+
+.restart-game-btn {
+  background-color: $main-logo;
+  border-radius: 8px;
+  border: 0;
+  color: #7f2e2e;;
+  display: inline;
+  font-size: 15px;
+  height: 40px;
+  line-height: 2.5;
+  margin: 0% 1% 0% 15%;
+  padding: 0px 10px;
+  text-align: center;
+  width: 15%;
+  background-image: linear-gradient(to top left,
+  rgba(0, 0, 0, .2),
+  rgba(0, 0, 0, .2) 30%,
+  rgba(0, 0, 0, 0));
+  box-shadow: inset 2px 2px 3px rgba(255, 255, 255, .6),
+              inset -2px -2px 3px rgba(0, 0, 0, .6);
 }
 
 .player-container {

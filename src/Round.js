@@ -26,12 +26,6 @@ class Round {
    console.log('Player switch', this.currentPlayer);
   }
 
- // spinWheel() {
- //  this.chooseWheelPrize();
- //  console.log("YoWheelPrize", this.wheelPrize)
-  
- // }
-
   makeNewWheel() {
     let wheel = new Wheel(this.data);
     return wheel.generateCurrentWheel();

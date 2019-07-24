@@ -87,6 +87,11 @@ $(document).ready(function() {
     dom.disappearButton(targetLetter, game);
     game.round.takeVowelMoney()
   });
-});
+
+    $('.restart-game-btn').on('click', function() {
+      console.log( "I am in biotch")
+            location.reload();
+    });
+  });
 });
 
