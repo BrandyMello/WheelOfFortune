@@ -5,12 +5,10 @@ import data from '../src/data';
 import Player from '../src/Player';
 import Round from '../src/Round';
 
-
 const expect = chai.expect;
 chai.use(spies);
 
 let game;
-
 
 describe('Game', () => {
   
@@ -50,7 +48,6 @@ describe('Game', () => {
     });
   });
 
-
   describe('puzzleSlayer', () => {
     it('should return the winner of all of the rounds', () => {
       expect(game.puzzleSlayer().to.be.an('object'))
@@ -61,23 +58,21 @@ describe('Game', () => {
   });
 });
 
-   describe('startGame', () => {
-    it('should initialize the game with the three new players', () => {
-      chai.spy.on(game,['addPlayers'], () => {});
-      game.startGame()
-      expect(game.addPlayers).to.have.been.called(1);
-    })
-  })
-
-   describe('createPuzzleBank', () => {
-    it('should create a puzzle bank', function () {
-    expect(game.puzzleBank.length).to.eql(4);
-    })
-  });
-
-   describe('choosePuzzle', () => {
-    it('should choose a puzzle from the puzzle bank', function() {
-    expect(game.choosePuzzle()).to.be.an('object');
-    });
-  });
+ describe('startGame', () => {
+   it('should initialize the game with the three newplayers', () => {
+     chai.spy.on(game,['addPlayers'], () => {});
+     game.startGame()
+     expect(game.addPlayers).to.have.been.called(1);
+   })
+ });
+  describe('createPuzzleBank', () => {
+   it('should create a puzzle bank', function () {
+   expect(game.puzzleBank.length).to.eql(4);
+   })
+ });
+  describe('choosePuzzle', () => {
+   it('should choose a puzzle from the puzzle bank',function() {
+   expect(game.choosePuzzle()).to.be.an('object');
+   });
+ });
 

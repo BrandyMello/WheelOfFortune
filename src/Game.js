@@ -1,11 +1,9 @@
-// import data from './data';
 import Player from './Player';
 import Round from './Round';
 import dom from './domUpdates.js'
 
-
 class Game {
-  constructor(data,p1, p2, p3) {
+  constructor(data, p1, p2, p3) {
     this.data = data;
     this.players = [];
     this.player1 = new Player(p1);
@@ -32,12 +30,11 @@ class Game {
 
   startNewRound() {
     if(this.roundCounter === 4) {
-       this.puzzleSlayer()
+      this.puzzleSlayer()
     } else {
       this.roundCounter ++;
       this.choosePuzzle();
       this.round = new Round(this.data, this.players, this.currentPuzzle, this.nextPlayer);
-      // this.round.makeNewWheel();
     }
   }
 
@@ -68,5 +65,4 @@ class Game {
     }
 };
   
-
 export default Game;

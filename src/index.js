@@ -87,8 +87,7 @@ $(document).ready(function() {
    });
 
   $('.restart-game-btn').on('click', function() {
-      console.log( "I am in biotch")
-            location.reload();
+      location.reload();
     });
   });
 });

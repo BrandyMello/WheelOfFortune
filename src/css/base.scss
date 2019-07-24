@@ -1,10 +1,8 @@
-/* This is an example of using Sass, otherwise plain CSS works too*/
 $main-logo: #F1C40F;
 $border: #261663; 
 $primary-color: #91508cc4; 
 
 body {
-  // background-color: $primary-background;
   background-image: linear-gradient(
       rgba(0, 0, 0, 0.5),
       rgba(0, 0, 0, 0.5)
@@ -37,16 +35,19 @@ table {
     tr {
     border: 2px solid black;
     }
+
     td {
     border: 2px solid black;
     height:50px;
     width:50px;
     }
+
       .puzzle-display {
         background-color: white;
         color: white;
         text-align: center;
       }
+
       .display-letter {
         color: black;
         transition: transform 4s;
@@ -74,34 +75,41 @@ h3 {
 }
 
 @keyframes h3 {
+
   0% {
-            transform: scale(1)rotateZ(0);
-            transform: scale(1) rotateZ(0);
+        transform: scale(1)rotateZ(0);
+        transform: scale(1) rotateZ(0);
     }
+
   50% {
-            transform: scale(2) rotateZ(180deg);
-            transform: scale(2) rotateZ(180deg);
+        transform: scale(2) rotateZ(180deg);
+        transform: scale(2) rotateZ(180deg);
     }
+
   100% {
-            transform: scale(1) rotateZ(360deg);
-            transform: scale(1) rotateZ(360deg);
+        transform: scale(1) rotateZ(360deg);
+        transform: scale(1) rotateZ(360deg);
   }
 }
 
 @keyframes rotate-scale-up {
+
   0% {
-    transform: scale(1) rotateZ(0);
-            transform: scale(1) rotateZ(0);
+        transform: scale(1) rotateZ(0);
+        transform: scale(1) rotateZ(0);
   }
+
   50% {
-    transform: scale(2) rotateZ(180deg);
-            transform: scale(2) rotateZ(180deg);
+        transform: scale(2) rotateZ(180deg);
+        transform: scale(2) rotateZ(180deg);
   }
+
   100% {
-    transform: scale(1) rotateZ(360deg);
-            transform: scale(1) rotateZ(360deg);
+        transform: scale(1) rotateZ(360deg);
+        transform: scale(1) rotateZ(360deg);
   }
 }
+
 .splash-intake {
   display: flex;
   justify-content: center;
@@ -113,9 +121,9 @@ h3 {
   background-color: $primary-color;
   width: 50%;
     p {
-    color: $main-logo;
-    margin: 13% 30%;
-    text-align: center;
+      color: $main-logo;
+      margin: 13% 30%;
+      text-align: center;
     }
 }
 
@@ -142,7 +150,7 @@ h3 {
   rgba(0, 0, 0, .2) 30%,
   rgba(0, 0, 0, 0));
   box-shadow: inset 2px 2px 3px rgba(255, 255, 255, .6),
-              inset -2px -2px 3px rgba(0, 0, 0, .6);
+  inset -2px -2px 3px rgba(0, 0, 0, .6);
 }
 
 .row-no-block {
@@ -211,8 +219,8 @@ text {
   rgba(0, 0, 0, .2) 30%,
   rgba(0, 0, 0, 0));
   box-shadow: inset 2px 2px 3px rgba(255, 255, 255, .6),
-              inset -2px -2px 3px rgba(0, 0, 0, .6);
-  }
+  inset -2px -2px 3px rgba(0, 0, 0, .6);
+}
 
 .div-wheel-prize-display {
     animation: rotate-scale-up 0.65s linear both;
@@ -232,32 +240,38 @@ text {
 }
 
 @keyframes h3 {
+
   0% {
-            transform: scale(1)rotateZ(0);
-            transform: scale(1) rotateZ(0);
+        transform: scale(1)rotateZ(0);
+        transform: scale(1) rotateZ(0);
     }
+
   50% {
-            transform: scale(2) rotateZ(180deg);
-            transform: scale(2) rotateZ(180deg);
+        transform: scale(2) rotateZ(180deg);
+        transform: scale(2) rotateZ(180deg);
     }
+
   100% {
-            transform: scale(1) rotateZ(360deg);
-            transform: scale(1) rotateZ(360deg);
+        transform: scale(1) rotateZ(360deg);
+        transform: scale(1) rotateZ(360deg);
   }
 }
 
 @keyframes rotate-scale-up {
+
   0% {
-    transform: scale(1) rotateZ(0);
-            transform: scale(1) rotateZ(0);
+        transform: scale(1) rotateZ(0);
+        transform: scale(1) rotateZ(0);
   }
+
   50% {
-    transform: scale(2) rotateZ(180deg);
-            transform: scale(2) rotateZ(180deg);
+        transform: scale(2) rotateZ(180deg);
+        transform: scale(2) rotateZ(180deg);
   }
+
   100% {
-    transform: scale(1) rotateZ(360deg);
-            transform: scale(1) rotateZ(360deg);
+          transform: scale(1) rotateZ(360deg);
+          transform: scale(1) rotateZ(360deg);
   }
 }
 
@@ -306,7 +320,7 @@ text {
   rgba(0, 0, 0, .2) 30%,
   rgba(0, 0, 0, 0));
   box-shadow: inset 2px 2px 3px rgba(255, 255, 255, .6),
-              inset -2px -2px 3px rgba(0, 0, 0, .6);
+  inset -2px -2px 3px rgba(0, 0, 0, .6);
 }
 
 .player-container {

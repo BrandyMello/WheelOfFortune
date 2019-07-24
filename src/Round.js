@@ -21,8 +21,7 @@ class Round {
    } else {
    this.currentPlayer = this.players[playerIndex + 1];
    }
-   this.checkIfPlayerCanBuyVowel()
-   console.log('Player switch', this.currentPlayer);
+   this.checkIfPlayerCanBuyVowel();
   }
 
   makeNewWheel() {
@@ -35,7 +34,7 @@ class Round {
     let randomIndex = Math.floor(Math.random() * Math.floor(6));
     let randomPrize = this.currentRoundWheel[randomIndex]
     this.wheelPrize = randomPrize;
-    if (this.wheelPrize === "BANKRUPT"){
+    if (this.wheelPrize === "BANKRUPT") {
       this.takeBankruptMoney()
       dom.disableAlphabet();
       dom.emptyWheelPrize();
@@ -59,14 +58,12 @@ class Round {
        letterCounter++
        }
        dom.appendLetter(letter);
-
       });
       if (puzzleAnswer.indexOf(guess) === -1) {
        this.findNextPlayer();
        dom.appendNextPlayerName(this.currentPlayer);
        dom.disableAlphabet();  
       };
-      
       this.currentPlayer.roundScore += this.wheelPrize * letterCounter;
       dom.updateScore(this.currentPlayer, this.players);
       this.checkIfPlayerCanBuyVowel();
@@ -89,8 +86,6 @@ class Round {
       } 
       this.findNextPlayer();
       dom.appendNextPlayerName(this.currentPlayer);
-  
-      console.log(puzzleAnswer);
     }
 
     takeVowelMoney() {
@@ -104,5 +99,4 @@ class Round {
     }  
 }
   
-
 export default Round;
