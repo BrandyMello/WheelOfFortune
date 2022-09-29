@@ -36,7 +36,7 @@
     "webpack-dev-server": "^3.1.14"
   },
   "dependencies": {
-    "d3": "^5.9.7",
+    "d3": "^7.6.1",
     "jquery": "^3.4.1"
   }
 }
